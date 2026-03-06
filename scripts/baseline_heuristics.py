@@ -5,26 +5,18 @@ import numpy as np
 from typing import Dict, Any, Optional, Literal
 from pathlib import Path
 from collections import Counter
-
-
-def parse_json_field(value):
-    """Safely parse JSON field."""
-    if pd.isna(value):
-        return None
-    if isinstance(value, str):
-        try:
-            return json.loads(value)
-        except:
-            return None
-    return value
-
-
-def extract_name_primary(names_field):
-    """Extract primary name from names field."""
-    parsed = parse_json_field(names_field)
-    if parsed and isinstance(parsed, dict):
-        return parsed.get('primary', '').strip()
-    return ''
+try:
+    from scripts.normalization import (
+        extract_name_primary,
+        is_missing_value,
+        values_equivalent,
+    )
+except ModuleNotFoundError:
+    from normalization import (
+        extract_name_primary,
+        is_missing_value,
+        values_equivalent,
+    )
 
 
 class MostRecentBaseline:
@@ -51,18 +43,15 @@ class MostRecentBaseline:
             current_val = row['names']
             base_val = row['base_names']
             
-            if pd.isna(current_val) and pd.isna(base_val):
+            if is_missing_value(current_val) and is_missing_value(base_val):
                 return 'unclear'
-            if pd.isna(current_val):
+            if is_missing_value(current_val):
                 return 'base'
-            if pd.isna(base_val):
+            if is_missing_value(base_val):
                 return 'current'
             
             # Check if same
-            current_primary = extract_name_primary(current_val)
-            base_primary = extract_name_primary(base_val)
-            
-            if current_primary and base_primary and current_primary.lower() == base_primary.lower():
+            if values_equivalent('name', current_val, base_val):
                 return 'same'
             
             # Always prefer current (most recent)
@@ -81,15 +70,15 @@ class MostRecentBaseline:
         current_val = row.get(attr_col_curr)
         base_val = row.get(attr_col_base)
         
-        if pd.isna(current_val) and pd.isna(base_val):
+        if is_missing_value(current_val) and is_missing_value(base_val):
             return 'unclear'
-        if pd.isna(current_val):
+        if is_missing_value(current_val):
             return 'base'
-        if pd.isna(base_val):
+        if is_missing_value(base_val):
             return 'current'
         
         # Check if same (simple string comparison for non-name attributes)
-        if str(current_val).strip() == str(base_val).strip():
+        if values_equivalent(attribute, current_val, base_val):
             return 'same'
         
         return 'current'
@@ -127,22 +116,16 @@ class ConfidenceBaseline:
         current_data_val = row.get(attr_col_curr)
         base_data_val = row.get(attr_col_base)
         
-        if pd.isna(current_data_val) and pd.isna(base_data_val):
+        if is_missing_value(current_data_val) and is_missing_value(base_data_val):
             return 'unclear'
-        if pd.isna(current_data_val):
+        if is_missing_value(current_data_val):
             return 'base'
-        if pd.isna(base_data_val):
+        if is_missing_value(base_data_val):
             return 'current'
         
         # Check if same
-        if attribute == 'name':
-            current_primary = extract_name_primary(current_data_val)
-            base_primary = extract_name_primary(base_data_val)
-            if current_primary and base_primary and current_primary.lower() == base_primary.lower():
-                return 'same'
-        else:
-            if str(current_data_val).strip() == str(base_data_val).strip():
-                return 'same'
+        if values_equivalent(attribute, current_data_val, base_data_val):
+            return 'same'
         
         # Compare confidence
         current_conf = row.get('confidence', 0.5)
@@ -171,7 +154,7 @@ class CompletenessBaseline:
     
     def _calculate_completeness(self, value, attribute: str = 'name'):
         """Calculate a completeness score for a value."""
-        if pd.isna(value) or not value:
+        if is_missing_value(value):
             return 0.0
         
         score = 1.0 # Base score for existence
@@ -220,22 +203,16 @@ class CompletenessBaseline:
         current_val = row.get(attr_col_curr)
         base_val = row.get(attr_col_base)
         
-        if pd.isna(current_val) and pd.isna(base_val):
+        if is_missing_value(current_val) and is_missing_value(base_val):
             return 'unclear'
-        if pd.isna(current_val):
+        if is_missing_value(current_val):
             return 'base'
-        if pd.isna(base_val):
+        if is_missing_value(base_val):
             return 'current'
         
         # Check if same
-        if attribute == 'name':
-            current_primary = extract_name_primary(current_val)
-            base_primary = extract_name_primary(base_val)
-            if current_primary and base_primary and current_primary.lower() == base_primary.lower():
-                return 'same'
-        else: # For other attributes, simple string comparison
-            if str(current_val).strip() == str(base_val).strip():
-                return 'same'
+        if values_equivalent(attribute, current_val, base_val):
+            return 'same'
         
         # Compare completeness
         current_complete = self._calculate_completeness(current_val, attribute)

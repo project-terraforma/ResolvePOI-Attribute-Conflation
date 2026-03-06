@@ -10,26 +10,26 @@ import json
 import numpy as np
 from typing import Dict, Any, Optional, List
 from pathlib import Path
-
-
-def parse_json_field(value):
-    """Safely parse JSON field."""
-    if pd.isna(value):
-        return None
-    if isinstance(value, str):
-        try:
-            return json.loads(value)
-        except:
-            return None
-    return value
-
-
-def extract_name_primary(names_field):
-    """Extract primary name from names field."""
-    parsed = parse_json_field(names_field)
-    if parsed and isinstance(parsed, dict):
-        return parsed.get('primary', '').strip()
-    return ''
+try:
+    from scripts.normalization import (
+        extract_address_primary,
+        extract_category_primary,
+        extract_name_primary,
+        extract_phone_primary,
+        extract_website_primary,
+        is_missing_value,
+        phone_digits,
+    )
+except ModuleNotFoundError:
+    from normalization import (
+        extract_address_primary,
+        extract_category_primary,
+        extract_name_primary,
+        extract_phone_primary,
+        extract_website_primary,
+        is_missing_value,
+        phone_digits,
+    )
 
 
 def levenshtein_distance(s1: str, s2: str) -> int:
@@ -187,13 +187,6 @@ def extract_name_features(current_names: Any, base_names: Any) -> Dict[str, floa
     return features
 
 
-def extract_phone_primary(phone_field):
-    """Extract primary phone from phone field."""
-    parsed = parse_json_field(phone_field)
-    if parsed and isinstance(parsed, list) and len(parsed) > 0:
-        return str(parsed[0]) if parsed[0] else ''
-    return ''
-
 def extract_phone_features(current_phones: Any, base_phones: Any) -> Dict[str, float]:
     """Extract features for phone attribute comparison."""
     current = extract_phone_primary(current_phones)
@@ -202,8 +195,8 @@ def extract_phone_features(current_phones: Any, base_phones: Any) -> Dict[str, f
     features = {}
     
     # Presence features
-    features['phone_current_exists'] = 1.0 if current and current != 'nan' else 0.0
-    features['phone_base_exists'] = 1.0 if base and base != 'nan' else 0.0
+    features['phone_current_exists'] = 1.0 if not is_missing_value(current) else 0.0
+    features['phone_base_exists'] = 1.0 if not is_missing_value(base) else 0.0
     
     if features['phone_current_exists'] and features['phone_base_exists']:
         # Length features
@@ -218,8 +211,8 @@ def extract_phone_features(current_phones: Any, base_phones: Any) -> Dict[str, f
         features['phone_base_has_paren'] = 1.0 if '(' in base else 0.0
         
         # Digit only comparison
-        curr_digits = ''.join(filter(str.isdigit, current))
-        base_digits = ''.join(filter(str.isdigit, base))
+        curr_digits = phone_digits(current)
+        base_digits = phone_digits(base)
         
         features['phone_digits_match'] = 1.0 if curr_digits == base_digits else 0.0
         features['phone_digits_len_diff'] = abs(len(curr_digits) - len(base_digits))
@@ -238,13 +231,6 @@ def extract_phone_features(current_phones: Any, base_phones: Any) -> Dict[str, f
             
     return features
 
-def extract_website_primary(website_field):
-    """Extract primary website from website field."""
-    parsed = parse_json_field(website_field)
-    if parsed and isinstance(parsed, list) and len(parsed) > 0:
-        return str(parsed[0]) if parsed[0] else ''
-    return ''
-
 def extract_website_features(current_websites: Any, base_websites: Any) -> Dict[str, float]:
     """Extract features for website attribute comparison."""
     current = extract_website_primary(current_websites)
@@ -253,8 +239,8 @@ def extract_website_features(current_websites: Any, base_websites: Any) -> Dict[
     features = {}
     
     # Presence
-    features['web_current_exists'] = 1.0 if current and current != 'nan' else 0.0
-    features['web_base_exists'] = 1.0 if base and base != 'nan' else 0.0
+    features['web_current_exists'] = 1.0 if not is_missing_value(current) else 0.0
+    features['web_base_exists'] = 1.0 if not is_missing_value(base) else 0.0
     
     if features['web_current_exists'] and features['web_base_exists']:
         # Protocol
@@ -279,13 +265,6 @@ def extract_website_features(current_websites: Any, base_websites: Any) -> Dict[
             features[f'web_{k}'] = 0.0
             
     return features
-
-def extract_address_primary(address_field):
-    """Extract primary address object."""
-    parsed = parse_json_field(address_field)
-    if parsed and isinstance(parsed, list) and len(parsed) > 0:
-        return parsed[0] if parsed[0] else {}
-    return {}
 
 def extract_address_features(current_addr: Any, base_addr: Any) -> Dict[str, float]:
     """Extract features for address attribute comparison."""
@@ -323,14 +302,6 @@ def extract_address_features(current_addr: Any, base_addr: Any) -> Dict[str, flo
             features[f'addr_{k}'] = 0.0
             
     return features
-
-def extract_category_primary(category_field):
-    """Extract primary category string."""
-    parsed = parse_json_field(category_field)
-    if parsed and isinstance(parsed, dict):
-        val = parsed.get('primary') # Get primary, can be None
-        return str(val).strip() if val is not None else '' # Ensure it's a string
-    return ''
 
 def extract_category_features(current_cat: Any, base_cat: Any) -> Dict[str, float]:
     """Extract features for category attribute comparison."""
@@ -382,7 +353,11 @@ def extract_metadata_features(row: pd.Series) -> Dict[str, float]:
     return features
 
 
-def extract_features_for_record(row: pd.Series, attribute: str = 'name') -> Dict[str, float]:
+def extract_features_for_record(
+    row: pd.Series,
+    attribute: str = 'name',
+    include_metadata: bool = True,
+) -> Dict[str, float]:
     """
     Extract all features for a single record and attribute.
     
@@ -396,8 +371,9 @@ def extract_features_for_record(row: pd.Series, attribute: str = 'name') -> Dict
     features = {}
     
     # Metadata features (same for all attributes)
-    metadata_features = extract_metadata_features(row)
-    features.update(metadata_features)
+    if include_metadata:
+        metadata_features = extract_metadata_features(row)
+        features.update(metadata_features)
     
     # Attribute-specific features
     if attribute == 'name':
@@ -419,7 +395,11 @@ def extract_features_for_record(row: pd.Series, attribute: str = 'name') -> Dict
     return features
 
 
-def extract_features_batch(df: pd.DataFrame, attribute: str = 'name') -> pd.DataFrame:
+def extract_features_batch(
+    df: pd.DataFrame,
+    attribute: str = 'name',
+    include_metadata: bool = True,
+) -> pd.DataFrame:
     """
     Extract features for a batch of records.
     
@@ -429,7 +409,11 @@ def extract_features_batch(df: pd.DataFrame, attribute: str = 'name') -> pd.Data
     feature_rows = []
     
     for idx, row in df.iterrows():
-        features = extract_features_for_record(row, attribute)
+        features = extract_features_for_record(
+            row,
+            attribute,
+            include_metadata=include_metadata,
+        )
         features['record_index'] = idx
         features['id'] = row['id']
         feature_rows.append(features)

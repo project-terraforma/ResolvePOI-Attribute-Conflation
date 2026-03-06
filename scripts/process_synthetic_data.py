@@ -2,14 +2,32 @@
 import json
 import pandas as pd
 import argparse
-from scripts.extract_features import extract_features_batch
+try:
+    from scripts.extract_features import extract_features_batch
+except ModuleNotFoundError:
+    from extract_features import extract_features_batch
 
 INPUT_FILE = 'data/synthetic_golden_dataset_2k.json'
 
 def process_synthetic():
     parser = argparse.ArgumentParser()
     parser.add_argument('--attribute', default='name', choices=['name', 'phone', 'website', 'address', 'category'])
+    parser.add_argument(
+        '--include-metadata',
+        choices=['true', 'false'],
+        default='false',
+        help='Whether to include metadata features (confidence, sources) in training features.',
+    )
+    parser.add_argument(
+        '--use-record-confidence',
+        choices=['true', 'false'],
+        default='true',
+        help='Whether to use synthetic record confidence values, else use fixed 1.0/0.5.',
+    )
     args = parser.parse_args()
+
+    include_metadata = args.include_metadata == 'true'
+    use_record_confidence = args.use_record_confidence == 'true'
     
     output_features = f'data/processed/features_{args.attribute}_synthetic.parquet'
     
@@ -22,6 +40,13 @@ def process_synthetic():
     labels = {}
     
     for r in records:
+        if use_record_confidence:
+            confidence = float(r['data']['current'].get('confidence', 1.0))
+            base_confidence = float(r['data']['base'].get('confidence', 0.5))
+        else:
+            confidence = 1.0
+            base_confidence = 0.5
+
         row = {
             'id': r['id'],
             'names': r['data']['current']['names'],
@@ -34,8 +59,8 @@ def process_synthetic():
             'base_addresses': r['data']['base']['addresses'],
             'categories': r['data']['current']['categories'],
             'base_categories': r['data']['base']['categories'],
-            'confidence': 1.0, # Synthetic 'current' is perfect
-            'base_confidence': 0.5, # Synthetic 'base' is degraded
+            'confidence': confidence,
+            'base_confidence': base_confidence,
             'sources': '',
             'base_sources': ''
         }
@@ -47,7 +72,11 @@ def process_synthetic():
     
     # Extract Features
     print(f"Extracting features for '{args.attribute}'...")
-    features_df = extract_features_batch(df, attribute=args.attribute)
+    features_df = extract_features_batch(
+        df,
+        attribute=args.attribute,
+        include_metadata=include_metadata,
+    )
     
     # Add Labels
     print("Applying labels...")

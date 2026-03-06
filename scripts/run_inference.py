@@ -6,7 +6,10 @@ from pathlib import Path
 import time
 import psutil
 import os
-from scripts.extract_features import extract_features_batch
+try:
+    from scripts.extract_features import extract_features_batch
+except ModuleNotFoundError:
+    from extract_features import extract_features_batch
 
 def get_attribute_value(row, attribute, source='current'):
     """Helper to extract the raw value for a given attribute."""
@@ -37,6 +40,7 @@ def get_attribute_value(row, attribute, source='current'):
     except:
         pass
     return str(val_str)
+
 
 def run_inference():
     parser = argparse.ArgumentParser(description='Run inference on Overture data')
@@ -121,15 +125,15 @@ def run_inference():
     # 3. Extract Features
     print(f"Extracting features for '{args.attribute}' attribute...")
     features_df = extract_features_batch(df, attribute=args.attribute)
-    
+
     # Ensure columns align with training
     # Add missing cols with 0
     for col in feature_cols:
         if col not in features_df.columns:
             features_df[col] = 0.0
-            
+
     X = features_df[feature_cols].fillna(0.0)
-    
+
     # 4. Predict
     print("Predicting best attributes...")
     start_time = time.time()
@@ -150,12 +154,13 @@ def run_inference():
         
         val_c = get_attribute_value(row, args.attribute, 'current')
         val_b = get_attribute_value(row, args.attribute, 'base')
-            
+
         choice = "current" if pred == 1 else "base"
+        confidence = max(prob)
+
         stats[choice] += 1
         
         chosen_value = val_c if choice == "current" else val_b
-        confidence = max(prob)
         
         results.append({
             "id": row['id'],

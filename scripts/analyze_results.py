@@ -15,7 +15,10 @@ def analyze_results():
     print("="*80)
     
     # 1. Performance Metrics (Accuracy, F1, Precision, Recall)
+    # Keep existing ML/baseline eval files and also include router eval files
+    # like: evaluation_exp_step5_hybrid_router_best_name.json
     eval_files = list(RESULTS_DIR.glob('*_evaluation_*.json'))
+    eval_files.extend(list(RESULTS_DIR.glob('evaluation_*.json')))
     
     performance_data = []
     
@@ -30,6 +33,15 @@ def analyze_results():
         elif 'baseline' in f.name:
             algo_parts = name_parts[4:-1]
             algo = "Baseline: " + " ".join(algo_parts).title()
+        elif f.name.startswith('evaluation_'):
+            # Preserve the algorithm label from the file and append the run tag
+            # so multiple router runs (v1/best) can be compared in one table.
+            algo = data.get('algorithm', 'Hybrid Router')
+            run_tag = f.stem
+            if run_tag.endswith(f"_{attribute}"):
+                run_tag = run_tag[:-(len(attribute) + 1)]
+            run_tag = run_tag.replace('evaluation_', '')
+            algo = f"{algo} [{run_tag}]"
         else:
             algo = "Unknown"
             

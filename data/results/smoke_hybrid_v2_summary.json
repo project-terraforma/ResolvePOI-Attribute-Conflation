@@ -1,0 +1,14 @@
+{
+  "name": {
+    "policy": {
+      "mode": "confidence_gate",
+      "threshold": 0.9,
+      "baseline": "most_recent"
+    },
+    "baseline": "most_recent",
+    "routed_to_ml": 16,
+    "routed_to_baseline": 184,
+    "prediction_file": "data/results/predictions_smoke_hybrid_v2_name.json",
+    "evaluation_file": "data/results/evaluation_smoke_hybrid_v2_name.json"
+  }
+}

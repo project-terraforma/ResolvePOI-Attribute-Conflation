@@ -1,0 +1,159 @@
+{
+  "attributes": [
+    "name",
+    "address"
+  ],
+  "seed": 42,
+  "best": {
+    "name": {
+      "config": {
+        "label_mode": "confidence",
+        "include_metadata": "true",
+        "use_record_confidence": "true"
+      },
+      "f1": 0.5700934579439252
+    },
+    "address": {
+      "config": {
+        "label_mode": "quality",
+        "include_metadata": "true",
+        "use_record_confidence": "false"
+      },
+      "f1": 0.7986577181208053
+    }
+  },
+  "results": {
+    "name": [
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "true",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.5700934579439252
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "false",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.5209302325581395
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "false",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.5209302325581395
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "true",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.463768115942029
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "true",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.42
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "true",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.175
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "false",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.175
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "false",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.175
+      }
+    ],
+    "address": [
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "true",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.7986577181208053
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "false",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.7986577181208053
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "false",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.7986577181208053
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "true",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.5472636815920398
+      },
+      {
+        "config": {
+          "label_mode": "quality",
+          "include_metadata": "true",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.25
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "true",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.0
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "false",
+          "use_record_confidence": "true"
+        },
+        "f1": 0.0
+      },
+      {
+        "config": {
+          "label_mode": "confidence",
+          "include_metadata": "false",
+          "use_record_confidence": "false"
+        },
+        "f1": 0.0
+      }
+    ]
+  }
+}

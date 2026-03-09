@@ -15,6 +15,8 @@ except ModuleNotFoundError:
 ALL_ATTRIBUTES = ["name", "phone", "website", "address", "category"]
 BASELINES = ["hybrid", "most_recent", "confidence", "completeness"]
 THRESHOLDS = [0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90]
+LOW_THRESHOLDS = [0.55, 0.60, 0.65, 0.70]
+HIGH_THRESHOLDS = [0.80, 0.85, 0.90, 0.95]
 
 
 def load_ml_predictions(attribute: str) -> dict:
@@ -36,13 +38,31 @@ def load_baseline_predictions(attribute: str, baseline: str) -> dict:
         return json.load(f)
 
 
-def route(ml_pred: dict, baseline_pred: str, mode: str, threshold: float) -> str:
+def route(
+    ml_pred: dict,
+    baseline_pred: str,
+    mode: str,
+    threshold: float,
+    low_threshold: float | None = None,
+    high_threshold: float | None = None,
+    prefer_ml_on_agreement_midband: bool = True,
+) -> str:
     ml_choice = ml_pred.get("selected_source", "unclear")
     ml_conf = float(ml_pred.get("model_confidence", 0.0))
 
     if mode == "ml_only":
         return ml_choice
     if mode == "baseline_only":
+        return baseline_pred
+    if mode == "dual_threshold_gate":
+        low = float(low_threshold if low_threshold is not None else 0.70)
+        high = float(high_threshold if high_threshold is not None else 0.90)
+        if ml_conf >= high:
+            return ml_choice
+        if ml_conf <= low:
+            return baseline_pred
+        if ml_choice == baseline_pred and prefer_ml_on_agreement_midband:
+            return ml_choice
         return baseline_pred
     if ml_conf >= threshold:
         return ml_choice
@@ -55,6 +75,9 @@ def build_predictions(
     baseline_preds: dict,
     mode: str,
     threshold: float,
+    low_threshold: float | None = None,
+    high_threshold: float | None = None,
+    prefer_ml_on_agreement_midband: bool = True,
 ) -> dict:
     ids = set(ml_preds.keys()) | set(baseline_preds.keys())
     out = {}
@@ -64,6 +87,9 @@ def build_predictions(
             baseline_pred=baseline_preds.get(rid, "unclear"),
             mode=mode,
             threshold=threshold,
+            low_threshold=low_threshold,
+            high_threshold=high_threshold,
+            prefer_ml_on_agreement_midband=prefer_ml_on_agreement_midband,
         )
     return out
 
@@ -104,19 +130,63 @@ def main() -> int:
     results = []
 
     # Keep phone/website/category as baseline-only; sweep which baseline to use.
-    # Sweep gate threshold + fallback baseline for name/address.
-    for phone_b, web_b, cat_b, name_fallback, addr_fallback, name_th, addr_th in itertools.product(
+    # For name/address sweep both single-threshold and dual-threshold policies.
+    name_policy_candidates = []
+    for b, th in itertools.product(BASELINES, THRESHOLDS):
+        name_policy_candidates.append(
+            {
+                "mode": "confidence_gate",
+                "threshold": th,
+                "baseline": b,
+            }
+        )
+    for b, low, high in itertools.product(BASELINES, LOW_THRESHOLDS, HIGH_THRESHOLDS):
+        if low >= high:
+            continue
+        name_policy_candidates.append(
+            {
+                "mode": "dual_threshold_gate",
+                "threshold": high,
+                "low_threshold": low,
+                "high_threshold": high,
+                "prefer_ml_on_agreement_midband": True,
+                "baseline": b,
+            }
+        )
+
+    addr_policy_candidates = []
+    for b, th in itertools.product(BASELINES, THRESHOLDS):
+        addr_policy_candidates.append(
+            {
+                "mode": "confidence_gate",
+                "threshold": th,
+                "baseline": b,
+            }
+        )
+    for b, low, high in itertools.product(BASELINES, LOW_THRESHOLDS, HIGH_THRESHOLDS):
+        if low >= high:
+            continue
+        addr_policy_candidates.append(
+            {
+                "mode": "dual_threshold_gate",
+                "threshold": high,
+                "low_threshold": low,
+                "high_threshold": high,
+                "prefer_ml_on_agreement_midband": True,
+                "baseline": b,
+            }
+        )
+
+    for phone_b, web_b, cat_b, name_policy, addr_policy in itertools.product(
         BASELINES,
         BASELINES,
         BASELINES,
-        BASELINES,
-        BASELINES,
-        THRESHOLDS,
-        THRESHOLDS,
+        name_policy_candidates,
+        addr_policy_candidates,
     ):
         policy = {
-            "name": {"mode": "confidence_gate", "threshold": name_th, "baseline": name_fallback},
-            "address": {"mode": "confidence_gate", "threshold": addr_th, "baseline": addr_fallback},
+            "name": name_policy,
+            "address": addr_policy,
             "phone": {"mode": "baseline_only", "threshold": 1.0, "baseline": phone_b},
             "website": {"mode": "baseline_only", "threshold": 1.0, "baseline": web_b},
             "category": {"mode": "baseline_only", "threshold": 1.0, "baseline": cat_b},
@@ -131,6 +201,9 @@ def main() -> int:
                 baseline_preds=baseline_by_attr[attribute][p["baseline"]],
                 mode=p["mode"],
                 threshold=float(p["threshold"]),
+                low_threshold=p.get("low_threshold"),
+                high_threshold=p.get("high_threshold"),
+                prefer_ml_on_agreement_midband=bool(p.get("prefer_ml_on_agreement_midband", True)),
             )
             eval_result = evaluate_algorithm(
                 predictions=preds,

@@ -1,0 +1,62 @@
+{
+  "name": {
+    "policy": {
+      "mode": "confidence_gate",
+      "threshold": 0.7,
+      "baseline": "most_recent"
+    },
+    "baseline": "most_recent",
+    "routed_to_ml": 1,
+    "routed_to_baseline": 199,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_name.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_name.json"
+  },
+  "phone": {
+    "policy": {
+      "mode": "baseline_only",
+      "threshold": 1.0,
+      "baseline": "hybrid"
+    },
+    "baseline": "hybrid",
+    "routed_to_ml": 0,
+    "routed_to_baseline": 200,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_phone.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_phone.json"
+  },
+  "website": {
+    "policy": {
+      "mode": "baseline_only",
+      "threshold": 1.0,
+      "baseline": "hybrid"
+    },
+    "baseline": "hybrid",
+    "routed_to_ml": 0,
+    "routed_to_baseline": 200,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_website.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_website.json"
+  },
+  "address": {
+    "policy": {
+      "mode": "confidence_gate",
+      "threshold": 0.65,
+      "baseline": "hybrid"
+    },
+    "baseline": "hybrid",
+    "routed_to_ml": 105,
+    "routed_to_baseline": 95,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_address.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_address.json"
+  },
+  "category": {
+    "policy": {
+      "mode": "baseline_only",
+      "threshold": 1.0,
+      "baseline": "most_recent"
+    },
+    "baseline": "most_recent",
+    "routed_to_ml": 0,
+    "routed_to_baseline": 200,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_category.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_category.json"
+  }
+}

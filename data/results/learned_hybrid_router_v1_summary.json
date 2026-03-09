@@ -1,0 +1,42 @@
+{
+  "name": {
+    "baseline": "most_recent",
+    "threshold": 0.55,
+    "n_train_rows": 108,
+    "f1": 0.6996466431095406,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v1_name.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v1_name.json"
+  },
+  "phone": {
+    "baseline": "hybrid",
+    "threshold": 0.4,
+    "n_train_rows": 62,
+    "f1": 0.8554216867469879,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v1_phone.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v1_phone.json"
+  },
+  "website": {
+    "baseline": "hybrid",
+    "threshold": 0.45,
+    "n_train_rows": 90,
+    "f1": 0.8273615635179153,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v1_website.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v1_website.json"
+  },
+  "address": {
+    "baseline": "hybrid",
+    "threshold": 0.45,
+    "n_train_rows": 67,
+    "f1": 0.8333333333333334,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v1_address.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v1_address.json"
+  },
+  "category": {
+    "baseline": "most_recent",
+    "threshold": 0.35,
+    "n_train_rows": 171,
+    "f1": 0.8338192419825073,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v1_category.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v1_category.json"
+  }
+}

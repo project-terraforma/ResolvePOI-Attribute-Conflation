@@ -45,6 +45,9 @@ def load_ml_predictions(path: Path) -> dict:
         out[item["id"]] = {
             "selected_source": item.get("selected_source", "unclear"),
             "model_confidence": float(item.get("model_confidence", 0.0)),
+            "model_confidence_raw": float(item.get("model_confidence_raw", item.get("model_confidence", 0.0))),
+            "current_probability_calibrated": float(item.get("current_probability_calibrated", 0.5)),
+            "is_calibrated": bool(item.get("is_calibrated", False)),
         }
     return out
 
@@ -54,7 +57,15 @@ def load_baseline_predictions(path: Path) -> dict:
         return json.load(f)
 
 
-def route_prediction(ml_pred: dict, baseline_pred: str, mode: str, threshold: float) -> tuple[str, str]:
+def route_prediction(
+    ml_pred: dict,
+    baseline_pred: str,
+    mode: str,
+    threshold: float,
+    low_threshold: float | None = None,
+    high_threshold: float | None = None,
+    prefer_ml_on_agreement_midband: bool = True,
+) -> tuple[str, str]:
     ml_choice = ml_pred.get("selected_source", "unclear")
     ml_conf = float(ml_pred.get("model_confidence", 0.0))
 
@@ -62,6 +73,19 @@ def route_prediction(ml_pred: dict, baseline_pred: str, mode: str, threshold: fl
         return ml_choice, "ml"
     if mode == "baseline_only":
         return baseline_pred, "baseline"
+    if mode == "dual_threshold_gate":
+        low = float(low_threshold if low_threshold is not None else 0.70)
+        high = float(high_threshold if high_threshold is not None else 0.90)
+
+        if ml_conf >= high:
+            return ml_choice, "ml_high"
+        if ml_conf <= low:
+            return baseline_pred, "baseline_low"
+
+        # Mid-band: use disagreement signal conservatively.
+        if ml_choice == baseline_pred and prefer_ml_on_agreement_midband:
+            return ml_choice, "ml_mid_agree"
+        return baseline_pred, "baseline_mid_disagree"
 
     # confidence_gate
     if ml_conf >= threshold:
@@ -137,11 +161,14 @@ def main() -> int:
                 ml_pred=ml_pred,
                 baseline_pred=baseline_pred,
                 mode=policy["mode"],
-                threshold=policy["threshold"],
+                threshold=float(policy.get("threshold", 0.0)),
+                low_threshold=policy.get("low_threshold"),
+                high_threshold=policy.get("high_threshold"),
+                prefer_ml_on_agreement_midband=bool(policy.get("prefer_ml_on_agreement_midband", True)),
             )
             combined[rid] = final_pred
 
-            if routed_source == "ml":
+            if routed_source.startswith("ml"):
                 routed_to_ml += 1
             else:
                 routed_to_baseline += 1

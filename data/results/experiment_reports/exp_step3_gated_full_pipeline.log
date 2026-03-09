@@ -1,0 +1,1504 @@
+
+================================================================================
+OBJECTIVE 2 (OKR 2) ALGORITHM PIPELINE
+================================================================================
+Attributes to process: name, phone, website, address, category
+Working directory: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation
+
+################################################################################
+PROCESSING ATTRIBUTE: NAME
+################################################################################
+
+================================================================================
+STEP: Generate Synthetic Golden Dataset
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/generate_synthetic_dataset.py --limit 2000
+Generating synthetic records from Yelp (limit=2000)...
+✅ Generated 2000 synthetic records to data/synthetic_golden_dataset_2k.json
+
+
+================================================================================
+STEP: Process Synthetic Data (Features for name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute name
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'name'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_name_synthetic.parquet
+
+
+================================================================================
+STEP: Train ML Models (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_name_synthetic.parquet --output-dir models/ml/name
+Loading training data from data/processed/features_name_synthetic.parquet...
+Loaded 2000 samples with 27 features
+Label distribution: {'c': 1012, 'b': 988}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.6369
+  Val F1:   0.6269
+  Val Acc:  0.5150
+  Train Duration: 0.01s
+  Peak Memory: 193.11MB
+
+Training Random Forest...
+  Train F1: 0.6355
+  Val F1:   0.5136
+  Val Acc:  0.5075
+  Train Duration: 0.17s
+  Peak Memory: 199.09MB
+  Top 5 features: ['name_current_length', 'name_base_length', 'name_base_has_apostrophe', 'name_current_has_apostrophe', 'name_current_has_hyphen']
+
+Training Gradient Boosting...
+  Train F1: 0.5919
+  Val F1:   0.4948
+  Val Acc:  0.5150
+  Train Duration: 0.13s
+  Peak Memory: 200.61MB
+  Top 5 features: ['name_base_length', 'name_current_length', 'name_length_diff', 'name_base_has_apostrophe', 'name_current_has_apostrophe']
+
+================================================================================
+Best Model: logistic_regression (F1: 0.6269)
+================================================================================
+Saved best model to models/ml/name/best_model_logistic_regression.joblib
+Saved scaler to models/ml/name/scaler_logistic_regression.joblib
+Saved training summary to models/ml/name/training_summary.json
+
+
+================================================================================
+STEP: Run ML Inference on 200 Real Records (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute name --data data/golden_dataset_200.json --model models/ml/name/best_model_logistic_regression.joblib --output data/results/ml_predictions_200_real_name.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (NAME ATTRIBUTE)
+================================================================================
+Initial memory usage: 97.31 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/name/best_model_logistic_regression.joblib...
+Model loaded: logistic_regression
+Running gated inference for 'name' attribute...
+Rule-resolved records: 98
+ML-resolved records:   102
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=195, Base=5
+Results saved to: data/results/ml_predictions_200_real_name.json
+Inference Duration: 0.0146 seconds
+Initial Memory: 97.31 MB
+Peak Memory: 172.34 MB
+
+Sample Decisions:
+[CURRENT] ร้านตัดผมพี่ริน ห้วยตะแคง... vs ร้านตัดผมพี่ริน ห้วยตะแคง... -> ร้านตัดผมพี่ริน ห้วยตะแคง...
+[CURRENT] davaindia GENERIC PHARMACY... vs Davaindia Generic Pharmacy... -> davaindia GENERIC PHARMACY...
+[CURRENT] The Home Depot México... vs The Home Depot... -> The Home Depot México...
+[CURRENT] Sonei Jewellers... vs Sonei Jewellers... -> Sonei Jewellers...
+[CURRENT] Imobiliária Alegro... vs Imobiliaria Alegro... -> Imobiliária Alegro...
+
+STDERR: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+
+
+================================================================================
+STEP: Evaluate ML Model on 200 Real Records (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_name.json --golden data/golden_dataset_200.json --attribute name --algorithm-name ML Model (name) --output data/results/ml_evaluation_200_real_name.json
+Loading predictions from data/results/ml_predictions_200_real_name.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (name)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8225 (82.25%)
+  Accuracy:    0.7000 (70.00%)
+  Precision:   0.7128 (71.28%)
+  Recall:      0.9720 (97.20%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_name.json
+
+
+================================================================================
+EVALUATING BASELINE HEURISTICS (NAME)
+================================================================================
+
+================================================================================
+STEP: Run Baseline 'most_recent' Predictions (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline most_recent --attribute name --data data/golden_dataset_200.json --output data/results/predictions_baseline_most_recent_200_real_name.json
+
+Using baseline: Most Recent for attribute: name
+Predictions saved to data/results/predictions_baseline_most_recent_200_real_name.json
+
+Prediction distribution: {'same': 98, 'current': 102}
+
+
+================================================================================
+STEP: Evaluate Baseline 'most_recent' (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_most_recent_200_real_name.json --golden data/golden_dataset_200.json --attribute name --algorithm-name Baseline Most Recent (name) --output data/results/baseline_evaluation_200_real_most_recent_name.json
+Loading predictions from data/results/predictions_baseline_most_recent_200_real_name.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Most Recent (name)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8338 (83.38%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7150 (71.50%)
+  Recall:      1.0000 (100.00%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_most_recent_name.json
+
+
+================================================================================
+STEP: Run Baseline 'confidence' Predictions (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline confidence --attribute name --data data/golden_dataset_200.json --output data/results/predictions_baseline_confidence_200_real_name.json
+
+Using baseline: Confidence-Based for attribute: name
+Predictions saved to data/results/predictions_baseline_confidence_200_real_name.json
+
+Prediction distribution: {'same': 139, 'base': 44, 'current': 17}
+
+
+================================================================================
+STEP: Evaluate Baseline 'confidence' (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_confidence_200_real_name.json --golden data/golden_dataset_200.json --attribute name --algorithm-name Baseline Confidence (name) --output data/results/baseline_evaluation_200_real_confidence_name.json
+Loading predictions from data/results/predictions_baseline_confidence_200_real_name.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Confidence (name)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7692 (76.92%)
+  Accuracy:    0.6550 (65.50%)
+  Precision:   0.7372 (73.72%)
+  Recall:      0.8042 (80.42%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_confidence_name.json
+
+
+================================================================================
+STEP: Run Baseline 'completeness' Predictions (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline completeness --attribute name --data data/golden_dataset_200.json --output data/results/predictions_baseline_completeness_200_real_name.json
+
+Using baseline: Completeness-Based for attribute: name
+Predictions saved to data/results/predictions_baseline_completeness_200_real_name.json
+
+Prediction distribution: {'same': 98, 'base': 67, 'current': 35}
+
+
+================================================================================
+STEP: Evaluate Baseline 'completeness' (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_completeness_200_real_name.json --golden data/golden_dataset_200.json --attribute name --algorithm-name Baseline Completeness (name) --output data/results/baseline_evaluation_200_real_completeness_name.json
+Loading predictions from data/results/predictions_baseline_completeness_200_real_name.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Completeness (name)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7319 (73.19%)
+  Accuracy:    0.6300 (63.00%)
+  Precision:   0.7594 (75.94%)
+  Recall:      0.7063 (70.63%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_completeness_name.json
+
+
+================================================================================
+STEP: Run Baseline 'hybrid' Predictions (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline hybrid --attribute name --data data/golden_dataset_200.json --output data/results/predictions_baseline_hybrid_200_real_name.json
+
+Using baseline: Hybrid for attribute: name
+Predictions saved to data/results/predictions_baseline_hybrid_200_real_name.json
+
+Prediction distribution: {'same': 98, 'base': 43, 'current': 59}
+
+
+================================================================================
+STEP: Evaluate Baseline 'hybrid' (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_hybrid_200_real_name.json --golden data/golden_dataset_200.json --attribute name --algorithm-name Baseline Hybrid (name) --output data/results/baseline_evaluation_200_real_hybrid_name.json
+Loading predictions from data/results/predictions_baseline_hybrid_200_real_name.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Hybrid (name)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7667 (76.67%)
+  Accuracy:    0.6500 (65.00%)
+  Precision:   0.7325 (73.25%)
+  Recall:      0.8042 (80.42%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_hybrid_name.json
+
+
+Skipping final ML inference for name on 2000 records.
+
+################################################################################
+PROCESSING ATTRIBUTE: PHONE
+################################################################################
+
+Synthetic golden dataset already generated (skip for subsequent attributes).
+
+================================================================================
+STEP: Process Synthetic Data (Features for phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute phone
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'phone'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_phone_synthetic.parquet
+
+
+================================================================================
+STEP: Train ML Models (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_phone_synthetic.parquet --output-dir models/ml/phone
+Loading training data from data/processed/features_phone_synthetic.parquet...
+Loaded 2000 samples with 23 features
+Label distribution: {'c': 1012, 'b': 988}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.8771
+  Val F1:   0.8651
+  Val Acc:  0.8425
+  Train Duration: 0.00s
+  Peak Memory: 193.28MB
+
+Training Random Forest...
+  Train F1: 0.8771
+  Val F1:   0.8651
+  Val Acc:  0.8425
+  Train Duration: 0.16s
+  Peak Memory: 195.47MB
+  Top 5 features: ['phone_base_has_plus', 'phone_current_has_plus', 'phone_current_len', 'phone_base_len', 'phone_base_has_paren']
+
+Training Gradient Boosting...
+  Train F1: 0.8771
+  Val F1:   0.8651
+  Val Acc:  0.8425
+  Train Duration: 0.09s
+  Peak Memory: 196.47MB
+  Top 5 features: ['phone_current_has_plus', 'phone_len_diff', 'phone_base_has_plus', 'phone_length_ratio', 'phone_levenshtein_similarity']
+
+================================================================================
+Best Model: logistic_regression (F1: 0.8651)
+================================================================================
+Saved best model to models/ml/phone/best_model_logistic_regression.joblib
+Saved scaler to models/ml/phone/scaler_logistic_regression.joblib
+Saved training summary to models/ml/phone/training_summary.json
+
+
+================================================================================
+STEP: Run ML Inference on 200 Real Records (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute phone --data data/golden_dataset_200.json --model models/ml/phone/best_model_logistic_regression.joblib --output data/results/ml_predictions_200_real_phone.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (PHONE ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.56 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/phone/best_model_logistic_regression.joblib...
+Model loaded: logistic_regression
+Running gated inference for 'phone' attribute...
+Rule-resolved records: 47
+ML-resolved records:   153
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=181, Base=19
+Results saved to: data/results/ml_predictions_200_real_phone.json
+Inference Duration: 0.0120 seconds
+Initial Memory: 96.56 MB
+Peak Memory: 172.19 MB
+
+Sample Decisions:
+[BASE] nan... vs None... -> None...
+[CURRENT] 09818559767... vs 09818559767... -> 09818559767...
+[CURRENT] +528000046633... vs None... -> +528000046633...
+[CURRENT] +16045748049... vs 6045748049... -> +16045748049...
+[CURRENT] +555130673966... vs None... -> +555130673966...
+
+STDERR: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+
+
+================================================================================
+STEP: Evaluate ML Model on 200 Real Records (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_phone.json --golden data/golden_dataset_200.json --attribute phone --algorithm-name ML Model (phone) --output data/results/ml_evaluation_200_real_phone.json
+Loading predictions from data/results/ml_predictions_200_real_phone.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (phone)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8519 (85.19%)
+  Accuracy:    0.7600 (76.00%)
+  Precision:   0.7624 (76.24%)
+  Recall:      0.9650 (96.50%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_phone.json
+
+
+================================================================================
+EVALUATING BASELINE HEURISTICS (PHONE)
+================================================================================
+
+================================================================================
+STEP: Run Baseline 'most_recent' Predictions (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline most_recent --attribute phone --data data/golden_dataset_200.json --output data/results/predictions_baseline_most_recent_200_real_phone.json
+
+Using baseline: Most Recent for attribute: phone
+Predictions saved to data/results/predictions_baseline_most_recent_200_real_phone.json
+
+Prediction distribution: {'base': 11, 'same': 35, 'current': 154}
+
+
+================================================================================
+STEP: Evaluate Baseline 'most_recent' (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_most_recent_200_real_phone.json --golden data/golden_dataset_200.json --attribute phone --algorithm-name Baseline Most Recent (phone) --output data/results/baseline_evaluation_200_real_most_recent_phone.json
+Loading predictions from data/results/predictions_baseline_most_recent_200_real_phone.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Most Recent (phone)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8554 (85.54%)
+  Accuracy:    0.7600 (76.00%)
+  Precision:   0.7513 (75.13%)
+  Recall:      0.9930 (99.30%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_most_recent_phone.json
+
+
+================================================================================
+STEP: Run Baseline 'confidence' Predictions (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline confidence --attribute phone --data data/golden_dataset_200.json --output data/results/predictions_baseline_confidence_200_real_phone.json
+
+Using baseline: Confidence-Based for attribute: phone
+Predictions saved to data/results/predictions_baseline_confidence_200_real_phone.json
+
+Prediction distribution: {'base': 62, 'same': 84, 'current': 54}
+
+
+================================================================================
+STEP: Evaluate Baseline 'confidence' (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_confidence_200_real_phone.json --golden data/golden_dataset_200.json --attribute phone --algorithm-name Baseline Confidence (phone) --output data/results/baseline_evaluation_200_real_confidence_phone.json
+Loading predictions from data/results/predictions_baseline_confidence_200_real_phone.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Confidence (phone)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7616 (76.16%)
+  Accuracy:    0.6650 (66.50%)
+  Precision:   0.7754 (77.54%)
+  Recall:      0.7483 (74.83%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_confidence_phone.json
+
+
+================================================================================
+STEP: Run Baseline 'completeness' Predictions (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline completeness --attribute phone --data data/golden_dataset_200.json --output data/results/predictions_baseline_completeness_200_real_phone.json
+
+Using baseline: Completeness-Based for attribute: phone
+Predictions saved to data/results/predictions_baseline_completeness_200_real_phone.json
+
+Prediction distribution: {'base': 11, 'same': 35, 'current': 154}
+
+
+================================================================================
+STEP: Evaluate Baseline 'completeness' (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_completeness_200_real_phone.json --golden data/golden_dataset_200.json --attribute phone --algorithm-name Baseline Completeness (phone) --output data/results/baseline_evaluation_200_real_completeness_phone.json
+Loading predictions from data/results/predictions_baseline_completeness_200_real_phone.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Completeness (phone)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8554 (85.54%)
+  Accuracy:    0.7600 (76.00%)
+  Precision:   0.7513 (75.13%)
+  Recall:      0.9930 (99.30%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_completeness_phone.json
+
+
+================================================================================
+STEP: Run Baseline 'hybrid' Predictions (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline hybrid --attribute phone --data data/golden_dataset_200.json --output data/results/predictions_baseline_hybrid_200_real_phone.json
+
+Using baseline: Hybrid for attribute: phone
+Predictions saved to data/results/predictions_baseline_hybrid_200_real_phone.json
+
+Prediction distribution: {'base': 11, 'same': 35, 'current': 154}
+
+
+================================================================================
+STEP: Evaluate Baseline 'hybrid' (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_hybrid_200_real_phone.json --golden data/golden_dataset_200.json --attribute phone --algorithm-name Baseline Hybrid (phone) --output data/results/baseline_evaluation_200_real_hybrid_phone.json
+Loading predictions from data/results/predictions_baseline_hybrid_200_real_phone.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Hybrid (phone)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8554 (85.54%)
+  Accuracy:    0.7600 (76.00%)
+  Precision:   0.7513 (75.13%)
+  Recall:      0.9930 (99.30%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_hybrid_phone.json
+
+
+Skipping final ML inference for phone on 2000 records.
+
+################################################################################
+PROCESSING ATTRIBUTE: WEBSITE
+################################################################################
+
+Synthetic golden dataset already generated (skip for subsequent attributes).
+
+================================================================================
+STEP: Process Synthetic Data (Features for website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute website
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'website'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_website_synthetic.parquet
+
+
+================================================================================
+STEP: Train ML Models (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_website_synthetic.parquet --output-dir models/ml/website
+Loading training data from data/processed/features_website_synthetic.parquet...
+Loaded 2000 samples with 20 features
+Label distribution: {'c': 1012, 'b': 988}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.6473
+  Val F1:   0.6293
+  Val Acc:  0.4875
+  Train Duration: 0.00s
+  Peak Memory: 192.28MB
+
+Training Random Forest...
+  Train F1: 0.6600
+  Val F1:   0.6325
+  Val Acc:  0.4975
+  Train Duration: 0.17s
+  Peak Memory: 196.19MB
+  Top 5 features: ['web_len_ratio', 'web_len_diff', 'web_length_ratio', 'web_jaro_winkler_similarity', 'web_exact_match']
+
+Training Gradient Boosting...
+  Train F1: 0.6553
+  Val F1:   0.6264
+  Val Acc:  0.4900
+  Train Duration: 0.09s
+  Peak Memory: 197.45MB
+  Top 5 features: ['web_len_diff', 'web_length_ratio', 'web_len_ratio', 'web_levenshtein_similarity', 'web_exact_match_lower']
+
+================================================================================
+Best Model: random_forest (F1: 0.6325)
+================================================================================
+Saved best model to models/ml/website/best_model_random_forest.joblib
+Saved training summary to models/ml/website/training_summary.json
+
+
+================================================================================
+STEP: Run ML Inference on 200 Real Records (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute website --data data/golden_dataset_200.json --model models/ml/website/best_model_random_forest.joblib --output data/results/ml_predictions_200_real_website.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (WEBSITE ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.64 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/website/best_model_random_forest.joblib...
+Model loaded: random_forest
+Running gated inference for 'website' attribute...
+Rule-resolved records: 117
+ML-resolved records:   83
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=132, Base=68
+Results saved to: data/results/ml_predictions_200_real_website.json
+Inference Duration: 0.0793 seconds
+Initial Memory: 96.64 MB
+Peak Memory: 183.83 MB
+
+Sample Decisions:
+[BASE] nan... vs None... -> None...
+[CURRENT] http://sector15rohini.davaindi... vs https://pharmacy-nearme.davain... -> http://sector15rohini.davaindi...
+[CURRENT] http://www.homedepot.com.mx/... vs http://www.homedepot.com... -> http://www.homedepot.com.mx/...
+[BASE] http://soneijewellers.ca/... vs https://soneijewellers.ca/... -> https://soneijewellers.ca/...
+[BASE] http://www.imobiliariaalegro.c... vs None... -> None...
+
+
+================================================================================
+STEP: Evaluate ML Model on 200 Real Records (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_website.json --golden data/golden_dataset_200.json --attribute website --algorithm-name ML Model (website) --output data/results/ml_evaluation_200_real_website.json
+Loading predictions from data/results/ml_predictions_200_real_website.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (website)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7491 (74.91%)
+  Accuracy:    0.6550 (65.50%)
+  Precision:   0.7803 (78.03%)
+  Recall:      0.7203 (72.03%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_website.json
+
+
+================================================================================
+EVALUATING BASELINE HEURISTICS (WEBSITE)
+================================================================================
+
+================================================================================
+STEP: Run Baseline 'most_recent' Predictions (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline most_recent --attribute website --data data/golden_dataset_200.json --output data/results/predictions_baseline_most_recent_200_real_website.json
+
+Using baseline: Most Recent for attribute: website
+Predictions saved to data/results/predictions_baseline_most_recent_200_real_website.json
+
+Prediction distribution: {'base': 33, 'current': 84, 'same': 83}
+
+
+================================================================================
+STEP: Evaluate Baseline 'most_recent' (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_most_recent_200_real_website.json --golden data/golden_dataset_200.json --attribute website --algorithm-name Baseline Most Recent (website) --output data/results/baseline_evaluation_200_real_most_recent_website.json
+Loading predictions from data/results/predictions_baseline_most_recent_200_real_website.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Most Recent (website)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8323 (83.23%)
+  Accuracy:    0.7400 (74.00%)
+  Precision:   0.7725 (77.25%)
+  Recall:      0.9021 (90.21%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_most_recent_website.json
+
+
+================================================================================
+STEP: Run Baseline 'confidence' Predictions (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline confidence --attribute website --data data/golden_dataset_200.json --output data/results/predictions_baseline_confidence_200_real_website.json
+
+Using baseline: Confidence-Based for attribute: website
+Predictions saved to data/results/predictions_baseline_confidence_200_real_website.json
+
+Prediction distribution: {'base': 57, 'same': 119, 'current': 24}
+
+
+================================================================================
+STEP: Evaluate Baseline 'confidence' (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_confidence_200_real_website.json --golden data/golden_dataset_200.json --attribute website --algorithm-name Baseline Confidence (website) --output data/results/baseline_evaluation_200_real_confidence_website.json
+Loading predictions from data/results/predictions_baseline_confidence_200_real_website.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Confidence (website)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7832 (78.32%)
+  Accuracy:    0.6900 (69.00%)
+  Precision:   0.7832 (78.32%)
+  Recall:      0.7832 (78.32%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_confidence_website.json
+
+
+================================================================================
+STEP: Run Baseline 'completeness' Predictions (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline completeness --attribute website --data data/golden_dataset_200.json --output data/results/predictions_baseline_completeness_200_real_website.json
+
+Using baseline: Completeness-Based for attribute: website
+Predictions saved to data/results/predictions_baseline_completeness_200_real_website.json
+
+Prediction distribution: {'base': 33, 'current': 84, 'same': 83}
+
+
+================================================================================
+STEP: Evaluate Baseline 'completeness' (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_completeness_200_real_website.json --golden data/golden_dataset_200.json --attribute website --algorithm-name Baseline Completeness (website) --output data/results/baseline_evaluation_200_real_completeness_website.json
+Loading predictions from data/results/predictions_baseline_completeness_200_real_website.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Completeness (website)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8323 (83.23%)
+  Accuracy:    0.7400 (74.00%)
+  Precision:   0.7725 (77.25%)
+  Recall:      0.9021 (90.21%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_completeness_website.json
+
+
+================================================================================
+STEP: Run Baseline 'hybrid' Predictions (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline hybrid --attribute website --data data/golden_dataset_200.json --output data/results/predictions_baseline_hybrid_200_real_website.json
+
+Using baseline: Hybrid for attribute: website
+Predictions saved to data/results/predictions_baseline_hybrid_200_real_website.json
+
+Prediction distribution: {'base': 33, 'current': 84, 'same': 83}
+
+
+================================================================================
+STEP: Evaluate Baseline 'hybrid' (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_hybrid_200_real_website.json --golden data/golden_dataset_200.json --attribute website --algorithm-name Baseline Hybrid (website) --output data/results/baseline_evaluation_200_real_hybrid_website.json
+Loading predictions from data/results/predictions_baseline_hybrid_200_real_website.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Hybrid (website)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8323 (83.23%)
+  Accuracy:    0.7400 (74.00%)
+  Precision:   0.7725 (77.25%)
+  Recall:      0.9021 (90.21%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_hybrid_website.json
+
+
+Skipping final ML inference for website on 2000 records.
+
+################################################################################
+PROCESSING ATTRIBUTE: ADDRESS
+################################################################################
+
+Synthetic golden dataset already generated (skip for subsequent attributes).
+
+================================================================================
+STEP: Process Synthetic Data (Features for address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute address
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'address'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_address_synthetic.parquet
+
+
+================================================================================
+STEP: Train ML Models (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_address_synthetic.parquet --output-dir models/ml/address
+Loading training data from data/processed/features_address_synthetic.parquet...
+Loaded 2000 samples with 19 features
+Label distribution: {'c': 1012, 'b': 988}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.9994
+  Val F1:   1.0000
+  Val Acc:  1.0000
+  Train Duration: 0.00s
+  Peak Memory: 192.30MB
+
+Training Random Forest...
+  Train F1: 0.9994
+  Val F1:   1.0000
+  Val Acc:  1.0000
+  Train Duration: 0.16s
+  Peak Memory: 194.55MB
+  Top 5 features: ['addr_current_has_postcode', 'addr_components_diff', 'addr_base_has_postcode', 'addr_current_components', 'addr_base_components']
+
+Training Gradient Boosting...
+  Train F1: 0.9994
+  Val F1:   1.0000
+  Val Acc:  1.0000
+  Train Duration: 0.07s
+  Peak Memory: 195.50MB
+  Top 5 features: ['addr_current_has_postcode', 'addr_components_diff', 'addr_base_has_postcode', 'addr_base_components', 'addr_current_components']
+
+================================================================================
+Best Model: logistic_regression (F1: 1.0000)
+================================================================================
+Saved best model to models/ml/address/best_model_logistic_regression.joblib
+Saved scaler to models/ml/address/scaler_logistic_regression.joblib
+Saved training summary to models/ml/address/training_summary.json
+
+
+================================================================================
+STEP: Run ML Inference on 200 Real Records (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute address --data data/golden_dataset_200.json --model models/ml/address/best_model_logistic_regression.joblib --output data/results/ml_predictions_200_real_address.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (ADDRESS ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.67 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/address/best_model_logistic_regression.joblib...
+Model loaded: logistic_regression
+Running gated inference for 'address' attribute...
+Rule-resolved records: 37
+ML-resolved records:   163
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=160, Base=40
+Results saved to: data/results/ml_predictions_200_real_address.json
+Inference Duration: 0.0199 seconds
+Initial Memory: 96.67 MB
+Peak Memory: 171.89 MB
+
+Sample Decisions:
+[CURRENT] {'country': 'TH'}... vs {'country': 'TH'}... -> {'country': 'TH'}...
+[CURRENT] {'freeform': 'Shop No F21/66, ... vs {'freeform': 'Shop No F21/66, ... -> {'freeform': 'Shop No F21/66, ...
+[CURRENT] {'freeform': 'Calle Benito Juá... vs {'freeform': 'Carretera Transp... -> {'freeform': 'Calle Benito Juá...
+[CURRENT] {'freeform': '8430 128 St', 'l... vs {'freeform': 'Unit - 23 8430 1... -> {'freeform': '8430 128 St', 'l...
+[CURRENT] {'freeform': 'Rua Sobradinho, ... vs {'freeform': '100 Rua Sobradin... -> {'freeform': 'Rua Sobradinho, ...
+
+STDERR: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+
+
+================================================================================
+STEP: Evaluate ML Model on 200 Real Records (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_address.json --golden data/golden_dataset_200.json --attribute address --algorithm-name ML Model (address) --output data/results/ml_evaluation_200_real_address.json
+Loading predictions from data/results/ml_predictions_200_real_address.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (address)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7921 (79.21%)
+  Accuracy:    0.6850 (68.50%)
+  Precision:   0.7500 (75.00%)
+  Recall:      0.8392 (83.92%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_address.json
+
+
+================================================================================
+EVALUATING BASELINE HEURISTICS (ADDRESS)
+================================================================================
+
+================================================================================
+STEP: Run Baseline 'most_recent' Predictions (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline most_recent --attribute address --data data/golden_dataset_200.json --output data/results/predictions_baseline_most_recent_200_real_address.json
+
+Using baseline: Most Recent for attribute: address
+Predictions saved to data/results/predictions_baseline_most_recent_200_real_address.json
+
+Prediction distribution: {'same': 37, 'current': 163}
+
+
+================================================================================
+STEP: Evaluate Baseline 'most_recent' (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_most_recent_200_real_address.json --golden data/golden_dataset_200.json --attribute address --algorithm-name Baseline Most Recent (address) --output data/results/baseline_evaluation_200_real_most_recent_address.json
+Loading predictions from data/results/predictions_baseline_most_recent_200_real_address.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Most Recent (address)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8338 (83.38%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7150 (71.50%)
+  Recall:      1.0000 (100.00%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_most_recent_address.json
+
+
+================================================================================
+STEP: Run Baseline 'confidence' Predictions (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline confidence --attribute address --data data/golden_dataset_200.json --output data/results/predictions_baseline_confidence_200_real_address.json
+
+Using baseline: Confidence-Based for attribute: address
+Predictions saved to data/results/predictions_baseline_confidence_200_real_address.json
+
+Prediction distribution: {'same': 88, 'base': 59, 'current': 53}
+
+
+================================================================================
+STEP: Evaluate Baseline 'confidence' (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_confidence_200_real_address.json --golden data/golden_dataset_200.json --attribute address --algorithm-name Baseline Confidence (address) --output data/results/baseline_evaluation_200_real_confidence_address.json
+Loading predictions from data/results/predictions_baseline_confidence_200_real_address.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Confidence (address)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7535 (75.35%)
+  Accuracy:    0.6500 (65.00%)
+  Precision:   0.7589 (75.89%)
+  Recall:      0.7483 (74.83%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_confidence_address.json
+
+
+================================================================================
+STEP: Run Baseline 'completeness' Predictions (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline completeness --attribute address --data data/golden_dataset_200.json --output data/results/predictions_baseline_completeness_200_real_address.json
+
+Using baseline: Completeness-Based for attribute: address
+Predictions saved to data/results/predictions_baseline_completeness_200_real_address.json
+
+Prediction distribution: {'same': 37, 'current': 163}
+
+
+================================================================================
+STEP: Evaluate Baseline 'completeness' (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_completeness_200_real_address.json --golden data/golden_dataset_200.json --attribute address --algorithm-name Baseline Completeness (address) --output data/results/baseline_evaluation_200_real_completeness_address.json
+Loading predictions from data/results/predictions_baseline_completeness_200_real_address.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Completeness (address)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8338 (83.38%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7150 (71.50%)
+  Recall:      1.0000 (100.00%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_completeness_address.json
+
+
+================================================================================
+STEP: Run Baseline 'hybrid' Predictions (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline hybrid --attribute address --data data/golden_dataset_200.json --output data/results/predictions_baseline_hybrid_200_real_address.json
+
+Using baseline: Hybrid for attribute: address
+Predictions saved to data/results/predictions_baseline_hybrid_200_real_address.json
+
+Prediction distribution: {'same': 37, 'current': 163}
+
+
+================================================================================
+STEP: Evaluate Baseline 'hybrid' (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_hybrid_200_real_address.json --golden data/golden_dataset_200.json --attribute address --algorithm-name Baseline Hybrid (address) --output data/results/baseline_evaluation_200_real_hybrid_address.json
+Loading predictions from data/results/predictions_baseline_hybrid_200_real_address.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Hybrid (address)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8338 (83.38%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7150 (71.50%)
+  Recall:      1.0000 (100.00%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_hybrid_address.json
+
+
+Skipping final ML inference for address on 2000 records.
+
+################################################################################
+PROCESSING ATTRIBUTE: CATEGORY
+################################################################################
+
+Synthetic golden dataset already generated (skip for subsequent attributes).
+
+================================================================================
+STEP: Process Synthetic Data (Features for category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute category
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'category'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_category_synthetic.parquet
+
+
+================================================================================
+STEP: Train ML Models (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_category_synthetic.parquet --output-dir models/ml/category
+Loading training data from data/processed/features_category_synthetic.parquet...
+Loaded 2000 samples with 17 features
+Label distribution: {'c': 1012, 'b': 988}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.6722
+  Val F1:   0.6711
+  Val Acc:  0.5050
+  Train Duration: 0.00s
+  Peak Memory: 193.09MB
+
+Training Random Forest...
+  Train F1: 0.7664
+  Val F1:   0.5158
+  Val Acc:  0.5025
+  Train Duration: 0.17s
+  Peak Memory: 208.11MB
+  Top 5 features: ['cat_levenshtein_similarity', 'cat_jaro_winkler_similarity', 'cat_length_ratio', 'cat_exact_match_lower', 'cat_exact_match']
+
+Training Gradient Boosting...
+  Train F1: 0.6897
+  Val F1:   0.4936
+  Val Acc:  0.5025
+  Train Duration: 0.23s
+  Peak Memory: 209.56MB
+  Top 5 features: ['cat_jaro_winkler_similarity', 'cat_length_ratio', 'cat_levenshtein_similarity', 'cat_current_exists', 'cat_base_exists']
+
+================================================================================
+Best Model: logistic_regression (F1: 0.6711)
+================================================================================
+Saved best model to models/ml/category/best_model_logistic_regression.joblib
+Saved scaler to models/ml/category/scaler_logistic_regression.joblib
+Saved training summary to models/ml/category/training_summary.json
+
+
+================================================================================
+STEP: Run ML Inference on 200 Real Records (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute category --data data/golden_dataset_200.json --model models/ml/category/best_model_logistic_regression.joblib --output data/results/ml_predictions_200_real_category.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (CATEGORY ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.89 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/category/best_model_logistic_regression.joblib...
+Model loaded: logistic_regression
+Running gated inference for 'category' attribute...
+Rule-resolved records: 56
+ML-resolved records:   144
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=56, Base=144
+Results saved to: data/results/ml_predictions_200_real_category.json
+Inference Duration: 0.0188 seconds
+Initial Memory: 96.89 MB
+Peak Memory: 171.95 MB
+
+Sample Decisions:
+[BASE] beauty_salon... vs Business and Professional Serv... -> Business and Professional Serv...
+[CURRENT] pharmacy... vs pharmacy... -> pharmacy...
+[BASE] home_and_garden... vs Retail > Hardware Store... -> Retail > Hardware Store...
+[CURRENT] jewelry_store... vs jewelry_store... -> jewelry_store...
+[BASE] real_estate... vs Business and Professional Serv... -> Business and Professional Serv...
+
+STDERR: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+
+
+================================================================================
+STEP: Evaluate ML Model on 200 Real Records (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_category.json --golden data/golden_dataset_200.json --attribute category --algorithm-name ML Model (category) --output data/results/ml_evaluation_200_real_category.json
+Loading predictions from data/results/ml_predictions_200_real_category.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (category)
+================================================================================
+
+Metrics:
+  F1-Score:    0.4623 (46.23%)
+  Accuracy:    0.4650 (46.50%)
+  Precision:   0.8214 (82.14%)
+  Recall:      0.3217 (32.17%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_category.json
+
+
+================================================================================
+EVALUATING BASELINE HEURISTICS (CATEGORY)
+================================================================================
+
+================================================================================
+STEP: Run Baseline 'most_recent' Predictions (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline most_recent --attribute category --data data/golden_dataset_200.json --output data/results/predictions_baseline_most_recent_200_real_category.json
+
+Using baseline: Most Recent for attribute: category
+Predictions saved to data/results/predictions_baseline_most_recent_200_real_category.json
+
+Prediction distribution: {'current': 144, 'same': 56}
+
+
+================================================================================
+STEP: Evaluate Baseline 'most_recent' (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_most_recent_200_real_category.json --golden data/golden_dataset_200.json --attribute category --algorithm-name Baseline Most Recent (category) --output data/results/baseline_evaluation_200_real_most_recent_category.json
+Loading predictions from data/results/predictions_baseline_most_recent_200_real_category.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Most Recent (category)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8338 (83.38%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7150 (71.50%)
+  Recall:      1.0000 (100.00%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_most_recent_category.json
+
+
+================================================================================
+STEP: Run Baseline 'confidence' Predictions (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline confidence --attribute category --data data/golden_dataset_200.json --output data/results/predictions_baseline_confidence_200_real_category.json
+
+Using baseline: Confidence-Based for attribute: category
+Predictions saved to data/results/predictions_baseline_confidence_200_real_category.json
+
+Prediction distribution: {'base': 68, 'same': 95, 'current': 37}
+
+
+================================================================================
+STEP: Evaluate Baseline 'confidence' (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_confidence_200_real_category.json --golden data/golden_dataset_200.json --attribute category --algorithm-name Baseline Confidence (category) --output data/results/baseline_evaluation_200_real_confidence_category.json
+Loading predictions from data/results/predictions_baseline_confidence_200_real_category.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Confidence (category)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7564 (75.64%)
+  Accuracy:    0.6650 (66.50%)
+  Precision:   0.7879 (78.79%)
+  Recall:      0.7273 (72.73%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_confidence_category.json
+
+
+================================================================================
+STEP: Run Baseline 'completeness' Predictions (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline completeness --attribute category --data data/golden_dataset_200.json --output data/results/predictions_baseline_completeness_200_real_category.json
+
+Using baseline: Completeness-Based for attribute: category
+Predictions saved to data/results/predictions_baseline_completeness_200_real_category.json
+
+Prediction distribution: {'base': 83, 'same': 56, 'current': 61}
+
+
+================================================================================
+STEP: Evaluate Baseline 'completeness' (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_completeness_200_real_category.json --golden data/golden_dataset_200.json --attribute category --algorithm-name Baseline Completeness (category) --output data/results/baseline_evaluation_200_real_completeness_category.json
+Loading predictions from data/results/predictions_baseline_completeness_200_real_category.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Completeness (category)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7231 (72.31%)
+  Accuracy:    0.6400 (64.00%)
+  Precision:   0.8034 (80.34%)
+  Recall:      0.6573 (65.73%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_completeness_category.json
+
+
+================================================================================
+STEP: Run Baseline 'hybrid' Predictions (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/baseline_heuristics.py --baseline hybrid --attribute category --data data/golden_dataset_200.json --output data/results/predictions_baseline_hybrid_200_real_category.json
+
+Using baseline: Hybrid for attribute: category
+Predictions saved to data/results/predictions_baseline_hybrid_200_real_category.json
+
+Prediction distribution: {'base': 44, 'same': 56, 'current': 100}
+
+
+================================================================================
+STEP: Evaluate Baseline 'hybrid' (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/predictions_baseline_hybrid_200_real_category.json --golden data/golden_dataset_200.json --attribute category --algorithm-name Baseline Hybrid (category) --output data/results/baseline_evaluation_200_real_hybrid_category.json
+Loading predictions from data/results/predictions_baseline_hybrid_200_real_category.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: Baseline Hybrid (category)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8094 (80.94%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7756 (77.56%)
+  Recall:      0.8462 (84.62%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/baseline_evaluation_200_real_hybrid_category.json
+
+
+Skipping final ML inference for category on 2000 records.
+
+Skipping final consolidation.
+
+================================================================================
+COMPLETE PIPELINE RUN FINISHED
+================================================================================
+
+Next steps: Analyze evaluation reports in data/results/ and compare performance metrics.

@@ -1,0 +1,52 @@
+{
+  "name": {
+    "policy": {
+      "mode": "confidence_gate",
+      "threshold": 0.8
+    },
+    "routed_to_ml": 17,
+    "routed_to_baseline": 183,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_v1_name.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_v1_name.json"
+  },
+  "phone": {
+    "policy": {
+      "mode": "baseline_only",
+      "threshold": 1.0
+    },
+    "routed_to_ml": 0,
+    "routed_to_baseline": 200,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_v1_phone.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_v1_phone.json"
+  },
+  "website": {
+    "policy": {
+      "mode": "baseline_only",
+      "threshold": 1.0
+    },
+    "routed_to_ml": 0,
+    "routed_to_baseline": 200,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_v1_website.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_v1_website.json"
+  },
+  "address": {
+    "policy": {
+      "mode": "confidence_gate",
+      "threshold": 0.7
+    },
+    "routed_to_ml": 28,
+    "routed_to_baseline": 172,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_v1_address.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_v1_address.json"
+  },
+  "category": {
+    "policy": {
+      "mode": "baseline_only",
+      "threshold": 1.0
+    },
+    "routed_to_ml": 0,
+    "routed_to_baseline": 200,
+    "prediction_file": "data/results/predictions_exp_step5_hybrid_router_v1_category.json",
+    "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_v1_category.json"
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "weights": {
+    "name": 1.0,
+    "phone": 1.0,
+    "website": 1.0,
+    "address": 1.0,
+    "category": 1.0
+  },
+  "searched_configs": 541696,
+  "best": {
+    "macro_f1": 0.8395484955304748,
+    "weighted_f1": 0.8395484955304748,
+    "per_attr_f1": {
+      "name": 0.8338192419825073,
+      "phone": 0.8554216867469879,
+      "website": 0.832258064516129,
+      "address": 0.8424242424242424,
+      "category": 0.8338192419825073
+    },
+    "policy": {
+      "name": {
+        "mode": "confidence_gate",
+        "threshold": 0.7,
+        "baseline": "most_recent"
+      },
+      "address": {
+        "mode": "confidence_gate",
+        "threshold": 0.65,
+        "baseline": "hybrid"
+      },
+      "phone": {
+        "mode": "baseline_only",
+        "threshold": 1.0,
+        "baseline": "hybrid"
+      },
+      "website": {
+        "mode": "baseline_only",
+        "threshold": 1.0,
+        "baseline": "hybrid"
+      },
+      "category": {
+        "mode": "baseline_only",
+        "threshold": 1.0,
+        "baseline": "most_recent"
+      }
+    }
+  },
+  "top_k": [
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.7,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.7,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "most_recent"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.7,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "completeness"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.75,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.75,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "most_recent"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.75,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "completeness"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.8,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.8,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "most_recent"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.8,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "completeness"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.8395484955304748,
+      "weighted_f1": 0.8395484955304748,
+      "per_attr_f1": {
+        "name": 0.8338192419825073,
+        "phone": 0.8554216867469879,
+        "website": 0.832258064516129,
+        "address": 0.8424242424242424,
+        "category": 0.8338192419825073
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.85,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.65,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    }
+  ],
+  "runner_policy_path": "data/results/experiment_reports/exp_step5_hybrid_router_best_policy.json"
+}

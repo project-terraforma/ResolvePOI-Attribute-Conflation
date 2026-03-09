@@ -26,6 +26,32 @@ except ImportError:
     raise
 
 
+def fit_platt_calibrator(prob_pos: np.ndarray, y_true: pd.Series) -> Optional[Dict[str, float]]:
+    """Fit a Platt-style calibrator on validation probabilities.
+
+    Returns None when calibration cannot be fit reliably.
+    """
+    try:
+        y_arr = np.asarray(y_true)
+        if len(np.unique(y_arr)) < 2:
+            return None
+
+        eps = 1e-6
+        prob_clipped = np.clip(np.asarray(prob_pos), eps, 1.0 - eps)
+        logits = np.log(prob_clipped / (1.0 - prob_clipped)).reshape(-1, 1)
+
+        calibrator = LogisticRegression(max_iter=1000, random_state=42)
+        calibrator.fit(logits, y_arr)
+
+        return {
+            "method": "platt_logit",
+            "coef": float(calibrator.coef_[0][0]),
+            "intercept": float(calibrator.intercept_[0]),
+        }
+    except Exception:
+        return None
+
+
 def load_training_data(features_file: str) -> tuple:
     """
     Load training data with features and labels.
@@ -81,6 +107,7 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series,
     # Evaluate
     train_pred = model.predict(X_train_scaled)
     val_pred = model.predict(X_val_scaled)
+    val_prob_pos = model.predict_proba(X_val_scaled)[:, 1]
     
     train_f1 = f1_score(y_train, train_pred)
     val_f1 = f1_score(y_val, val_pred)
@@ -91,6 +118,8 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series,
     print(f"  Val Acc:  {val_acc:.4f}")
     print(f"  Train Duration: {train_duration_seconds:.2f}s")
     print(f"  Peak Memory: {peak_memory_mb:.2f}MB")
+
+    calibration = fit_platt_calibrator(val_prob_pos, y_val)
     
     return {
         'model': model,
@@ -102,6 +131,8 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series,
         'train_duration_seconds': train_duration_seconds,
         'initial_memory_mb': initial_memory_mb,
         'peak_memory_mb': peak_memory_mb
+        ,
+        'calibration': calibration
     }
 
 
@@ -129,6 +160,7 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
     # Evaluate
     train_pred = model.predict(X_train)
     val_pred = model.predict(X_val)
+    val_prob_pos = model.predict_proba(X_val)[:, 1]
     
     train_f1 = f1_score(y_train, train_pred)
     val_f1 = f1_score(y_val, val_pred)
@@ -144,6 +176,8 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
     feature_importance = dict(zip(X_train.columns, model.feature_importances_))
     top_features = sorted(feature_importance.items(), key=lambda x: x[1], reverse=True)[:10]
     print(f"  Top 5 features: {[f[0] for f in top_features[:5]]}")
+
+    calibration = fit_platt_calibrator(val_prob_pos, y_val)
     
     return {
         'model': model,
@@ -155,7 +189,8 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
         'train_duration_seconds': train_duration_seconds,
         'initial_memory_mb': initial_memory_mb,
         'peak_memory_mb': peak_memory_mb,
-        'feature_importance': feature_importance
+        'feature_importance': feature_importance,
+        'calibration': calibration,
     }
 
 
@@ -182,6 +217,7 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
     # Evaluate
     train_pred = model.predict(X_train)
     val_pred = model.predict(X_val)
+    val_prob_pos = model.predict_proba(X_val)[:, 1]
     
     train_f1 = f1_score(y_train, train_pred)
     val_f1 = f1_score(y_val, val_pred)
@@ -197,6 +233,8 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
     feature_importance = dict(zip(X_train.columns, model.feature_importances_))
     top_features = sorted(feature_importance.items(), key=lambda x: x[1], reverse=True)[:10]
     print(f"  Top 5 features: {[f[0] for f in top_features[:5]]}")
+
+    calibration = fit_platt_calibrator(val_prob_pos, y_val)
     
     return {
         'model': model,
@@ -208,7 +246,8 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
         'train_duration_seconds': train_duration_seconds,
         'initial_memory_mb': initial_memory_mb,
         'peak_memory_mb': peak_memory_mb,
-        'feature_importance': feature_importance
+        'feature_importance': feature_importance,
+        'calibration': calibration,
     }
 
 
@@ -283,7 +322,8 @@ def train_all_models(
             'val_acc': best_model['val_acc'],
             'train_duration_seconds': best_model.get('train_duration_seconds'),
             'initial_memory_mb': best_model.get('initial_memory_mb'),
-            'peak_memory_mb': best_model.get('peak_memory_mb')
+            'peak_memory_mb': best_model.get('peak_memory_mb'),
+            'calibration': best_model.get('calibration'),
         }, model_file)
         print(f"Saved best model to {model_file}")
         

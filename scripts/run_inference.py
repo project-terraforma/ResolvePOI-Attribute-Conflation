@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import joblib
+import numpy as np
 import argparse
 from pathlib import Path
 import time
@@ -10,6 +11,23 @@ try:
     from scripts.extract_features import extract_features_batch
 except ModuleNotFoundError:
     from extract_features import extract_features_batch
+
+
+def apply_platt_calibration(prob_pos: float, calibration: dict | None) -> float:
+    """Apply optional Platt scaling to a positive-class probability."""
+    if not calibration:
+        return float(prob_pos)
+    if calibration.get("method") != "platt_logit":
+        return float(prob_pos)
+
+    eps = 1e-6
+    p = min(max(float(prob_pos), eps), 1.0 - eps)
+    logit = np.log(p / (1.0 - p))
+    coef = float(calibration.get("coef", 1.0))
+    intercept = float(calibration.get("intercept", 0.0))
+    calibrated_logit = coef * logit + intercept
+    calibrated = 1.0 / (1.0 + np.exp(-calibrated_logit))
+    return float(min(max(calibrated, 0.0), 1.0))
 
 def get_attribute_value(row, attribute, source='current'):
     """Helper to extract the raw value for a given attribute."""
@@ -120,6 +138,7 @@ def run_inference():
     model_data = joblib.load(args.model)
     model = model_data['model']
     feature_cols = model_data['feature_cols']
+    calibration = model_data.get('calibration')
     print(f"Model loaded: {model_data['model_type']}")
 
     # 3. Extract Features
@@ -156,7 +175,14 @@ def run_inference():
         val_b = get_attribute_value(row, args.attribute, 'base')
 
         choice = "current" if pred == 1 else "base"
-        confidence = max(prob)
+        current_prob_raw = float(prob[1])
+        current_prob_calibrated = apply_platt_calibration(current_prob_raw, calibration)
+
+        # Preserve existing `model_confidence` field while upgrading its meaning
+        # to calibrated confidence when calibration is available.
+        confidence_raw = float(max(prob))
+        confidence_calibrated = max(current_prob_calibrated, 1.0 - current_prob_calibrated)
+        confidence = confidence_calibrated if calibration else confidence_raw
 
         stats[choice] += 1
         
@@ -168,6 +194,10 @@ def run_inference():
             "attribute": args.attribute,
             "selected_source": choice,
             "model_confidence": float(confidence),
+            "model_confidence_raw": float(confidence_raw),
+            "current_probability_raw": current_prob_raw,
+            "current_probability_calibrated": float(current_prob_calibrated),
+            "is_calibrated": bool(calibration),
             "conflated_value": chosen_value,
             "candidates": {
                 "current": val_c,

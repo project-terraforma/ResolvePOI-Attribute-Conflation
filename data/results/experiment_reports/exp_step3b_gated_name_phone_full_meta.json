@@ -1,0 +1,20 @@
+{
+  "tag": "exp_step3b_gated_name_phone_full",
+  "timestamp_utc": "2026-03-06T02:54:05.154865+00:00",
+  "python_executable": "/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python",
+  "python_version": "3.13.7 (main, Aug 14 2025, 11:12:11) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+  "git_commit": "7fc7e94a39f8e1a70c18e65a30216a1ab6ba92c0",
+  "git_branch": "main",
+  "package_versions": {
+    "numpy": "2.4.2",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3",
+    "pyarrow": "23.0.1"
+  },
+  "commands": {
+    "pipeline": "/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/run_algorithm_pipeline.py --skip-inference-2k --skip-consolidation",
+    "analysis": "scripts/analyze_results.py"
+  }
+}

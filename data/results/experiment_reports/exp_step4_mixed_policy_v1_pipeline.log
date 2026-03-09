@@ -1,0 +1,729 @@
+
+================================================================================
+MIXED POLICY PIPELINE (V1)
+================================================================================
+
+################################################################################
+PROCESSING ATTRIBUTE: NAME
+POLICY: {'label_mode': 'quality', 'include_metadata': 'false', 'use_record_confidence': 'true'}
+################################################################################
+
+================================================================================
+STEP: Generate synthetic (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/generate_synthetic_dataset.py --limit 2000 --seed 42 --label-mode quality
+Generating synthetic records from Yelp (limit=2000, seed=42, label_mode=quality)...
+Generated 2000 synthetic records to data/synthetic_golden_dataset_2k.json
+Profile mix: {'current_better': 693, 'base_better': 667, 'near_equal': 340, 'both_noisy': 300}
+
+
+================================================================================
+STEP: Process synthetic features (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute name --include-metadata false --use-record-confidence true
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'name'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_name_synthetic.parquet
+
+
+================================================================================
+STEP: Train models (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_name_synthetic.parquet --output-dir models/ml/name
+Loading training data from data/processed/features_name_synthetic.parquet...
+Loaded 2000 samples with 20 features
+Label distribution: {'b': 1068, 'c': 932}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.2185
+  Val F1:   0.1415
+  Val Acc:  0.5450
+  Train Duration: 0.01s
+  Peak Memory: 192.61MB
+
+Training Random Forest...
+  Train F1: 0.5517
+  Val F1:   0.3677
+  Val Acc:  0.5100
+  Train Duration: 0.16s
+  Peak Memory: 202.66MB
+  Top 5 features: ['name_current_length', 'name_base_length', 'name_length_ratio', 'name_jaro_winkler_similarity', 'name_levenshtein_similarity']
+
+Training Gradient Boosting...
+  Train F1: 0.5150
+  Val F1:   0.3660
+  Val Acc:  0.5150
+  Train Duration: 0.15s
+  Peak Memory: 204.27MB
+  Top 5 features: ['name_base_length', 'name_current_length', 'name_jaro_winkler_similarity', 'name_levenshtein_similarity', 'name_length_ratio']
+
+================================================================================
+Best Model: random_forest (F1: 0.3677)
+================================================================================
+Saved best model to models/ml/name/best_model_random_forest.joblib
+Saved training summary to models/ml/name/training_summary.json
+
+
+================================================================================
+STEP: Inference on 200 real (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute name --data data/golden_dataset_200.json --model models/ml/name/best_model_random_forest.joblib --output data/results/ml_predictions_200_real_name.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (NAME ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.66 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/name/best_model_random_forest.joblib...
+Model loaded: random_forest
+Extracting features for 'name' attribute...
+Predicting best attributes...
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=72, Base=128
+Results saved to: data/results/ml_predictions_200_real_name.json
+Inference Duration: 0.0615 seconds
+Initial Memory: 96.66 MB
+Peak Memory: 191.86 MB
+
+Sample Decisions:
+[BASE] ร้านตัดผมพี่ริน ห้วยตะแคง... vs ร้านตัดผมพี่ริน ห้วยตะแคง... -> ร้านตัดผมพี่ริน ห้วยตะแคง...
+[CURRENT] davaindia GENERIC PHARMACY... vs Davaindia Generic Pharmacy... -> davaindia GENERIC PHARMACY...
+[CURRENT] The Home Depot México... vs The Home Depot... -> The Home Depot México...
+[CURRENT] Sonei Jewellers... vs Sonei Jewellers... -> Sonei Jewellers...
+[BASE] Imobiliária Alegro... vs Imobiliaria Alegro... -> Imobiliaria Alegro...
+
+
+================================================================================
+STEP: Evaluate ML on 200 real (name)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_name.json --golden data/golden_dataset_200.json --attribute name --algorithm-name ML Model (name) --output data/results/ml_evaluation_200_real_name.json
+Loading predictions from data/results/ml_predictions_200_real_name.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (name)
+================================================================================
+
+Metrics:
+  F1-Score:    0.5209 (52.09%)
+  Accuracy:    0.4850 (48.50%)
+  Precision:   0.7778 (77.78%)
+  Recall:      0.3916 (39.16%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_name.json
+
+
+################################################################################
+PROCESSING ATTRIBUTE: PHONE
+POLICY: {'label_mode': 'confidence', 'include_metadata': 'true', 'use_record_confidence': 'false'}
+################################################################################
+
+================================================================================
+STEP: Generate synthetic (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/generate_synthetic_dataset.py --limit 2000 --seed 42 --label-mode confidence
+Generating synthetic records from Yelp (limit=2000, seed=42, label_mode=confidence)...
+Generated 2000 synthetic records to data/synthetic_golden_dataset_2k.json
+Profile mix: {'current_better': 729, 'base_better': 681, 'near_equal': 309, 'both_noisy': 281}
+
+
+================================================================================
+STEP: Process synthetic features (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute phone --include-metadata true --use-record-confidence false
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'phone'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_phone_synthetic.parquet
+
+
+================================================================================
+STEP: Train models (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_phone_synthetic.parquet --output-dir models/ml/phone
+Loading training data from data/processed/features_phone_synthetic.parquet...
+Loaded 2000 samples with 23 features
+Label distribution: {'c': 1009, 'b': 991}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.5591
+  Val F1:   0.5394
+  Val Acc:  0.5475
+  Train Duration: 0.01s
+  Peak Memory: 193.56MB
+
+Training Random Forest...
+  Train F1: 0.5922
+  Val F1:   0.5495
+  Val Acc:  0.5450
+  Train Duration: 0.16s
+  Peak Memory: 199.44MB
+  Top 5 features: ['phone_jaro_winkler_similarity', 'phone_levenshtein_similarity', 'phone_current_has_plus', 'phone_current_len', 'phone_base_len']
+
+Training Gradient Boosting...
+  Train F1: 0.5828
+  Val F1:   0.5414
+  Val Acc:  0.5425
+  Train Duration: 0.14s
+  Peak Memory: 200.89MB
+  Top 5 features: ['phone_jaro_winkler_similarity', 'phone_current_has_plus', 'phone_current_len', 'phone_length_ratio', 'phone_levenshtein_similarity']
+
+================================================================================
+Best Model: random_forest (F1: 0.5495)
+================================================================================
+Saved best model to models/ml/phone/best_model_random_forest.joblib
+Saved training summary to models/ml/phone/training_summary.json
+
+
+================================================================================
+STEP: Inference on 200 real (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute phone --data data/golden_dataset_200.json --model models/ml/phone/best_model_random_forest.joblib --output data/results/ml_predictions_200_real_phone.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (PHONE ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.62 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/phone/best_model_random_forest.joblib...
+Model loaded: random_forest
+Extracting features for 'phone' attribute...
+Predicting best attributes...
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=112, Base=88
+Results saved to: data/results/ml_predictions_200_real_phone.json
+Inference Duration: 0.0583 seconds
+Initial Memory: 96.62 MB
+Peak Memory: 187.08 MB
+
+Sample Decisions:
+[BASE] nan... vs None... -> None...
+[BASE] 09818559767... vs 09818559767... -> 09818559767...
+[BASE] +528000046633... vs None... -> None...
+[CURRENT] +16045748049... vs 6045748049... -> +16045748049...
+[BASE] +555130673966... vs None... -> None...
+
+
+================================================================================
+STEP: Evaluate ML on 200 real (phone)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_phone.json --golden data/golden_dataset_200.json --attribute phone --algorithm-name ML Model (phone) --output data/results/ml_evaluation_200_real_phone.json
+Loading predictions from data/results/ml_predictions_200_real_phone.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (phone)
+================================================================================
+
+Metrics:
+  F1-Score:    0.6902 (69.02%)
+  Accuracy:    0.6050 (60.50%)
+  Precision:   0.7857 (78.57%)
+  Recall:      0.6154 (61.54%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_phone.json
+
+
+################################################################################
+PROCESSING ATTRIBUTE: WEBSITE
+POLICY: {'label_mode': 'confidence', 'include_metadata': 'true', 'use_record_confidence': 'false'}
+################################################################################
+
+================================================================================
+STEP: Generate synthetic (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/generate_synthetic_dataset.py --limit 2000 --seed 42 --label-mode confidence
+Generating synthetic records from Yelp (limit=2000, seed=42, label_mode=confidence)...
+Generated 2000 synthetic records to data/synthetic_golden_dataset_2k.json
+Profile mix: {'current_better': 729, 'base_better': 681, 'near_equal': 309, 'both_noisy': 281}
+
+
+================================================================================
+STEP: Process synthetic features (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute website --include-metadata true --use-record-confidence false
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'website'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_website_synthetic.parquet
+
+
+================================================================================
+STEP: Train models (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_website_synthetic.parquet --output-dir models/ml/website
+Loading training data from data/processed/features_website_synthetic.parquet...
+Loaded 2000 samples with 20 features
+Label distribution: {'c': 1009, 'b': 991}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.6185
+  Val F1:   0.5726
+  Val Acc:  0.4625
+  Train Duration: 0.00s
+  Peak Memory: 193.47MB
+
+Training Random Forest...
+  Train F1: 0.6586
+  Val F1:   0.6225
+  Val Acc:  0.5300
+  Train Duration: 0.17s
+  Peak Memory: 199.31MB
+  Top 5 features: ['web_len_ratio', 'web_length_ratio', 'web_len_diff', 'web_jaro_winkler_similarity', 'web_levenshtein_similarity']
+
+Training Gradient Boosting...
+  Train F1: 0.6562
+  Val F1:   0.6185
+  Val Acc:  0.5250
+  Train Duration: 0.11s
+  Peak Memory: 200.83MB
+  Top 5 features: ['web_length_ratio', 'web_len_ratio', 'web_len_diff', 'web_levenshtein_similarity', 'web_jaro_winkler_similarity']
+
+================================================================================
+Best Model: random_forest (F1: 0.6225)
+================================================================================
+Saved best model to models/ml/website/best_model_random_forest.joblib
+Saved training summary to models/ml/website/training_summary.json
+
+
+================================================================================
+STEP: Inference on 200 real (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute website --data data/golden_dataset_200.json --model models/ml/website/best_model_random_forest.joblib --output data/results/ml_predictions_200_real_website.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (WEBSITE ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.81 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/website/best_model_random_forest.joblib...
+Model loaded: random_forest
+Extracting features for 'website' attribute...
+Predicting best attributes...
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=188, Base=12
+Results saved to: data/results/ml_predictions_200_real_website.json
+Inference Duration: 0.0488 seconds
+Initial Memory: 96.81 MB
+Peak Memory: 186.47 MB
+
+Sample Decisions:
+[CURRENT] nan... vs None... -> nan...
+[CURRENT] http://sector15rohini.davaindi... vs https://pharmacy-nearme.davain... -> http://sector15rohini.davaindi...
+[BASE] http://www.homedepot.com.mx/... vs http://www.homedepot.com... -> http://www.homedepot.com...
+[CURRENT] http://soneijewellers.ca/... vs https://soneijewellers.ca/... -> http://soneijewellers.ca/...
+[CURRENT] http://www.imobiliariaalegro.c... vs None... -> http://www.imobiliariaalegro.c...
+
+
+================================================================================
+STEP: Evaluate ML on 200 real (website)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_website.json --golden data/golden_dataset_200.json --attribute website --algorithm-name ML Model (website) --output data/results/ml_evaluation_200_real_website.json
+Loading predictions from data/results/ml_predictions_200_real_website.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (website)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8036 (80.36%)
+  Accuracy:    0.6750 (67.50%)
+  Precision:   0.7074 (70.74%)
+  Recall:      0.9301 (93.01%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_website.json
+
+
+################################################################################
+PROCESSING ATTRIBUTE: ADDRESS
+POLICY: {'label_mode': 'quality', 'include_metadata': 'false', 'use_record_confidence': 'true'}
+################################################################################
+
+================================================================================
+STEP: Generate synthetic (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/generate_synthetic_dataset.py --limit 2000 --seed 42 --label-mode quality
+Generating synthetic records from Yelp (limit=2000, seed=42, label_mode=quality)...
+Generated 2000 synthetic records to data/synthetic_golden_dataset_2k.json
+Profile mix: {'current_better': 693, 'base_better': 667, 'near_equal': 340, 'both_noisy': 300}
+
+
+================================================================================
+STEP: Process synthetic features (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute address --include-metadata false --use-record-confidence true
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'address'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_address_synthetic.parquet
+
+
+================================================================================
+STEP: Train models (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_address_synthetic.parquet --output-dir models/ml/address
+Loading training data from data/processed/features_address_synthetic.parquet...
+Loaded 2000 samples with 12 features
+Label distribution: {'b': 1068, 'c': 932}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.5899
+  Val F1:   0.6419
+  Val Acc:  0.7350
+  Train Duration: 0.00s
+  Peak Memory: 192.62MB
+
+Training Random Forest...
+  Train F1: 0.6211
+  Val F1:   0.6351
+  Val Acc:  0.7300
+  Train Duration: 0.17s
+  Peak Memory: 196.70MB
+  Top 5 features: ['addr_components_diff', 'addr_current_components', 'addr_base_components', 'addr_current_has_postcode', 'addr_jaro_winkler_similarity']
+
+Training Gradient Boosting...
+  Train F1: 0.6198
+  Val F1:   0.6395
+  Val Acc:  0.7350
+  Train Duration: 0.11s
+  Peak Memory: 198.38MB
+  Top 5 features: ['addr_components_diff', 'addr_jaro_winkler_similarity', 'addr_length_ratio', 'addr_levenshtein_similarity', 'addr_current_has_postcode']
+
+================================================================================
+Best Model: logistic_regression (F1: 0.6419)
+================================================================================
+Saved best model to models/ml/address/best_model_logistic_regression.joblib
+Saved scaler to models/ml/address/scaler_logistic_regression.joblib
+Saved training summary to models/ml/address/training_summary.json
+
+
+================================================================================
+STEP: Inference on 200 real (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute address --data data/golden_dataset_200.json --model models/ml/address/best_model_logistic_regression.joblib --output data/results/ml_predictions_200_real_address.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (ADDRESS ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.70 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/address/best_model_logistic_regression.joblib...
+Model loaded: logistic_regression
+Extracting features for 'address' attribute...
+Predicting best attributes...
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=155, Base=45
+Results saved to: data/results/ml_predictions_200_real_address.json
+Inference Duration: 0.0027 seconds
+Initial Memory: 96.70 MB
+Peak Memory: 172.17 MB
+
+Sample Decisions:
+[BASE] {'country': 'TH'}... vs {'country': 'TH'}... -> {'country': 'TH'}...
+[CURRENT] {'freeform': 'Shop No F21/66, ... vs {'freeform': 'Shop No F21/66, ... -> {'freeform': 'Shop No F21/66, ...
+[CURRENT] {'freeform': 'Calle Benito Juá... vs {'freeform': 'Carretera Transp... -> {'freeform': 'Calle Benito Juá...
+[CURRENT] {'freeform': '8430 128 St', 'l... vs {'freeform': 'Unit - 23 8430 1... -> {'freeform': '8430 128 St', 'l...
+[CURRENT] {'freeform': 'Rua Sobradinho, ... vs {'freeform': '100 Rua Sobradin... -> {'freeform': 'Rua Sobradinho, ...
+
+STDERR: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+
+
+================================================================================
+STEP: Evaluate ML on 200 real (address)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_address.json --golden data/golden_dataset_200.json --attribute address --algorithm-name ML Model (address) --output data/results/ml_evaluation_200_real_address.json
+Loading predictions from data/results/ml_predictions_200_real_address.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (address)
+================================================================================
+
+Metrics:
+  F1-Score:    0.7987 (79.87%)
+  Accuracy:    0.7000 (70.00%)
+  Precision:   0.7677 (76.77%)
+  Recall:      0.8322 (83.22%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_address.json
+
+
+################################################################################
+PROCESSING ATTRIBUTE: CATEGORY
+POLICY: {'label_mode': 'confidence', 'include_metadata': 'true', 'use_record_confidence': 'false'}
+################################################################################
+
+================================================================================
+STEP: Generate synthetic (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/generate_synthetic_dataset.py --limit 2000 --seed 42 --label-mode confidence
+Generating synthetic records from Yelp (limit=2000, seed=42, label_mode=confidence)...
+Generated 2000 synthetic records to data/synthetic_golden_dataset_2k.json
+Profile mix: {'current_better': 729, 'base_better': 681, 'near_equal': 309, 'both_noisy': 281}
+
+
+================================================================================
+STEP: Process synthetic features (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.process_synthetic_data --attribute category --include-metadata true --use-record-confidence false
+Loading synthetic dataset from data/synthetic_golden_dataset_2k.json...
+Converted 2000 records to DataFrame.
+Extracting features for 'category'...
+Applying labels...
+✅ Saved features with labels to data/processed/features_category_synthetic.parquet
+
+
+================================================================================
+STEP: Train models (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/train_models.py --features data/processed/features_category_synthetic.parquet --output-dir models/ml/category
+Loading training data from data/processed/features_category_synthetic.parquet...
+Loaded 2000 samples with 17 features
+Label distribution: {'c': 1009, 'b': 991}
+
+Train set: 1600 samples
+Val set:   400 samples
+
+Training Logistic Regression...
+  Train F1: 0.6705
+  Val F1:   0.6711
+  Val Acc:  0.5050
+  Train Duration: 0.00s
+  Peak Memory: 193.64MB
+
+Training Random Forest...
+  Train F1: 0.6705
+  Val F1:   0.6711
+  Val Acc:  0.5050
+  Train Duration: 0.17s
+  Peak Memory: 195.64MB
+  Top 5 features: ['confidence_current', 'confidence_base', 'confidence_diff', 'confidence_ratio', 'sources_current_count']
+
+Training Gradient Boosting...
+  Train F1: 0.6705
+  Val F1:   0.6711
+  Val Acc:  0.5050
+  Train Duration: 0.04s
+  Peak Memory: 196.08MB
+  Top 5 features: ['confidence_current', 'confidence_base', 'confidence_diff', 'confidence_ratio', 'sources_current_count']
+
+================================================================================
+Best Model: logistic_regression (F1: 0.6711)
+================================================================================
+Saved best model to models/ml/category/best_model_logistic_regression.joblib
+Saved scaler to models/ml/category/scaler_logistic_regression.joblib
+Saved training summary to models/ml/category/training_summary.json
+
+
+================================================================================
+STEP: Inference on 200 real (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python -m scripts.run_inference --attribute category --data data/golden_dataset_200.json --model models/ml/category/best_model_logistic_regression.joblib --output data/results/ml_predictions_200_real_category.json
+================================================================================
+RUNNING INFERENCE ON 2,000 OVERTURE RECORDS (CATEGORY ATTRIBUTE)
+================================================================================
+Initial memory usage: 96.70 MB
+Loading Overture data from data/golden_dataset_200.json...
+Loaded 200 records.
+Loading model from models/ml/category/best_model_logistic_regression.joblib...
+Model loaded: logistic_regression
+Extracting features for 'category' attribute...
+Predicting best attributes...
+
+================================================================================
+INFERENCE COMPLETE
+================================================================================
+Total Records: 200
+Decisions: Current=200, Base=0
+Results saved to: data/results/ml_predictions_200_real_category.json
+Inference Duration: 0.0012 seconds
+Initial Memory: 96.70 MB
+Peak Memory: 171.59 MB
+
+Sample Decisions:
+[CURRENT] beauty_salon... vs Business and Professional Serv... -> beauty_salon...
+[CURRENT] pharmacy... vs pharmacy... -> pharmacy...
+[CURRENT] home_and_garden... vs Retail > Hardware Store... -> home_and_garden...
+[CURRENT] jewelry_store... vs jewelry_store... -> jewelry_store...
+[CURRENT] real_estate... vs Business and Professional Serv... -> real_estate...
+
+STDERR: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+/Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2684: UserWarning: X has feature names, but LogisticRegression was fitted without feature names
+  warnings.warn(
+
+
+================================================================================
+STEP: Evaluate ML on 200 real (category)
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/evaluate_models.py --predictions data/results/ml_predictions_200_real_category.json --golden data/golden_dataset_200.json --attribute category --algorithm-name ML Model (category) --output data/results/ml_evaluation_200_real_category.json
+Loading predictions from data/results/ml_predictions_200_real_category.json...
+Loading golden labels from data/golden_dataset_200.json...
+
+================================================================================
+EVALUATION REPORT: ML Model (category)
+================================================================================
+
+Metrics:
+  F1-Score:    0.8338 (83.38%)
+  Accuracy:    0.7150 (71.50%)
+  Precision:   0.7150 (71.50%)
+  Recall:      1.0000 (100.00%)
+
+Coverage:
+  Total Records: 200
+  Unclear:       0
+  Coverage:      1.0000 (100.00%)
+
+KR Targets:
+  KR1 (Beat baseline by 15%+): [TBD]
+  KR2 (F1 > 0.90): [NO]
+  KR3 (Coverage > 99%): [YES]
+
+Results saved to data/results/ml_evaluation_200_real_category.json
+
+
+================================================================================
+STEP: Analyze final results
+================================================================================
+Running: /Users/katemikhailova/mayhem_restart/Mayhem_Attribute_Conflation/.venv/bin/python scripts/analyze_results.py
+================================================================================
+MAYHEM PROJECT: FINAL RESULTS ANALYSIS
+================================================================================
+
+--- PERFORMANCE METRICS (200 Real Records) ---
+| Attribute   | Algorithm              |   F1-Score |   Accuracy |   Precision |   Recall |   Coverage |
+|:------------|:-----------------------|-----------:|-----------:|------------:|---------:|-----------:|
+| Address     | Baseline: Hybrid       |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Address     | Baseline: Most Recent  |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Address     | Baseline: Completeness |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Address     | ML Model               |     0.7987 |     0.7000 |      0.7677 |   0.8322 |     1.0000 |
+| Address     | Baseline: Confidence   |     0.7535 |     0.6500 |      0.7589 |   0.7483 |     1.0000 |
+| Category    | Baseline: Most Recent  |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Category    | ML Model               |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Category    | Baseline: Hybrid       |     0.8094 |     0.7150 |      0.7756 |   0.8462 |     1.0000 |
+| Category    | Baseline: Confidence   |     0.7564 |     0.6650 |      0.7879 |   0.7273 |     1.0000 |
+| Category    | Baseline: Completeness |     0.7231 |     0.6400 |      0.8034 |   0.6573 |     1.0000 |
+| Name        | Baseline: Most Recent  |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Name        | Baseline: Confidence   |     0.7692 |     0.6550 |      0.7372 |   0.8042 |     1.0000 |
+| Name        | Baseline: Hybrid       |     0.7667 |     0.6500 |      0.7325 |   0.8042 |     1.0000 |
+| Name        | Baseline: Completeness |     0.7319 |     0.6300 |      0.7594 |   0.7063 |     1.0000 |
+| Name        | ML Model               |     0.5209 |     0.4850 |      0.7778 |   0.3916 |     1.0000 |
+| Phone       | Baseline: Completeness |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | Baseline: Most Recent  |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | Baseline: Hybrid       |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | Baseline: Confidence   |     0.7616 |     0.6650 |      0.7754 |   0.7483 |     1.0000 |
+| Phone       | ML Model               |     0.6902 |     0.6050 |      0.7857 |   0.6154 |     1.0000 |
+| Website     | Baseline: Completeness |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
+| Website     | Baseline: Hybrid       |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
+| Website     | Baseline: Most Recent  |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
+| Website     | ML Model               |     0.8036 |     0.6750 |      0.7074 |   0.9301 |     1.0000 |
+| Website     | Baseline: Confidence   |     0.7832 |     0.6900 |      0.7832 |   0.7832 |     1.0000 |
+
+--- OKR 2.1 CHECK (ML vs. Most Recent Baseline) ---
+Address: ML (0.7987) vs Baseline (0.8338) -> -4.22% Improvement  FAILED ❌
+Category: ML (0.8338) vs Baseline (0.8338) -> +0.00% Improvement  FAILED ❌
+Name: ML (0.5209) vs Baseline (0.8338) -> -37.52% Improvement  FAILED ❌
+Phone: ML (0.6902) vs Baseline (0.8554) -> -19.32% Improvement  FAILED ❌
+Website: ML (0.8036) vs Baseline (0.8323) -> -3.44% Improvement  FAILED ❌
+
+--- COMPUTE METRICS (Training) ---
+| Attribute   | Best Model          |   Train Time (s) |   Peak Memory (MB) |
+|:------------|:--------------------|-----------------:|-------------------:|
+| Category    | logistic_regression |           0.0024 |           193.6406 |
+| Website     | random_forest       |           0.1691 |           199.3125 |
+| Address     | logistic_regression |           0.0029 |           192.6250 |
+| Phone       | random_forest       |           0.1620 |           199.4375 |
+| Name        | random_forest       |           0.1635 |           202.6562 |
+
+--- COMPUTE METRICS (Inference on 2k Records) ---
+| Attribute   |   Total Inference Time (s) |   Time Per Record (ms) |   Peak Memory (MB) |
+|:------------|---------------------------:|-----------------------:|-------------------:|
+| Category    |                     0.0598 |                 0.0299 |           237.4219 |
+| Website     |                     0.0014 |                 0.0007 |           197.5156 |
+| Name        |                     0.0624 |                 0.0312 |           213.6562 |
+| Phone       |                     0.0014 |                 0.0007 |           198.7344 |
+| Address     |                     0.0014 |                 0.0007 |           197.5938 |
+
+--- OKR 2.3 CHECK (< 100ms Inference Time) ---
+Average Time Per Record: 0.0126 ms  PASSED ✅
+
+
+Mixed-policy run completed.

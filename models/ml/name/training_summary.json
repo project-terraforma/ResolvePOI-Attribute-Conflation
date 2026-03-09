@@ -1,31 +1,31 @@
 {
-  "best_model": "logistic_regression",
-  "best_val_f1": 0.8020261713803293,
-  "best_val_acc": 0.7655,
+  "best_model": "random_forest",
+  "best_val_f1": 0.36774193548387096,
+  "best_val_acc": 0.51,
   "all_models": {
     "logistic_regression": {
-      "val_f1": 0.8020261713803293,
-      "val_acc": 0.7655,
+      "val_f1": 0.14150943396226415,
+      "val_acc": 0.545,
       "model_type": "logistic_regression",
-      "train_duration_seconds": 0.021586179733276367,
-      "initial_memory_mb": 188.796875,
-      "peak_memory_mb": 194.703125
+      "train_duration_seconds": 0.00732111930847168,
+      "initial_memory_mb": 192.640625,
+      "peak_memory_mb": 193.5625
     },
     "random_forest": {
-      "val_f1": 0.7797563261480788,
-      "val_acc": 0.765,
+      "val_f1": 0.36774193548387096,
+      "val_acc": 0.51,
       "model_type": "random_forest",
-      "train_duration_seconds": 0.2260570526123047,
-      "initial_memory_mb": 195.34375,
-      "peak_memory_mb": 205.96875
+      "train_duration_seconds": 0.16269302368164062,
+      "initial_memory_mb": 193.59375,
+      "peak_memory_mb": 203.5625
     },
     "gradient_boosting": {
-      "val_f1": 0.7774647887323943,
-      "val_acc": 0.763,
+      "val_f1": 0.3660130718954248,
+      "val_acc": 0.515,
       "model_type": "gradient_boosting",
-      "train_duration_seconds": 0.8109390735626221,
-      "initial_memory_mb": 208.0625,
-      "peak_memory_mb": 205.640625
+      "train_duration_seconds": 0.1466388702392578,
+      "initial_memory_mb": 204.28125,
+      "peak_memory_mb": 205.109375
     }
   }
 }

@@ -3,51 +3,63 @@
     "id": "08f64a59990a63a0030784450be43ba4",
     "record_index": 0,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f3da18ccad52ad03cc06b87820910f",
     "record_index": 1,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5154261013111763,
+    "selected_source": "base",
+    "model_confidence": 0.5527738431832117,
+    "model_confidence_raw": 0.5637251193576737,
+    "current_probability_raw": 0.4362748806423265,
+    "current_probability_calibrated": 0.44722615681678834,
+    "is_calibrated": true,
     "conflated_value": "09818559767",
     "candidates": {
       "current": "09818559767",
       "base": "09818559767"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f4823ad167532903b45bc53a70221e",
     "record_index": 2,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+528000046633",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+528000046633",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -55,33 +67,41 @@
     "record_index": 3,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+16045748049",
     "candidates": {
       "current": "+16045748049",
       "base": "6045748049"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08fa90e8d6b065a303084f1af4a32095",
     "record_index": 4,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+555130673966",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+555130673966",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -89,33 +109,41 @@
     "record_index": 5,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.6134017734951476,
+    "model_confidence": 0.7308480947853796,
+    "model_confidence_raw": 0.7743330411806642,
+    "current_probability_raw": 0.22566695881933568,
+    "current_probability_calibrated": 0.2691519052146204,
+    "is_calibrated": true,
     "conflated_value": "075739 19585",
     "candidates": {
       "current": "09426792001",
       "base": "075739 19585"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f2aad39c474c9c03e6e7b74bca7273",
     "record_index": 6,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+13026457779",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "nan",
     "candidates": {
       "current": "+13026457779",
       "base": "nan"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -123,16 +151,20 @@
     "record_index": 7,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9727730151590105,
+    "model_confidence": 0.9510132909165113,
+    "model_confidence_raw": 0.9755680813439435,
+    "current_probability_raw": 0.9755680813439435,
+    "current_probability_calibrated": 0.9510132909165113,
+    "is_calibrated": true,
     "conflated_value": "+551139756418",
     "candidates": {
       "current": "+551139756418",
       "base": "(11) 3998-9853"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -140,16 +172,20 @@
     "record_index": 8,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "2766963535",
     "candidates": {
       "current": "2766963535",
       "base": "2766963535"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -157,33 +193,41 @@
     "record_index": 9,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8948281854408431,
+    "model_confidence": 0.8729086479682621,
+    "model_confidence_raw": 0.9166565545136974,
+    "current_probability_raw": 0.9166565545136974,
+    "current_probability_calibrated": 0.8729086479682621,
+    "is_calibrated": true,
     "conflated_value": "+33563301313",
     "candidates": {
       "current": "+33563301313",
       "base": "05 63 30 20 20"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1125899909415294",
     "record_index": 10,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5202910105918271,
-    "conflated_value": "6133897900",
+    "selected_source": "base",
+    "model_confidence": 0.5763178552867805,
+    "model_confidence_raw": 0.5927057178932178,
+    "current_probability_raw": 0.4072942821067821,
+    "current_probability_calibrated": 0.4236821447132195,
+    "is_calibrated": true,
+    "conflated_value": "6132239868",
     "candidates": {
       "current": "6133897900",
       "base": "6132239868"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -191,33 +235,41 @@
     "record_index": 11,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.9339244182199061,
+    "model_confidence": 0.566690088673951,
+    "model_confidence_raw": 0.5808768770276665,
+    "current_probability_raw": 0.41912312297233334,
+    "current_probability_calibrated": 0.43330991132604907,
+    "is_calibrated": true,
     "conflated_value": "01 869439186090",
     "candidates": {
       "current": "0186943910",
       "base": "01 869439186090"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f64a4ba092672503433c3f96046607",
     "record_index": 12,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -225,16 +277,20 @@
     "record_index": 13,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866085435684477,
+    "model_confidence": 0.7234805609661619,
+    "model_confidence_raw": 0.7685472721722724,
+    "current_probability_raw": 0.7685472721722724,
+    "current_probability_calibrated": 0.7234805609661619,
+    "is_calibrated": true,
     "conflated_value": "+17186521860",
     "candidates": {
       "current": "+17186521860",
       "base": "7186521860"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -242,16 +298,20 @@
     "record_index": 14,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866072473709377,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+16316456851",
     "candidates": {
       "current": "+16316456851",
       "base": "6316456851"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -259,16 +319,20 @@
     "record_index": 15,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8125478434",
     "candidates": {
       "current": "8125478434",
       "base": "8125478434"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -276,16 +340,20 @@
     "record_index": 16,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+15406843314",
     "candidates": {
       "current": "+15406843314",
       "base": "5406843314"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -293,84 +361,104 @@
     "record_index": 17,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8133302175",
     "candidates": {
       "current": "8133302175",
       "base": "8133302175"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f4983ca438bc5b033bac5a072fa3cd",
     "record_index": 18,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+524425612935",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+524425612935",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f64a090e19a48203f58e9c92720d04",
     "record_index": 19,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1125899912289624",
     "record_index": 20,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5198267041883458,
-    "conflated_value": "4632413927",
+    "selected_source": "base",
+    "model_confidence": 0.6354391571966691,
+    "model_confidence_raw": 0.6643723845598845,
+    "current_probability_raw": 0.3356276154401154,
+    "current_probability_calibrated": 0.36456084280333084,
+    "is_calibrated": true,
+    "conflated_value": "3172570779",
     "candidates": {
       "current": "4632413927",
       "base": "3172570779"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f8c100e5135acc0320b9849219dda3",
     "record_index": 21,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+62251123456",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+62251123456",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -378,50 +466,62 @@
     "record_index": 22,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7588118530592578,
+    "model_confidence": 0.7796724987631689,
+    "model_confidence_raw": 0.8265784327183009,
+    "current_probability_raw": 0.17342156728169913,
+    "current_probability_calibrated": 0.22032750123683115,
+    "is_calibrated": true,
     "conflated_value": "(800) 432-1000",
     "candidates": {
       "current": "8444018500",
       "base": "(800) 432-1000"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f2aa650405da4d03ac202ae41b574e",
     "record_index": 23,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+17166460233",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+17166460233",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f64b018d54d71403e6f180aca04fd1",
     "record_index": 24,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -429,16 +529,20 @@
     "record_index": 25,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865353333484258,
+    "model_confidence": 0.9388232794454611,
+    "model_confidence_raw": 0.9675595238095239,
+    "current_probability_raw": 0.9675595238095239,
+    "current_probability_calibrated": 0.9388232794454611,
+    "is_calibrated": true,
     "conflated_value": "+441803494001",
     "candidates": {
       "current": "+441803494001",
       "base": "01803494001"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -446,33 +550,41 @@
     "record_index": 26,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7267977040152686,
+    "model_confidence": 0.6481024190668244,
+    "model_confidence_raw": 0.6794393761899546,
+    "current_probability_raw": 0.320560623810045,
+    "current_probability_calibrated": 0.3518975809331756,
+    "is_calibrated": true,
     "conflated_value": "0345 734 5345",
     "candidates": {
       "current": "03457345345",
       "base": "0345 734 5345"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "562949955127994",
     "record_index": 27,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5204896889032228,
-    "conflated_value": "9413567677",
+    "selected_source": "base",
+    "model_confidence": 0.6761939695603987,
+    "model_confidence_raw": 0.7124037705715335,
+    "current_probability_raw": 0.2875962294284662,
+    "current_probability_calibrated": 0.3238060304396014,
+    "is_calibrated": true,
+    "conflated_value": "9417586303",
     "candidates": {
       "current": "9413567677",
       "base": "9417586303"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -480,16 +592,20 @@
     "record_index": 28,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+18502447111",
     "candidates": {
       "current": "+18502447111",
       "base": "8502447111"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -497,16 +613,20 @@
     "record_index": 29,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865375050503602,
+    "model_confidence": 0.8940356813185045,
+    "model_confidence_raw": 0.9341981007379827,
+    "current_probability_raw": 0.9341981007379827,
+    "current_probability_calibrated": 0.8940356813185045,
+    "is_calibrated": true,
     "conflated_value": "+493455126523",
     "candidates": {
       "current": "+493455126523",
       "base": "03455126523"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -514,16 +634,20 @@
     "record_index": 30,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865994640491447,
+    "model_confidence": 0.9524498630066492,
+    "model_confidence_raw": 0.9764761904761905,
+    "current_probability_raw": 0.9764761904761905,
+    "current_probability_calibrated": 0.9524498630066492,
+    "is_calibrated": true,
     "conflated_value": "+61359224111",
     "candidates": {
       "current": "+61359224111",
       "base": "0359224111"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -531,16 +655,20 @@
     "record_index": 31,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "7652315070",
     "candidates": {
       "current": "7652315070",
       "base": "7652315070"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -548,16 +676,20 @@
     "record_index": 32,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865483314089635,
+    "model_confidence": 0.9024602345337849,
+    "model_confidence_raw": 0.9408928571428571,
+    "current_probability_raw": 0.9408928571428571,
+    "current_probability_calibrated": 0.9024602345337849,
+    "is_calibrated": true,
     "conflated_value": "+17027855555",
     "candidates": {
       "current": "+17027855555",
       "base": "7028660703"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -565,33 +697,41 @@
     "record_index": 33,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+13155361401",
     "candidates": {
       "current": "+13155361401",
       "base": "3155361401"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08fa810056a2b6400390bcc253369382",
     "record_index": 34,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+5511983849245",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+5511983849245",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -599,16 +739,20 @@
     "record_index": 35,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866089756067844,
+    "model_confidence": 0.503431208128017,
+    "model_confidence_raw": 0.5059161255411257,
+    "current_probability_raw": 0.5059161255411257,
+    "current_probability_calibrated": 0.503431208128017,
+    "is_calibrated": true,
     "conflated_value": "+12259601580",
     "candidates": {
       "current": "+12259601580",
       "base": "2259601580"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -616,33 +760,41 @@
     "record_index": 36,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.960990564824449,
+    "model_confidence": 0.5801893985339822,
+    "model_confidence_raw": 0.6006393578525334,
+    "current_probability_raw": 0.6006393578525334,
+    "current_probability_calibrated": 0.5801893985339822,
+    "is_calibrated": true,
     "conflated_value": "+4792044930",
     "candidates": {
       "current": "+4792044930",
       "base": "47 83 50 55"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f396cb6912ad000340ccfcbe06ce49",
     "record_index": 37,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+33475462232",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+33475462232",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -650,33 +802,41 @@
     "record_index": 38,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.961296128596662,
+    "model_confidence": 0.6760161711251612,
+    "model_confidence_raw": 0.7149092580482914,
+    "current_probability_raw": 0.7149092580482914,
+    "current_probability_calibrated": 0.6760161711251612,
+    "is_calibrated": true,
     "conflated_value": "+390583419500",
     "candidates": {
       "current": "+390583419500",
       "base": "395 8341 9500"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f2a1340ea313910338f0d15a4b7f1f",
     "record_index": 39,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "8566388170",
     "candidates": {
       "current": "",
       "base": "8566388170"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -684,16 +844,20 @@
     "record_index": 40,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866102716392996,
+    "model_confidence": 0.7888907643093832,
+    "model_confidence_raw": 0.8378692002442001,
+    "current_probability_raw": 0.8378692002442001,
+    "current_probability_calibrated": 0.7888907643093832,
+    "is_calibrated": true,
     "conflated_value": "+12316330432",
     "candidates": {
       "current": "+12316330432",
       "base": "2316330432"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -701,16 +865,20 @@
     "record_index": 41,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552952004217258,
+    "model_confidence": 0.8952855003206361,
+    "model_confidence_raw": 0.935202522690148,
+    "current_probability_raw": 0.935202522690148,
+    "current_probability_calibrated": 0.8952855003206361,
+    "is_calibrated": true,
     "conflated_value": "+12259604475",
     "candidates": {
       "current": "+12259604475",
       "base": "(225) 960-4475"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -718,33 +886,41 @@
     "record_index": 42,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "4089844462",
     "candidates": {
       "current": "4089844462",
       "base": "4089844462"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1125899908355011",
     "record_index": 43,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5203100545317741,
-    "conflated_value": "4808211862",
+    "selected_source": "base",
+    "model_confidence": 0.6859933957707033,
+    "model_confidence_raw": 0.7237371039048671,
+    "current_probability_raw": 0.2762628960951329,
+    "current_probability_calibrated": 0.3140066042292967,
+    "is_calibrated": true,
+    "conflated_value": "4804854921",
     "candidates": {
       "current": "4808211862",
       "base": "4804854921"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -752,16 +928,20 @@
     "record_index": 44,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552924072914847,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+18198431331",
     "candidates": {
       "current": "+18198431331",
       "base": "(819) 843-1331"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -769,33 +949,41 @@
     "record_index": 45,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+18562672200",
     "candidates": {
       "current": "+18562672200",
       "base": "8562672200"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "281474979747202",
     "record_index": 46,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "7819320076",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "",
     "candidates": {
       "current": "7819320076",
       "base": ""
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -803,33 +991,41 @@
     "record_index": 47,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866085435684477,
+    "model_confidence": 0.7234805609661619,
+    "model_confidence_raw": 0.7685472721722724,
+    "current_probability_raw": 0.7685472721722724,
+    "current_probability_calibrated": 0.7234805609661619,
+    "is_calibrated": true,
     "conflated_value": "+13017782145",
     "candidates": {
       "current": "+13017782145",
       "base": "3017782145"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1125899908351517",
     "record_index": 48,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5199998229205849,
-    "conflated_value": "7705053855",
+    "selected_source": "base",
+    "model_confidence": 0.6354391571966691,
+    "model_confidence_raw": 0.6643723845598845,
+    "current_probability_raw": 0.3356276154401154,
+    "current_probability_calibrated": 0.36456084280333084,
+    "is_calibrated": true,
+    "conflated_value": "4706448140",
     "candidates": {
       "current": "7705053855",
       "base": "4706448140"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -837,16 +1033,20 @@
     "record_index": 49,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552924072914847,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+18134021080",
     "candidates": {
       "current": "+18134021080",
       "base": "(813) 402-1080"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -854,33 +1054,41 @@
     "record_index": 50,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552924072914847,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+17137791818",
     "candidates": {
       "current": "+17137791818",
       "base": "(713) 779-1818"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "562949966520897",
     "record_index": 51,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5200324711744869,
-    "conflated_value": "2342062621",
+    "selected_source": "base",
+    "model_confidence": 0.6354391571966691,
+    "model_confidence_raw": 0.6643723845598845,
+    "current_probability_raw": 0.3356276154401154,
+    "current_probability_calibrated": 0.36456084280333084,
+    "is_calibrated": true,
+    "conflated_value": "3303367472",
     "candidates": {
       "current": "2342062621",
       "base": "3303367472"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -888,16 +1096,20 @@
     "record_index": 52,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9551930874075271,
+    "model_confidence": 0.9942246559856671,
+    "model_confidence_raw": 0.9983333333333334,
+    "current_probability_raw": 0.9983333333333334,
+    "current_probability_calibrated": 0.9942246559856671,
+    "is_calibrated": true,
     "conflated_value": "+16312257000",
     "candidates": {
       "current": "+16312257000",
       "base": "(631) 789-2000"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -905,16 +1117,20 @@
     "record_index": 53,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+18589237371",
     "candidates": {
       "current": "+18589237371",
       "base": "8589237371"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -922,16 +1138,20 @@
     "record_index": 54,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8507634651",
     "candidates": {
       "current": "8507634651",
       "base": "8507634651"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -939,33 +1159,41 @@
     "record_index": 55,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7258285568530728,
+    "model_confidence": 0.6297490332589655,
+    "model_confidence_raw": 0.6575646110446823,
+    "current_probability_raw": 0.34243538895531755,
+    "current_probability_calibrated": 0.37025096674103447,
+    "is_calibrated": true,
     "conflated_value": "053-543-5751",
     "candidates": {
       "current": "0535435751",
       "base": "053-543-5751"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f2a143a2aea428033ac8f069c43517",
     "record_index": 56,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+12035746000",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+12035746000",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -973,16 +1201,20 @@
     "record_index": 57,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9728491142683556,
+    "model_confidence": 0.9577141246011956,
+    "model_confidence_raw": 0.9797347480106101,
+    "current_probability_raw": 0.9797347480106101,
+    "current_probability_calibrated": 0.9577141246011956,
+    "is_calibrated": true,
     "conflated_value": "+551932337525",
     "candidates": {
       "current": "+551932337525",
       "base": "(19) 3203-7525"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -990,16 +1222,20 @@
     "record_index": 58,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9551626272159509,
+    "model_confidence": 0.9942246559856671,
+    "model_confidence_raw": 0.9983333333333334,
+    "current_probability_raw": 0.9983333333333334,
+    "current_probability_calibrated": 0.9942246559856671,
+    "is_calibrated": true,
     "conflated_value": "+17128996773",
     "candidates": {
       "current": "+17128996773",
       "base": "(712) 568-2363"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1007,16 +1243,20 @@
     "record_index": 59,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866107036226414,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+13155975849",
     "candidates": {
       "current": "+13155975849",
       "base": "3155975849"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1024,16 +1264,20 @@
     "record_index": 60,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552924072914847,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+15184944460",
     "candidates": {
       "current": "+15184944460",
       "base": "(518) 494-4460"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1041,16 +1285,20 @@
     "record_index": 61,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865370707376144,
+    "model_confidence": 0.6174717339490614,
+    "model_confidence_raw": 0.6458432350533411,
+    "current_probability_raw": 0.6458432350533411,
+    "current_probability_calibrated": 0.6174717339490614,
+    "is_calibrated": true,
     "conflated_value": "+441243820330",
     "candidates": {
       "current": "+441243820330",
       "base": "01243820330"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1058,16 +1306,20 @@
     "record_index": 62,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.825554929724074,
+    "model_confidence": 0.8104588954537183,
+    "model_confidence_raw": 0.8577092766645574,
+    "current_probability_raw": 0.14229072333544246,
+    "current_probability_calibrated": 0.18954110454628173,
+    "is_calibrated": true,
     "conflated_value": "04921 17377940",
     "candidates": {
       "current": "02117377940",
       "base": "04921 17377940"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1075,16 +1327,20 @@
     "record_index": 63,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8947966521323815,
+    "model_confidence": 0.8729086479682621,
+    "model_confidence_raw": 0.9166565545136974,
+    "current_probability_raw": 0.9166565545136974,
+    "current_probability_calibrated": 0.8729086479682621,
+    "is_calibrated": true,
     "conflated_value": "+33556389479",
     "candidates": {
       "current": "+33556389479",
       "base": "05 56 01 15 95"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1092,16 +1348,20 @@
     "record_index": 64,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9613184896318304,
+    "model_confidence": 0.6993720979242557,
+    "model_confidence_raw": 0.741607693087356,
+    "current_probability_raw": 0.741607693087356,
+    "current_probability_calibrated": 0.6993720979242557,
+    "is_calibrated": true,
     "conflated_value": "+61493708328",
     "candidates": {
       "current": "+61493708328",
       "base": "0411 034 188"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1109,16 +1369,20 @@
     "record_index": 65,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7258285568530728,
+    "model_confidence": 0.6297490332589655,
+    "model_confidence_raw": 0.6575646110446823,
+    "current_probability_raw": 0.34243538895531755,
+    "current_probability_calibrated": 0.37025096674103447,
+    "is_calibrated": true,
     "conflated_value": "331 543 6845",
     "candidates": {
       "current": "3315436845",
       "base": "331 543 6845"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1126,16 +1390,20 @@
     "record_index": 66,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+16037452022",
     "candidates": {
       "current": "+16037452022",
       "base": "6037452022"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1143,50 +1411,62 @@
     "record_index": 67,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9614352393408289,
+    "model_confidence": 0.6993720979242557,
+    "model_confidence_raw": 0.741607693087356,
+    "current_probability_raw": 0.741607693087356,
+    "current_probability_calibrated": 0.6993720979242557,
+    "is_calibrated": true,
     "conflated_value": "+61449143781",
     "candidates": {
       "current": "+61449143781",
       "base": "0449 143 781"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f618c4c6d826e803b8e71b07951b00",
     "record_index": 68,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5154261013111763,
+    "selected_source": "base",
+    "model_confidence": 0.5527738431832117,
+    "model_confidence_raw": 0.5637251193576737,
+    "current_probability_raw": 0.4362748806423265,
+    "current_probability_calibrated": 0.44722615681678834,
+    "is_calibrated": true,
     "conflated_value": "18002022022",
     "candidates": {
       "current": "18002022022",
       "base": "18002022022"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f1f166d246c3290303ee41124b93fa",
     "record_index": 69,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+491736261921",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+491736261921",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1194,16 +1474,20 @@
     "record_index": 70,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7267997018982654,
+    "model_confidence": 0.6378524647246473,
+    "model_confidence_raw": 0.6672528592892877,
+    "current_probability_raw": 0.33274714071071204,
+    "current_probability_calibrated": 0.3621475352753527,
+    "is_calibrated": true,
     "conflated_value": "050-8890-5621",
     "candidates": {
       "current": "05088905621",
       "base": "050-8890-5621"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1211,16 +1495,20 @@
     "record_index": 71,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866107036226414,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+12145090550",
     "candidates": {
       "current": "+12145090550",
       "base": "2145090550"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1228,16 +1516,20 @@
     "record_index": 72,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9766711160538514,
+    "model_confidence": 0.7874597113439817,
+    "model_confidence_raw": 0.8364191037220704,
+    "current_probability_raw": 0.8364191037220704,
+    "current_probability_calibrated": 0.7874597113439817,
+    "is_calibrated": true,
     "conflated_value": "+9118604195555",
     "candidates": {
       "current": "+9118604195555",
       "base": "1860 419 5555"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1245,16 +1537,20 @@
     "record_index": 73,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8950532524780317,
+    "model_confidence": 0.8729086479682621,
+    "model_confidence_raw": 0.9166565545136974,
+    "current_probability_raw": 0.9166565545136974,
+    "current_probability_calibrated": 0.8729086479682621,
+    "is_calibrated": true,
     "conflated_value": "+33559023608",
     "candidates": {
       "current": "+33559023608",
       "base": "05 59 02 36 08"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1262,16 +1558,20 @@
     "record_index": 74,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "4808653981",
     "candidates": {
       "current": "4808653981",
       "base": "4808653981"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1279,33 +1579,41 @@
     "record_index": 75,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8004676182",
     "candidates": {
       "current": "8004676182",
       "base": "8004676182"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f49a8381a4d0f303240f2cdfbb374f",
     "record_index": 76,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+523330284289",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+523330284289",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1313,16 +1621,20 @@
     "record_index": 77,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+14428882289",
     "candidates": {
       "current": "+14428882289",
       "base": "4428882289"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1330,16 +1642,20 @@
     "record_index": 78,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "2095234578",
     "candidates": {
       "current": "2095234578",
       "base": "2095234578"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1347,16 +1663,20 @@
     "record_index": 79,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9614460153118771,
+    "model_confidence": 0.6799387886008106,
+    "model_confidence_raw": 0.7194315319005932,
+    "current_probability_raw": 0.7194315319005932,
+    "current_probability_calibrated": 0.6799387886008106,
+    "is_calibrated": true,
     "conflated_value": "+81665323151",
     "candidates": {
       "current": "+81665323151",
       "base": "06-6532-3151"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1364,16 +1684,20 @@
     "record_index": 80,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+12143068714",
     "candidates": {
       "current": "+12143068714",
       "base": "2143068714"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1381,16 +1705,20 @@
     "record_index": 81,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866081115163614,
+    "model_confidence": 0.9824871842058842,
+    "model_confidence_raw": 0.9933333333333333,
+    "current_probability_raw": 0.9933333333333333,
+    "current_probability_calibrated": 0.9824871842058842,
+    "is_calibrated": true,
     "conflated_value": "+13167195148",
     "candidates": {
       "current": "+13167195148",
       "base": "3167195148"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1398,33 +1726,41 @@
     "record_index": 82,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9353936876985406,
+    "model_confidence": 0.7452683692274692,
+    "model_confidence_raw": 0.7922903284457076,
+    "current_probability_raw": 0.7922903284457076,
+    "current_probability_calibrated": 0.7452683692274692,
+    "is_calibrated": true,
     "conflated_value": "+4953135573299",
     "candidates": {
       "current": "+4953135573299",
       "base": "04953 135573299"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f4995b9e3aba6c03df20d5c7b3d01a",
     "record_index": 83,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+525557150401",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+525557150401",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1432,33 +1768,41 @@
     "record_index": 84,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9359787269761142,
+    "model_confidence": 0.7730110704345738,
+    "model_confidence_raw": 0.82160040348044,
+    "current_probability_raw": 0.82160040348044,
+    "current_probability_calibrated": 0.7730110704345738,
+    "is_calibrated": true,
     "conflated_value": "+49523192570",
     "candidates": {
       "current": "+49523192570",
       "base": "04952 3192570"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f6d231146cbb8203a6b43c5463e884",
     "record_index": 85,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+529611705432",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+529611705432",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1466,16 +1810,20 @@
     "record_index": 86,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9614433215901148,
+    "model_confidence": 0.7085495745355352,
+    "model_confidence_raw": 0.7519410264206894,
+    "current_probability_raw": 0.7519410264206894,
+    "current_probability_calibrated": 0.7085495745355352,
+    "is_calibrated": true,
     "conflated_value": "+61412596583",
     "candidates": {
       "current": "+61412596583",
       "base": "0412 596 583"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1483,16 +1831,20 @@
     "record_index": 87,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+13144735141",
     "candidates": {
       "current": "+13144735141",
       "base": "3144735141"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1500,50 +1852,62 @@
     "record_index": 88,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866089756067844,
+    "model_confidence": 0.503431208128017,
+    "model_confidence_raw": 0.5059161255411257,
+    "current_probability_raw": 0.5059161255411257,
+    "current_probability_calibrated": 0.503431208128017,
+    "is_calibrated": true,
     "conflated_value": "+13172512294",
     "candidates": {
       "current": "+13172512294",
       "base": "3172512294"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08fa8186206ab06203b13b1910efb454",
     "record_index": 89,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f1e880c6d2a21a03dad9931d6666c6",
     "record_index": 90,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+390802223130",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+390802223130",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1551,16 +1915,20 @@
     "record_index": 91,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9766964599625154,
+    "model_confidence": 0.7989852340211682,
+    "model_confidence_raw": 0.8480047777016124,
+    "current_probability_raw": 0.8480047777016124,
+    "current_probability_calibrated": 0.7989852340211682,
+    "is_calibrated": true,
     "conflated_value": "+393496434773",
     "candidates": {
       "current": "+393496434773",
       "base": "329 362 2229"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1568,16 +1936,20 @@
     "record_index": 92,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+15036121614",
     "candidates": {
       "current": "+15036121614",
       "base": "5036121614"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1585,33 +1957,41 @@
     "record_index": 93,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865375050503602,
+    "model_confidence": 0.8940356813185045,
+    "model_confidence_raw": 0.9341981007379827,
+    "current_probability_raw": 0.9341981007379827,
+    "current_probability_calibrated": 0.8940356813185045,
+    "is_calibrated": true,
     "conflated_value": "+448000565275",
     "candidates": {
       "current": "+448000565275",
       "base": "08000565275"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f4995b9d4208a20380224da236338f",
     "record_index": 94,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+525583202020",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+525583202020",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1619,16 +1999,20 @@
     "record_index": 95,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9952688468258314,
+    "model_confidence": 0.6441951331936273,
+    "model_confidence_raw": 0.6777080210596399,
+    "current_probability_raw": 0.6777080210596399,
+    "current_probability_calibrated": 0.6441951331936273,
+    "is_calibrated": true,
     "conflated_value": "+390105692790",
     "candidates": {
       "current": "+390105692790",
       "base": "105692790"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1636,16 +2020,20 @@
     "record_index": 96,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8043235979",
     "candidates": {
       "current": "8043235979",
       "base": "8043235979"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1653,16 +2041,20 @@
     "record_index": 97,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.8190750104847737,
+    "model_confidence": 0.5838898164356154,
+    "model_confidence_raw": 0.6019836629498941,
+    "current_probability_raw": 0.39801633705010586,
+    "current_probability_calibrated": 0.4161101835643846,
+    "is_calibrated": true,
     "conflated_value": "056 424 04 44",
     "candidates": {
       "current": "0564240444",
       "base": "056 424 04 44"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1670,16 +2062,20 @@
     "record_index": 98,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.728800225203444,
+    "model_confidence": 0.5270566073857404,
+    "model_confidence_raw": 0.5319055373119838,
+    "current_probability_raw": 0.46809446268801613,
+    "current_probability_calibrated": 0.47294339261425955,
+    "is_calibrated": true,
     "conflated_value": "724 449 839",
     "candidates": {
       "current": "800767626",
       "base": "724 449 839"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1687,16 +2083,20 @@
     "record_index": 99,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7588229674347353,
+    "model_confidence": 0.7796724987631689,
+    "model_confidence_raw": 0.8265784327183009,
+    "current_probability_raw": 0.17342156728169913,
+    "current_probability_calibrated": 0.22032750123683115,
+    "is_calibrated": true,
     "conflated_value": "(864) 255-3775",
     "candidates": {
       "current": "8642012000",
       "base": "(864) 255-3775"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1704,33 +2104,41 @@
     "record_index": 100,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+16207585657",
     "candidates": {
       "current": "+16207585657",
       "base": "6207585657"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "2251799819434396",
     "record_index": 101,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5202436725428944,
-    "conflated_value": "8134525382",
+    "selected_source": "base",
+    "model_confidence": 0.6354391571966691,
+    "model_confidence_raw": 0.6643723845598845,
+    "current_probability_raw": 0.3356276154401154,
+    "current_probability_calibrated": 0.36456084280333084,
+    "is_calibrated": true,
+    "conflated_value": "3523530299",
     "candidates": {
       "current": "8134525382",
       "base": "3523530299"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1738,33 +2146,41 @@
     "record_index": 102,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5178822046718846,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "601723181",
     "candidates": {
       "current": "601723181",
       "base": "601723181"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f658e764964a7403a88c11cb4e70e4",
     "record_index": 103,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1772,16 +2188,20 @@
     "record_index": 104,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8067014020",
     "candidates": {
       "current": "8067014020",
       "base": "8067014020"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1789,16 +2209,20 @@
     "record_index": 105,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "2257673900",
     "candidates": {
       "current": "2257673900",
       "base": "2257673900"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1806,16 +2230,20 @@
     "record_index": 106,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9920888930045071,
+    "model_confidence": 0.6800842104353704,
+    "model_confidence_raw": 0.719598897609048,
+    "current_probability_raw": 0.719598897609048,
+    "current_probability_calibrated": 0.6800842104353704,
+    "is_calibrated": true,
     "conflated_value": "+4542909048",
     "candidates": {
       "current": "+4542909048",
       "base": "42909048"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1823,16 +2251,20 @@
     "record_index": 107,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+16067272167",
     "candidates": {
       "current": "+16067272167",
       "base": "6067272167"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1840,16 +2272,20 @@
     "record_index": 108,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8028645551",
     "candidates": {
       "current": "8028645551",
       "base": "8028645551"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1857,16 +2293,20 @@
     "record_index": 109,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "4034541399",
     "candidates": {
       "current": "4034541399",
       "base": "4034541399"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1874,33 +2314,41 @@
     "record_index": 110,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866081115163614,
+    "model_confidence": 0.9824871842058842,
+    "model_confidence_raw": 0.9933333333333333,
+    "current_probability_raw": 0.9933333333333333,
+    "current_probability_calibrated": 0.9824871842058842,
+    "is_calibrated": true,
     "conflated_value": "+17016523147",
     "candidates": {
       "current": "+17016523147",
       "base": "7016523147"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f1e82252c1c0ae03c90f2f5d5feef9",
     "record_index": 111,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1908,33 +2356,41 @@
     "record_index": 112,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7587708123385679,
+    "model_confidence": 0.7845184267799785,
+    "model_confidence_raw": 0.8315784327183009,
+    "current_probability_raw": 0.1684215672816991,
+    "current_probability_calibrated": 0.21548157322002148,
+    "is_calibrated": true,
     "conflated_value": "(979) 942-3365",
     "candidates": {
       "current": "9797329683",
       "base": "(979) 942-3365"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08fb25919140d504031466d3d5beb5d2",
     "record_index": 113,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+548106661212",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+548106661212",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1942,16 +2398,20 @@
     "record_index": 114,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865807920233431,
+    "model_confidence": 0.9024602345337849,
+    "model_confidence_raw": 0.9408928571428571,
+    "current_probability_raw": 0.9408928571428571,
+    "current_probability_calibrated": 0.9024602345337849,
+    "is_calibrated": true,
     "conflated_value": "+18009422502",
     "candidates": {
       "current": "+18009422502",
       "base": "7279422502"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1959,16 +2419,20 @@
     "record_index": 115,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "3469012320",
     "candidates": {
       "current": "3469012320",
       "base": "3469012320"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1976,16 +2440,20 @@
     "record_index": 116,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9356870718410547,
+    "model_confidence": 0.8060049201488148,
+    "model_confidence_raw": 0.8549544654567086,
+    "current_probability_raw": 0.8549544654567086,
+    "current_probability_calibrated": 0.8060049201488148,
+    "is_calibrated": true,
     "conflated_value": "+492822977654",
     "candidates": {
       "current": "+492822977654",
       "base": "04928 22977654"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -1993,16 +2461,20 @@
     "record_index": 117,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "8438745034",
     "candidates": {
       "current": "8438745034",
       "base": "8438745034"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2010,16 +2482,20 @@
     "record_index": 118,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+17575349370",
     "candidates": {
       "current": "+17575349370",
       "base": "7575349370"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2027,16 +2503,20 @@
     "record_index": 119,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552952004217258,
+    "model_confidence": 0.8952855003206361,
+    "model_confidence_raw": 0.935202522690148,
+    "current_probability_raw": 0.935202522690148,
+    "current_probability_calibrated": 0.8952855003206361,
+    "is_calibrated": true,
     "conflated_value": "+17658553633",
     "candidates": {
       "current": "+17658553633",
       "base": "(765) 855-3633"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2044,16 +2524,20 @@
     "record_index": 120,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8951134244877661,
+    "model_confidence": 0.5925020833963297,
+    "model_confidence_raw": 0.6156506021327449,
+    "current_probability_raw": 0.6156506021327449,
+    "current_probability_calibrated": 0.5925020833963297,
+    "is_calibrated": true,
     "conflated_value": "+33388055939",
     "candidates": {
       "current": "+33388055939",
       "base": "03 88 05 59 39"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2061,16 +2545,20 @@
     "record_index": 121,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767782815141559,
+    "model_confidence": 0.6928051390810641,
+    "model_confidence_raw": 0.7341575554793903,
+    "current_probability_raw": 0.7341575554793903,
+    "current_probability_calibrated": 0.6928051390810641,
+    "is_calibrated": true,
     "conflated_value": "+390688921191",
     "candidates": {
       "current": "+390688921191",
       "base": "06 8892 1191"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2078,16 +2566,20 @@
     "record_index": 122,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9728647582865332,
+    "model_confidence": 0.9468369393698216,
+    "model_confidence_raw": 0.972884077314983,
+    "current_probability_raw": 0.972884077314983,
+    "current_probability_calibrated": 0.9468369393698216,
+    "is_calibrated": true,
     "conflated_value": "+558232701138",
     "candidates": {
       "current": "+558232701138",
       "base": "(82) 3270-1138"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2095,16 +2587,20 @@
     "record_index": 123,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865370707376144,
+    "model_confidence": 0.6174717339490614,
+    "model_confidence_raw": 0.6458432350533411,
+    "current_probability_raw": 0.6458432350533411,
+    "current_probability_calibrated": 0.6174717339490614,
+    "is_calibrated": true,
     "conflated_value": "+441303211224",
     "candidates": {
       "current": "+441303211224",
       "base": "01303211224"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2112,16 +2608,20 @@
     "record_index": 124,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865489100118026,
+    "model_confidence": 0.9024602345337849,
+    "model_confidence_raw": 0.9408928571428571,
+    "current_probability_raw": 0.9408928571428571,
+    "current_probability_calibrated": 0.9024602345337849,
+    "is_calibrated": true,
     "conflated_value": "+16094369525",
     "candidates": {
       "current": "+16094369525",
       "base": "6096551448"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2129,16 +2629,20 @@
     "record_index": 125,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9362509780214273,
+    "model_confidence": 0.6825273940180004,
+    "model_confidence_raw": 0.7224076483816568,
+    "current_probability_raw": 0.7224076483816568,
+    "current_probability_calibrated": 0.6825273940180004,
+    "is_calibrated": true,
     "conflated_value": "+4923022060",
     "candidates": {
       "current": "+4923022060",
       "base": "04923 022060"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2146,16 +2650,20 @@
     "record_index": 126,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5208619992122041,
+    "model_confidence": 0.5933484362490087,
+    "model_confidence_raw": 0.6166797008025791,
+    "current_probability_raw": 0.6166797008025791,
+    "current_probability_calibrated": 0.5933484362490087,
+    "is_calibrated": true,
     "conflated_value": "4123663214",
     "candidates": {
       "current": "4123663214",
       "base": "4123666828"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2163,16 +2671,20 @@
     "record_index": 127,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "4168886365",
     "candidates": {
       "current": "4168886365",
       "base": "4168886365"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2180,16 +2692,20 @@
     "record_index": 128,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767834730697015,
+    "model_confidence": 0.7976045324736312,
+    "model_confidence_raw": 0.8466282200792921,
+    "current_probability_raw": 0.8466282200792921,
+    "current_probability_calibrated": 0.7976045324736312,
+    "is_calibrated": true,
     "conflated_value": "+526646863361",
     "candidates": {
       "current": "+526646863361",
       "base": "664 686 3361"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2197,16 +2713,20 @@
     "record_index": 129,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9864703574855138,
+    "model_confidence": 0.8025452651785967,
+    "model_confidence_raw": 0.8515395938345557,
+    "current_probability_raw": 0.8515395938345557,
+    "current_probability_calibrated": 0.8025452651785967,
+    "is_calibrated": true,
     "conflated_value": "+4934197855045",
     "candidates": {
       "current": "+4934197855045",
       "base": "034197855045"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2214,16 +2734,20 @@
     "record_index": 130,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9551111621672316,
+    "model_confidence": 0.9942246559856671,
+    "model_confidence_raw": 0.9983333333333334,
+    "current_probability_raw": 0.9983333333333334,
+    "current_probability_calibrated": 0.9942246559856671,
+    "is_calibrated": true,
     "conflated_value": "+61872308040",
     "candidates": {
       "current": "+61872308040",
       "base": "(08) 8227 2226"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2231,16 +2755,20 @@
     "record_index": 131,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9616447476075448,
+    "model_confidence": 0.7346790106725354,
+    "model_confidence_raw": 0.7808260373046538,
+    "current_probability_raw": 0.7808260373046538,
+    "current_probability_calibrated": 0.7346790106725354,
+    "is_calibrated": true,
     "conflated_value": "+1072387162",
     "candidates": {
       "current": "+1072387162",
       "base": "07-238 7162"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2248,16 +2776,20 @@
     "record_index": 132,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866004247577579,
+    "model_confidence": 0.8982603265001091,
+    "model_confidence_raw": 0.9375776397515527,
+    "current_probability_raw": 0.9375776397515527,
+    "current_probability_calibrated": 0.8982603265001091,
+    "is_calibrated": true,
     "conflated_value": "+18502585156",
     "candidates": {
       "current": "+18502585156",
       "base": "8502485156"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2265,33 +2797,41 @@
     "record_index": 133,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "4154831854",
     "candidates": {
       "current": "4154831854",
       "base": "4154831854"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1125899910838791",
     "record_index": 134,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5197722885513523,
-    "conflated_value": "2092522488",
+    "selected_source": "base",
+    "model_confidence": 0.6354391571966691,
+    "model_confidence_raw": 0.6643723845598845,
+    "current_probability_raw": 0.3356276154401154,
+    "current_probability_calibrated": 0.36456084280333084,
+    "is_calibrated": true,
+    "conflated_value": "8005397571",
     "candidates": {
       "current": "2092522488",
       "base": "8005397571"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2299,16 +2839,20 @@
     "record_index": 135,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767834730697015,
+    "model_confidence": 0.7976045324736312,
+    "model_confidence_raw": 0.8466282200792921,
+    "current_probability_raw": 0.8466282200792921,
+    "current_probability_calibrated": 0.7976045324736312,
+    "is_calibrated": true,
     "conflated_value": "+393271820090",
     "candidates": {
       "current": "+393271820090",
       "base": "327 182 0090"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2316,16 +2860,20 @@
     "record_index": 136,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9769787927538464,
+    "model_confidence": 0.7979491875938189,
+    "model_confidence_raw": 0.8469721340251006,
+    "current_probability_raw": 0.8469721340251006,
+    "current_probability_calibrated": 0.7979491875938189,
+    "is_calibrated": true,
     "conflated_value": "+4981789979337",
     "candidates": {
       "current": "+4981789979337",
       "base": "08178 9979337"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2333,16 +2881,20 @@
     "record_index": 137,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.6063757793676128,
+    "model_confidence": 0.58870749980692,
+    "model_confidence_raw": 0.6078741050859086,
+    "current_probability_raw": 0.39212589491409117,
+    "current_probability_calibrated": 0.41129250019307995,
+    "is_calibrated": true,
     "conflated_value": "010 465607",
     "candidates": {
       "current": "010465607",
       "base": "010 465607"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2350,16 +2902,20 @@
     "record_index": 138,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.955223028352872,
+    "model_confidence": 0.5541285912277404,
+    "model_confidence_raw": 0.5686547619047618,
+    "current_probability_raw": 0.5686547619047618,
+    "current_probability_calibrated": 0.5541285912277404,
+    "is_calibrated": true,
     "conflated_value": "+12297233033",
     "candidates": {
       "current": "+12297233033",
       "base": "(229) 723-4304"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2367,16 +2923,20 @@
     "record_index": 139,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.983596960551867,
+    "model_confidence": 0.7542446160832812,
+    "model_confidence_raw": 0.8018916217515181,
+    "current_probability_raw": 0.8018916217515181,
+    "current_probability_calibrated": 0.7542446160832812,
+    "is_calibrated": true,
     "conflated_value": "+5514997422255",
     "candidates": {
       "current": "+5514997422255",
       "base": "(14) 3653-5659"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2384,16 +2944,20 @@
     "record_index": 140,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767647592393609,
+    "model_confidence": 0.7989852340211682,
+    "model_confidence_raw": 0.8480047777016124,
+    "current_probability_raw": 0.8480047777016124,
+    "current_probability_calibrated": 0.7989852340211682,
+    "is_calibrated": true,
     "conflated_value": "+529222237633",
     "candidates": {
       "current": "+529222237633",
       "base": "992 223 7635"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2401,16 +2965,20 @@
     "record_index": 141,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+18888094713",
     "candidates": {
       "current": "+18888094713",
       "base": "8888094713"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2418,16 +2986,20 @@
     "record_index": 142,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552952004217258,
+    "model_confidence": 0.8952855003206361,
+    "model_confidence_raw": 0.935202522690148,
+    "current_probability_raw": 0.935202522690148,
+    "current_probability_calibrated": 0.8952855003206361,
+    "is_calibrated": true,
     "conflated_value": "+14243995282",
     "candidates": {
       "current": "+14243995282",
       "base": "(424) 399-5282"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2435,16 +3007,20 @@
     "record_index": 143,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9865674555508577,
+    "model_confidence": 0.9024602345337849,
+    "model_confidence_raw": 0.9408928571428571,
+    "current_probability_raw": 0.9408928571428571,
+    "current_probability_calibrated": 0.9024602345337849,
+    "is_calibrated": true,
     "conflated_value": "+18596297200",
     "candidates": {
       "current": "+18596297200",
       "base": "8592631280"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2452,33 +3028,41 @@
     "record_index": 144,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767084092865912,
+    "model_confidence": 0.7989852340211682,
+    "model_confidence_raw": 0.8480047777016124,
+    "current_probability_raw": 0.8480047777016124,
+    "current_probability_calibrated": 0.7989852340211682,
+    "is_calibrated": true,
     "conflated_value": "+528713304139",
     "candidates": {
       "current": "+528713304139",
       "base": "871 123 4567"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "562949958305102",
     "record_index": 145,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5198430287877743,
-    "conflated_value": "4696102838",
+    "selected_source": "base",
+    "model_confidence": 0.6354391571966691,
+    "model_confidence_raw": 0.6643723845598845,
+    "current_probability_raw": 0.3356276154401154,
+    "current_probability_calibrated": 0.36456084280333084,
+    "is_calibrated": true,
+    "conflated_value": "2144491884",
     "candidates": {
       "current": "4696102838",
       "base": "2144491884"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2486,16 +3070,20 @@
     "record_index": 146,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "9036184002",
     "candidates": {
       "current": "9036184002",
       "base": "9036184002"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2503,16 +3091,20 @@
     "record_index": 147,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552896139948981,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+18005118940",
     "candidates": {
       "current": "+18005118940",
       "base": "(800) 511-8940"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2520,50 +3112,62 @@
     "record_index": 148,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866658016318216,
+    "model_confidence": 0.6625370966092523,
+    "model_confidence_raw": 0.6992594738062333,
+    "current_probability_raw": 0.6992594738062333,
+    "current_probability_calibrated": 0.6625370966092523,
+    "is_calibrated": true,
     "conflated_value": "+4938608090",
     "candidates": {
       "current": "+4938608090",
       "base": "038608090"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1970324842205440",
     "record_index": 149,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5204603076619214,
-    "conflated_value": "9194579230",
+    "selected_source": "base",
+    "model_confidence": 0.5875900472849465,
+    "model_confidence_raw": 0.6065087481962482,
+    "current_probability_raw": 0.3934912518037518,
+    "current_probability_calibrated": 0.4124099527150535,
+    "is_calibrated": true,
+    "conflated_value": "9195616211",
     "candidates": {
       "current": "9194579230",
       "base": "9195616211"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f41695326f2812035673b147fa47f6",
     "record_index": 150,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2571,16 +3175,20 @@
     "record_index": 151,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.986599944411944,
+    "model_confidence": 0.9321715836956435,
+    "model_confidence_raw": 0.9629761904761905,
+    "current_probability_raw": 0.9629761904761905,
+    "current_probability_calibrated": 0.9321715836956435,
+    "is_calibrated": true,
     "conflated_value": "+49335414870",
     "candidates": {
       "current": "+49335414870",
       "base": "0335414870"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2588,16 +3196,20 @@
     "record_index": 152,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9952695311315227,
+    "model_confidence": 0.6322519661275875,
+    "model_confidence_raw": 0.6635305669291425,
+    "current_probability_raw": 0.6635305669291425,
+    "current_probability_calibrated": 0.6322519661275875,
+    "is_calibrated": true,
     "conflated_value": "+351255511936",
     "candidates": {
       "current": "+351255511936",
       "base": "255511936"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2605,16 +3217,20 @@
     "record_index": 153,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.976751108688357,
+    "model_confidence": 0.7989852340211682,
+    "model_confidence_raw": 0.8480047777016124,
+    "current_probability_raw": 0.8480047777016124,
+    "current_probability_calibrated": 0.7989852340211682,
+    "is_calibrated": true,
     "conflated_value": "+528677124373",
     "candidates": {
       "current": "+528677124373",
       "base": "867 712 4737"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2622,16 +3238,20 @@
     "record_index": 154,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+18478954447",
     "candidates": {
       "current": "+18478954447",
       "base": "8478954447"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2639,33 +3259,41 @@
     "record_index": 155,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "0292369090",
     "candidates": {
       "current": "0292369090",
       "base": "0292369090"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "1125899908396217",
     "record_index": 156,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5154261013111763,
+    "selected_source": "base",
+    "model_confidence": 0.5527738431832117,
+    "model_confidence_raw": 0.5637251193576737,
+    "current_probability_raw": 0.4362748806423265,
+    "current_probability_calibrated": 0.44722615681678834,
+    "is_calibrated": true,
     "conflated_value": "01634671651",
     "candidates": {
       "current": "01634671651",
       "base": "01634671651"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2673,16 +3301,20 @@
     "record_index": 157,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8946747340827661,
+    "model_confidence": 0.8729086479682621,
+    "model_confidence_raw": 0.9166565545136974,
+    "current_probability_raw": 0.9166565545136974,
+    "current_probability_calibrated": 0.8729086479682621,
+    "is_calibrated": true,
     "conflated_value": "+33892353535",
     "candidates": {
       "current": "+33892353535",
       "base": "01 42 14 20 00"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2690,16 +3322,20 @@
     "record_index": 158,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9864799252977381,
+    "model_confidence": 0.8888624430868053,
+    "model_confidence_raw": 0.93,
+    "current_probability_raw": 0.93,
+    "current_probability_calibrated": 0.8888624430868053,
+    "is_calibrated": true,
     "conflated_value": "+101982553608",
     "candidates": {
       "current": "+101982553608",
       "base": "03301230764"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2707,16 +3343,20 @@
     "record_index": 159,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.6063742183404192,
+    "model_confidence": 0.58870749980692,
+    "model_confidence_raw": 0.6078741050859086,
+    "current_probability_raw": 0.39212589491409117,
+    "current_probability_calibrated": 0.41129250019307995,
+    "is_calibrated": true,
     "conflated_value": "0961 39099",
     "candidates": {
       "current": "096139099",
       "base": "0961 39099"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2724,16 +3364,20 @@
     "record_index": 160,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9864731345647006,
+    "model_confidence": 0.76816816924758,
+    "model_confidence_raw": 0.8165629988514173,
+    "current_probability_raw": 0.8165629988514173,
+    "current_probability_calibrated": 0.76816816924758,
+    "is_calibrated": true,
     "conflated_value": "+4920997756247",
     "candidates": {
       "current": "+4920997756247",
       "base": "020997756247"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2741,16 +3385,20 @@
     "record_index": 161,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866107036226414,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+18152268550",
     "candidates": {
       "current": "+18152268550",
       "base": "8152268550"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2758,16 +3406,20 @@
     "record_index": 162,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866094076313716,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+14233219573",
     "candidates": {
       "current": "+14233219573",
       "base": "4233219573"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2775,16 +3427,20 @@
     "record_index": 163,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552910106639851,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+13017409244",
     "candidates": {
       "current": "+13017409244",
       "base": "(301) 740-9244"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2792,16 +3448,20 @@
     "record_index": 164,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8950703160793586,
+    "model_confidence": 0.8794929503098113,
+    "model_confidence_raw": 0.9222344765916194,
+    "current_probability_raw": 0.9222344765916194,
+    "current_probability_calibrated": 0.8794929503098113,
+    "is_calibrated": true,
     "conflated_value": "+33450328615",
     "candidates": {
       "current": "+33450328615",
       "base": "04 50 32 86 15"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2809,33 +3469,41 @@
     "record_index": 165,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552924072914847,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+13103606888",
     "candidates": {
       "current": "+13103606888",
       "base": "(310) 360-6888"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08fa8c241822e42503ab5d13ab28882d",
     "record_index": 166,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2843,33 +3511,41 @@
     "record_index": 167,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9551602930404132,
+    "model_confidence": 0.9942246559856671,
+    "model_confidence_raw": 0.9983333333333334,
+    "current_probability_raw": 0.9983333333333334,
+    "current_probability_calibrated": 0.9942246559856671,
+    "is_calibrated": true,
     "conflated_value": "+19169437958",
     "candidates": {
       "current": "+19169437958",
       "base": "(916) 892-0708"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f28308106929aa0322048f73b8a6a1",
     "record_index": 168,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5204641163493382,
-    "conflated_value": "5104633888",
+    "selected_source": "base",
+    "model_confidence": 0.5763178552867805,
+    "model_confidence_raw": 0.5927057178932178,
+    "current_probability_raw": 0.4072942821067821,
+    "current_probability_calibrated": 0.4236821447132195,
+    "is_calibrated": true,
+    "conflated_value": "5106479364",
     "candidates": {
       "current": "5104633888",
       "base": "5106479364"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2877,33 +3553,41 @@
     "record_index": 169,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767797649313733,
+    "model_confidence": 0.8048716784439943,
+    "model_confidence_raw": 0.8538381110349458,
+    "current_probability_raw": 0.8538381110349458,
+    "current_probability_calibrated": 0.8048716784439943,
+    "is_calibrated": true,
     "conflated_value": "+527597277610",
     "candidates": {
       "current": "+527597277610",
       "base": "759 727 7610"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f64b1b0e401063031c58c4f99da9d7",
     "record_index": 170,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2911,33 +3595,41 @@
     "record_index": 171,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866023459711695,
+    "model_confidence": 0.8795660442452388,
+    "model_confidence_raw": 0.9222958471267294,
+    "current_probability_raw": 0.9222958471267294,
+    "current_probability_calibrated": 0.8795660442452388,
+    "is_calibrated": true,
     "conflated_value": "+81465439278",
     "candidates": {
       "current": "+81465439278",
       "base": "0465439278"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f1969045565263037bc7b1b7bf1e37",
     "record_index": 172,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+31318743333",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+31318743333",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2945,16 +3637,20 @@
     "record_index": 173,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.8950532524780317,
+    "model_confidence": 0.8729086479682621,
+    "model_confidence_raw": 0.9166565545136974,
+    "current_probability_raw": 0.9166565545136974,
+    "current_probability_calibrated": 0.8729086479682621,
+    "is_calibrated": true,
     "conflated_value": "+33563370037",
     "candidates": {
       "current": "+33563370037",
       "base": "05 63 37 00 37"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2962,16 +3658,20 @@
     "record_index": 174,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+12606236355",
     "candidates": {
       "current": "+12606236355",
       "base": "2606236355"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -2979,50 +3679,62 @@
     "record_index": 175,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9769834726044715,
+    "model_confidence": 0.7499945314963437,
+    "model_confidence_raw": 0.7973592124588239,
+    "current_probability_raw": 0.7973592124588239,
+    "current_probability_calibrated": 0.7499945314963437,
+    "is_calibrated": true,
     "conflated_value": "+4977216809155",
     "candidates": {
       "current": "+4977216809155",
       "base": "07721 6809155"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f19424ccc1e0820363bbececd4900d",
     "record_index": 176,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5154261013111763,
+    "selected_source": "base",
+    "model_confidence": 0.5527738431832117,
+    "model_confidence_raw": 0.5637251193576737,
+    "current_probability_raw": 0.4362748806423265,
+    "current_probability_calibrated": 0.44722615681678834,
+    "is_calibrated": true,
     "conflated_value": "03308085456",
     "candidates": {
       "current": "03308085456",
       "base": "03308085456"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f658b4a649caad035bb199a7052b42",
     "record_index": 177,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "nan",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "nan",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3030,16 +3742,20 @@
     "record_index": 178,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "0306353853",
     "candidates": {
       "current": "0306353853",
       "base": "0306353853"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3047,16 +3763,20 @@
     "record_index": 179,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767834730697015,
+    "model_confidence": 0.7976045324736312,
+    "model_confidence_raw": 0.8466282200792921,
+    "current_probability_raw": 0.8466282200792921,
+    "current_probability_calibrated": 0.7976045324736312,
+    "is_calibrated": true,
     "conflated_value": "+524448176100",
     "candidates": {
       "current": "+524448176100",
       "base": "444 817 6100"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3064,16 +3784,20 @@
     "record_index": 180,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9767812482560815,
+    "model_confidence": 0.8154975896175561,
+    "model_confidence_raw": 0.8642193913520099,
+    "current_probability_raw": 0.8642193913520099,
+    "current_probability_calibrated": 0.8154975896175561,
+    "is_calibrated": true,
     "conflated_value": "+393293657448",
     "candidates": {
       "current": "+393293657448",
       "base": "329 365 7448"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3081,16 +3805,20 @@
     "record_index": 181,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+15869497740",
     "candidates": {
       "current": "+15869497740",
       "base": "5869497740"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3098,16 +3826,20 @@
     "record_index": 182,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9550646531874941,
+    "model_confidence": 0.9942246559856671,
+    "model_confidence_raw": 0.9983333333333334,
+    "current_probability_raw": 0.9983333333333334,
+    "current_probability_calibrated": 0.9942246559856671,
+    "is_calibrated": true,
     "conflated_value": "+18003326858",
     "candidates": {
       "current": "+18003326858",
       "base": "(703) 440-1041"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3115,16 +3847,20 @@
     "record_index": 183,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9551195734312322,
+    "model_confidence": 0.9942246559856671,
+    "model_confidence_raw": 0.9983333333333334,
+    "current_probability_raw": 0.9983333333333334,
+    "current_probability_calibrated": 0.9942246559856671,
+    "is_calibrated": true,
     "conflated_value": "+15615868666",
     "candidates": {
       "current": "+15615868666",
       "base": "(416) 525-3283"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3132,33 +3868,41 @@
     "record_index": 184,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+12818641001",
     "candidates": {
       "current": "+12818641001",
       "base": "2818641001"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f194ad0131a06b031c2633af407eb2",
     "record_index": 185,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.5154261013111763,
+    "selected_source": "base",
+    "model_confidence": 0.5527738431832117,
+    "model_confidence_raw": 0.5637251193576737,
+    "current_probability_raw": 0.4362748806423265,
+    "current_probability_calibrated": 0.44722615681678834,
+    "is_calibrated": true,
     "conflated_value": "08000086964",
     "candidates": {
       "current": "08000086964",
       "base": "08000086964"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3166,33 +3910,41 @@
     "record_index": 186,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9552952004217258,
+    "model_confidence": 0.8952855003206361,
+    "model_confidence_raw": 0.935202522690148,
+    "current_probability_raw": 0.935202522690148,
+    "current_probability_calibrated": 0.8952855003206361,
+    "is_calibrated": true,
     "conflated_value": "+16784359604",
     "candidates": {
       "current": "+16784359604",
       "base": "(678) 435-9604"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f424927109622803649838ac7eb6a2",
     "record_index": 187,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "091180 01200",
     "candidates": {
       "current": "",
       "base": "091180 01200"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3200,33 +3952,41 @@
     "record_index": 188,
     "attribute": "phone",
     "selected_source": "base",
-    "model_confidence": 0.7590452654557382,
+    "model_confidence": 0.7796724987631689,
+    "model_confidence_raw": 0.8265784327183009,
+    "current_probability_raw": 0.17342156728169913,
+    "current_probability_calibrated": 0.22032750123683115,
+    "is_calibrated": true,
     "conflated_value": "(863) 688-1188",
     "candidates": {
       "current": "8002421227",
       "base": "(863) 688-1188"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f2661b7016194a032ee6510609a5e5",
     "record_index": 189,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+13175475439",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+13175475439",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3234,16 +3994,20 @@
     "record_index": 190,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5210350886038413,
+    "model_confidence": 0.6105812276978683,
+    "model_confidence_raw": 0.6375481641975493,
+    "current_probability_raw": 0.6375481641975493,
+    "current_probability_calibrated": 0.6105812276978683,
+    "is_calibrated": true,
     "conflated_value": "6127889029",
     "candidates": {
       "current": "6127889029",
       "base": "6127884322"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3251,33 +4015,41 @@
     "record_index": 191,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+12395617215",
     "candidates": {
       "current": "+12395617215",
       "base": "2395617215"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
     "id": "08f8b221a404320d03b459bdb2275ea1",
     "record_index": 192,
     "attribute": "phone",
-    "selected_source": "current",
-    "model_confidence": 0.532869524705564,
-    "conflated_value": "+59178510290",
+    "selected_source": "base",
+    "model_confidence": 0.6459477346969161,
+    "model_confidence_raw": 0.6768841630256116,
+    "current_probability_raw": 0.32311583697438834,
+    "current_probability_calibrated": 0.35405226530308387,
+    "is_calibrated": true,
+    "conflated_value": "None",
     "candidates": {
       "current": "+59178510290",
       "base": "None"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3285,16 +4057,20 @@
     "record_index": 193,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866076794505249,
+    "model_confidence": 0.999985306294219,
+    "model_confidence_raw": 1.0,
+    "current_probability_raw": 1.0,
+    "current_probability_calibrated": 0.999985306294219,
+    "is_calibrated": true,
     "conflated_value": "+17166928181",
     "candidates": {
       "current": "+17166928181",
       "base": "7166928181"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3302,16 +4078,20 @@
     "record_index": 194,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+17578664652",
     "candidates": {
       "current": "+17578664652",
       "base": "7578664652"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3319,16 +4099,20 @@
     "record_index": 195,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9952695311315227,
+    "model_confidence": 0.6322519661275875,
+    "model_confidence_raw": 0.6635305669291425,
+    "current_probability_raw": 0.6635305669291425,
+    "current_probability_calibrated": 0.6322519661275875,
+    "is_calibrated": true,
     "conflated_value": "+351275333397",
     "candidates": {
       "current": "+351275333397",
       "base": "275333397"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3336,16 +4120,20 @@
     "record_index": 196,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9612207148685977,
+    "model_confidence": 0.7019365238115455,
+    "model_confidence_raw": 0.7445044359840989,
+    "current_probability_raw": 0.7445044359840989,
+    "current_probability_calibrated": 0.7019365238115455,
+    "is_calibrated": true,
     "conflated_value": "+543624450065",
     "candidates": {
       "current": "+543624450065",
       "base": "03722 45-0065"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3353,16 +4141,20 @@
     "record_index": 197,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.5166542535689633,
+    "model_confidence": 0.54383010246896,
+    "model_confidence_raw": 0.5559521210811597,
+    "current_probability_raw": 0.5559521210811597,
+    "current_probability_calibrated": 0.54383010246896,
+    "is_calibrated": true,
     "conflated_value": "9045957950",
     "candidates": {
       "current": "9045957950",
       "base": "9045957950"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3370,16 +4162,20 @@
     "record_index": 198,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.9866115675480823,
+    "model_confidence": 0.9218420720875605,
+    "model_confidence_raw": 0.9555847945414786,
+    "current_probability_raw": 0.9555847945414786,
+    "current_probability_calibrated": 0.9218420720875605,
+    "is_calibrated": true,
     "conflated_value": "+19738303163",
     "candidates": {
       "current": "+19738303163",
       "base": "9738303163"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   },
   {
@@ -3387,16 +4183,20 @@
     "record_index": 199,
     "attribute": "phone",
     "selected_source": "current",
-    "model_confidence": 0.961296128596662,
+    "model_confidence": 0.6760161711251612,
+    "model_confidence_raw": 0.7149092580482914,
+    "current_probability_raw": 0.7149092580482914,
+    "current_probability_calibrated": 0.6760161711251612,
+    "is_calibrated": true,
     "conflated_value": "+390758943730",
     "candidates": {
       "current": "+390758943730",
       "base": "397 5894 3730"
     },
     "inference_meta": {
-      "duration_seconds": 0.0013496875762939453,
-      "initial_memory_mb": 100.171875,
-      "peak_memory_mb": 165.296875
+      "duration_seconds": 0.05924677848815918,
+      "initial_memory_mb": 96.90625,
+      "peak_memory_mb": 185.171875
     }
   }
 ]

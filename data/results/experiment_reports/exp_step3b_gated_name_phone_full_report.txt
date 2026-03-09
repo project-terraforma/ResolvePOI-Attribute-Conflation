@@ -1,0 +1,60 @@
+================================================================================
+MAYHEM PROJECT: FINAL RESULTS ANALYSIS
+================================================================================
+
+--- PERFORMANCE METRICS (200 Real Records) ---
+| Attribute   | Algorithm              |   F1-Score |   Accuracy |   Precision |   Recall |   Coverage |
+|:------------|:-----------------------|-----------:|-----------:|------------:|---------:|-----------:|
+| Address     | Baseline: Hybrid       |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Address     | Baseline: Most Recent  |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Address     | Baseline: Completeness |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Address     | Baseline: Confidence   |     0.7535 |     0.6500 |      0.7589 |   0.7483 |     1.0000 |
+| Address     | ML Model               |     0.2558 |     0.3600 |      0.7586 |   0.1538 |     1.0000 |
+| Category    | Baseline: Most Recent  |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Category    | Baseline: Hybrid       |     0.8094 |     0.7150 |      0.7756 |   0.8462 |     1.0000 |
+| Category    | Baseline: Confidence   |     0.7564 |     0.6650 |      0.7879 |   0.7273 |     1.0000 |
+| Category    | Baseline: Completeness |     0.7231 |     0.6400 |      0.8034 |   0.6573 |     1.0000 |
+| Category    | ML Model               |     0.6760 |     0.5350 |      0.6736 |   0.6783 |     1.0000 |
+| Name        | Baseline: Most Recent  |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
+| Name        | Baseline: Confidence   |     0.7692 |     0.6550 |      0.7372 |   0.8042 |     1.0000 |
+| Name        | Baseline: Hybrid       |     0.7667 |     0.6500 |      0.7325 |   0.8042 |     1.0000 |
+| Name        | ML Model               |     0.7491 |     0.6450 |      0.7571 |   0.7413 |     1.0000 |
+| Name        | Baseline: Completeness |     0.7319 |     0.6300 |      0.7594 |   0.7063 |     1.0000 |
+| Phone       | Baseline: Completeness |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | Baseline: Most Recent  |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | Baseline: Hybrid       |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | ML Model               |     0.8053 |     0.7050 |      0.7625 |   0.8531 |     1.0000 |
+| Phone       | Baseline: Confidence   |     0.7616 |     0.6650 |      0.7754 |   0.7483 |     1.0000 |
+| Website     | Baseline: Completeness |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
+| Website     | Baseline: Hybrid       |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
+| Website     | Baseline: Most Recent  |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
+| Website     | Baseline: Confidence   |     0.7832 |     0.6900 |      0.7832 |   0.7832 |     1.0000 |
+| Website     | ML Model               |     0.7582 |     0.6300 |      0.7117 |   0.8112 |     1.0000 |
+
+--- OKR 2.1 CHECK (ML vs. Most Recent Baseline) ---
+Address: ML (0.2558) vs Baseline (0.8338) -> -69.32% Improvement  FAILED ❌
+Category: ML (0.6760) vs Baseline (0.8338) -> -18.93% Improvement  FAILED ❌
+Name: ML (0.7491) vs Baseline (0.8338) -> -10.16% Improvement  FAILED ❌
+Phone: ML (0.8053) vs Baseline (0.8554) -> -5.86% Improvement  FAILED ❌
+Website: ML (0.7582) vs Baseline (0.8323) -> -8.90% Improvement  FAILED ❌
+
+--- COMPUTE METRICS (Training) ---
+| Attribute   | Best Model          |   Train Time (s) |   Peak Memory (MB) |
+|:------------|:--------------------|-----------------:|-------------------:|
+| Category    | logistic_regression |           0.0030 |           192.8281 |
+| Website     | gradient_boosting   |           0.0917 |           198.4844 |
+| Address     | logistic_regression |           0.0030 |           193.3594 |
+| Phone       | logistic_regression |           0.0030 |           193.5312 |
+| Name        | logistic_regression |           0.0064 |           194.0000 |
+
+--- COMPUTE METRICS (Inference on 2k Records) ---
+| Attribute   |   Total Inference Time (s) |   Time Per Record (ms) |   Peak Memory (MB) |
+|:------------|---------------------------:|-----------------------:|-------------------:|
+| Category    |                     0.0598 |                 0.0299 |           237.4219 |
+| Website     |                     0.0014 |                 0.0007 |           197.5156 |
+| Name        |                     0.0624 |                 0.0312 |           213.6562 |
+| Phone       |                     0.0014 |                 0.0007 |           198.7344 |
+| Address     |                     0.0014 |                 0.0007 |           197.5938 |
+
+--- OKR 2.3 CHECK (< 100ms Inference Time) ---
+Average Time Per Record: 0.0126 ms  PASSED ✅

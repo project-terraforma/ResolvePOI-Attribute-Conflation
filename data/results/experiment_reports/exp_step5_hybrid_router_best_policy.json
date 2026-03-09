@@ -1,12 +1,12 @@
 {
   "name": {
     "mode": "confidence_gate",
-    "threshold": 0.7,
+    "threshold": 0.9,
     "baseline": "most_recent"
   },
   "address": {
     "mode": "confidence_gate",
-    "threshold": 0.65,
+    "threshold": 0.85,
     "baseline": "hybrid"
   },
   "phone": {

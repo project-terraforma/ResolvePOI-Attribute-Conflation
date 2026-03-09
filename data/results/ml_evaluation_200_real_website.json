@@ -1,13 +1,13 @@
 {
   "algorithm": "ML Model (website)",
   "metrics": {
-    "accuracy": 0.42,
-    "precision": 0.6421052631578947,
-    "recall": 0.42657342657342656,
-    "f1": 0.5126050420168067,
-    "n_samples": 200
+    "accuracy": 0.4543147208121827,
+    "precision": 0.7127659574468085,
+    "recall": 0.4542372881355932,
+    "f1": 0.5548654244306418,
+    "n_samples": 394
   },
   "coverage": 1.0,
-  "n_total": 200,
+  "n_total": 400,
   "n_unclear": 0
 }

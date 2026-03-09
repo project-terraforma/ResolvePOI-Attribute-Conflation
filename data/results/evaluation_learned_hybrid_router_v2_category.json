@@ -1,0 +1,21 @@
+{
+  "algorithm": "Learned Hybrid Router (category)",
+  "metrics": {
+    "accuracy": 0.715,
+    "precision": 0.715,
+    "recall": 1.0,
+    "f1": 0.8338192419825073,
+    "n_samples": 200
+  },
+  "coverage": 1.0,
+  "n_total": 200,
+  "n_unclear": 0,
+  "router_meta": {
+    "baseline": "most_recent",
+    "mode": "learned_logreg_router_cv",
+    "threshold": 0.35,
+    "best_c": 0.2,
+    "cv_accuracy": 0.6667226890756304,
+    "n_train_rows": 171
+  }
+}

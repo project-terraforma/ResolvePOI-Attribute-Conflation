@@ -8,24 +8,24 @@
   },
   "searched_configs": 541696,
   "best": {
-    "macro_f1": 0.8395484955304748,
-    "weighted_f1": 0.8395484955304748,
+    "macro_f1": 0.857454055958082,
+    "weighted_f1": 0.857454055958082,
     "per_attr_f1": {
-      "name": 0.8338192419825073,
-      "phone": 0.8554216867469879,
-      "website": 0.832258064516129,
-      "address": 0.8424242424242424,
-      "category": 0.8338192419825073
+      "name": 0.8563134978229318,
+      "phone": 0.8725637181409296,
+      "website": 0.8449367088607594,
+      "address": 0.8563134978229318,
+      "category": 0.8571428571428571
     },
     "policy": {
       "name": {
         "mode": "confidence_gate",
-        "threshold": 0.7,
+        "threshold": 0.9,
         "baseline": "most_recent"
       },
       "address": {
         "mode": "confidence_gate",
-        "threshold": 0.65,
+        "threshold": 0.85,
         "baseline": "hybrid"
       },
       "phone": {
@@ -47,24 +47,24 @@
   },
   "top_k": [
     {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
       "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
       },
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.7,
+          "threshold": 0.9,
           "baseline": "most_recent"
         },
         "address": {
           "mode": "confidence_gate",
-          "threshold": 0.65,
+          "threshold": 0.85,
           "baseline": "hybrid"
         },
         "phone": {
@@ -85,100 +85,24 @@
       }
     },
     {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
       "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
       },
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.7,
+          "threshold": 0.9,
           "baseline": "most_recent"
         },
         "address": {
           "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "most_recent"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
-          "mode": "confidence_gate",
-          "threshold": 0.7,
-          "baseline": "most_recent"
-        },
-        "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "completeness"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
-          "mode": "confidence_gate",
-          "threshold": 0.75,
-          "baseline": "most_recent"
-        },
-        "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
+          "threshold": 0.9,
           "baseline": "hybrid"
         },
         "phone": {
@@ -199,214 +123,302 @@
       }
     },
     {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
       "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
       },
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.75,
+          "threshold": 0.9,
           "baseline": "most_recent"
         },
         "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "most_recent"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
-          "mode": "confidence_gate",
-          "threshold": 0.75,
-          "baseline": "most_recent"
-        },
-        "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "completeness"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
-          "mode": "confidence_gate",
-          "threshold": 0.8,
-          "baseline": "most_recent"
-        },
-        "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "hybrid"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
-          "mode": "confidence_gate",
-          "threshold": 0.8,
-          "baseline": "most_recent"
-        },
-        "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "most_recent"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
-          "mode": "confidence_gate",
-          "threshold": 0.8,
-          "baseline": "most_recent"
-        },
-        "address": {
-          "mode": "confidence_gate",
-          "threshold": 0.65,
-          "baseline": "completeness"
-        },
-        "phone": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "website": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "hybrid"
-        },
-        "category": {
-          "mode": "baseline_only",
-          "threshold": 1.0,
-          "baseline": "most_recent"
-        }
-      }
-    },
-    {
-      "macro_f1": 0.8395484955304748,
-      "weighted_f1": 0.8395484955304748,
-      "per_attr_f1": {
-        "name": 0.8338192419825073,
-        "phone": 0.8554216867469879,
-        "website": 0.832258064516129,
-        "address": 0.8424242424242424,
-        "category": 0.8338192419825073
-      },
-      "policy": {
-        "name": {
           "mode": "confidence_gate",
           "threshold": 0.85,
           "baseline": "most_recent"
         },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
         "address": {
           "mode": "confidence_gate",
-          "threshold": 0.65,
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.85,
+          "baseline": "completeness"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "completeness"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "dual_threshold_gate",
+          "threshold": 0.85,
+          "low_threshold": 0.55,
+          "high_threshold": 0.85,
+          "prefer_ml_on_agreement_midband": true,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "dual_threshold_gate",
+          "threshold": 0.9,
+          "low_threshold": 0.55,
+          "high_threshold": 0.9,
+          "prefer_ml_on_agreement_midband": true,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "dual_threshold_gate",
+          "threshold": 0.95,
+          "low_threshold": 0.55,
+          "high_threshold": 0.95,
+          "prefer_ml_on_agreement_midband": true,
+          "baseline": "hybrid"
+        },
+        "phone": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "website": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "hybrid"
+        },
+        "category": {
+          "mode": "baseline_only",
+          "threshold": 1.0,
+          "baseline": "most_recent"
+        }
+      }
+    },
+    {
+      "macro_f1": 0.857454055958082,
+      "weighted_f1": 0.857454055958082,
+      "per_attr_f1": {
+        "name": 0.8563134978229318,
+        "phone": 0.8725637181409296,
+        "website": 0.8449367088607594,
+        "address": 0.8563134978229318,
+        "category": 0.8571428571428571
+      },
+      "policy": {
+        "name": {
+          "mode": "confidence_gate",
+          "threshold": 0.9,
+          "baseline": "most_recent"
+        },
+        "address": {
+          "mode": "dual_threshold_gate",
+          "threshold": 0.85,
+          "low_threshold": 0.6,
+          "high_threshold": 0.85,
+          "prefer_ml_on_agreement_midband": true,
           "baseline": "hybrid"
         },
         "phone": {

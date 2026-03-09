@@ -2,12 +2,12 @@
   "name": {
     "policy": {
       "mode": "confidence_gate",
-      "threshold": 0.7,
+      "threshold": 0.9,
       "baseline": "most_recent"
     },
     "baseline": "most_recent",
-    "routed_to_ml": 1,
-    "routed_to_baseline": 199,
+    "routed_to_ml": 0,
+    "routed_to_baseline": 400,
     "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_name.json",
     "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_name.json"
   },
@@ -19,7 +19,7 @@
     },
     "baseline": "hybrid",
     "routed_to_ml": 0,
-    "routed_to_baseline": 200,
+    "routed_to_baseline": 400,
     "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_phone.json",
     "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_phone.json"
   },
@@ -31,19 +31,19 @@
     },
     "baseline": "hybrid",
     "routed_to_ml": 0,
-    "routed_to_baseline": 200,
+    "routed_to_baseline": 400,
     "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_website.json",
     "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_website.json"
   },
   "address": {
     "policy": {
       "mode": "confidence_gate",
-      "threshold": 0.65,
+      "threshold": 0.85,
       "baseline": "hybrid"
     },
     "baseline": "hybrid",
-    "routed_to_ml": 105,
-    "routed_to_baseline": 95,
+    "routed_to_ml": 6,
+    "routed_to_baseline": 394,
     "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_address.json",
     "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_address.json"
   },
@@ -55,7 +55,7 @@
     },
     "baseline": "most_recent",
     "routed_to_ml": 0,
-    "routed_to_baseline": 200,
+    "routed_to_baseline": 400,
     "prediction_file": "data/results/predictions_exp_step5_hybrid_router_best_category.json",
     "evaluation_file": "data/results/evaluation_exp_step5_hybrid_router_best_category.json"
   }

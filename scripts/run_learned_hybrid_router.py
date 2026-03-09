@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import StandardScaler
 
 try:
@@ -90,16 +90,64 @@ def build_training_frame(attribute: str, baseline: str, golden: dict, ml_preds: 
     return pd.DataFrame(rows)
 
 
-def choose_best_threshold(y_true: np.ndarray, p_ml: np.ndarray) -> float:
+def choose_best_threshold(y_true: np.ndarray, p_ml: np.ndarray, thresholds: list[float]) -> tuple[float, float]:
     best_th = 0.5
     best_score = -1.0
-    for th in [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7]:
+    for th in thresholds:
         pred = (p_ml >= th).astype(int)
         score = float((pred == y_true).mean())
         if score > best_score:
             best_score = score
             best_th = th
-    return best_th
+    return best_th, best_score
+
+
+def tune_router_with_cv(X: np.ndarray, y: np.ndarray) -> tuple[float, float, float]:
+    """
+    Tune logistic C and decision threshold with stratified CV.
+
+    Returns:
+      best_c, best_threshold, best_mean_accuracy
+    """
+    threshold_grid = [0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70]
+    c_grid = [0.2, 0.5, 1.0, 2.0, 5.0]
+
+    n_pos = int((y == 1).sum())
+    n_neg = int((y == 0).sum())
+    n_splits = min(5, n_pos, n_neg)
+    if n_splits < 2:
+        return 1.0, 0.5, -1.0
+
+    cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+
+    best_cfg = (1.0, 0.5, -1.0)
+    for c_val in c_grid:
+        fold_scores = {th: [] for th in threshold_grid}
+
+        for train_idx, val_idx in cv.split(X, y):
+            X_train, X_val = X[train_idx], X[val_idx]
+            y_train, y_val = y[train_idx], y[val_idx]
+
+            scaler = StandardScaler()
+            X_train_s = scaler.fit_transform(X_train)
+            X_val_s = scaler.transform(X_val)
+
+            clf = LogisticRegression(max_iter=1000, random_state=42, C=c_val)
+            clf.fit(X_train_s, y_train)
+            p_val = clf.predict_proba(X_val_s)[:, 1]
+
+            for th in threshold_grid:
+                pred = (p_val >= th).astype(int)
+                fold_scores[th].append(float((pred == y_val).mean()))
+
+        for th in threshold_grid:
+            if not fold_scores[th]:
+                continue
+            mean_acc = float(np.mean(fold_scores[th]))
+            if mean_acc > best_cfg[2]:
+                best_cfg = (c_val, th, mean_acc)
+
+    return best_cfg
 
 
 def run_attribute(attribute: str, baseline: str, golden_path: str) -> dict:
@@ -122,6 +170,8 @@ def run_attribute(attribute: str, baseline: str, golden_path: str) -> dict:
             "predictions": final_preds,
             "evaluation": eval_result,
             "threshold": None,
+            "best_c": None,
+            "cv_accuracy": None,
             "n_train_rows": int(len(train_df)),
         }
 
@@ -138,24 +188,17 @@ def run_attribute(attribute: str, baseline: str, golden_path: str) -> dict:
     X = train_df[feature_cols].values
     y = train_df["choose_ml"].values
 
-    stratify = y if len(np.unique(y)) > 1 else None
-    X_train, X_val, y_train, y_val = train_test_split(
-        X,
-        y,
-        test_size=0.3,
-        random_state=42,
-        stratify=stratify,
-    )
+    best_c, threshold, cv_accuracy = tune_router_with_cv(X, y)
 
     scaler = StandardScaler()
-    X_train_s = scaler.fit_transform(X_train)
-    X_val_s = scaler.transform(X_val)
+    X_s = scaler.fit_transform(X)
+    clf = LogisticRegression(max_iter=1000, random_state=42, C=best_c)
+    clf.fit(X_s, y)
 
-    clf = LogisticRegression(max_iter=1000, random_state=42)
-    clf.fit(X_train_s, y_train)
-
-    p_val = clf.predict_proba(X_val_s)[:, 1]
-    threshold = choose_best_threshold(y_val, p_val)
+    # Optional in-sample calibration of threshold tie-breaking if CV fails to tune.
+    p_full = clf.predict_proba(X_s)[:, 1]
+    if cv_accuracy < 0:
+        threshold, _ = choose_best_threshold(y, p_full, [0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70])
 
     # Apply router model to all evaluable records.
     final_preds = {}
@@ -191,8 +234,10 @@ def run_attribute(attribute: str, baseline: str, golden_path: str) -> dict:
     eval_result = evaluate_algorithm(final_preds, golden, f"Learned Hybrid Router ({attribute})")
     eval_result["router_meta"] = {
         "baseline": baseline,
-        "mode": "learned_logreg_router",
+        "mode": "learned_logreg_router_cv",
         "threshold": threshold,
+        "best_c": best_c,
+        "cv_accuracy": cv_accuracy,
         "n_train_rows": int(len(train_df)),
     }
 
@@ -200,6 +245,8 @@ def run_attribute(attribute: str, baseline: str, golden_path: str) -> dict:
         "predictions": final_preds,
         "evaluation": eval_result,
         "threshold": float(threshold),
+        "best_c": float(best_c),
+        "cv_accuracy": float(cv_accuracy),
         "n_train_rows": int(len(train_df)),
     }
 
@@ -209,7 +256,7 @@ def main() -> int:
     parser.add_argument("--golden", default="data/golden_dataset_200.json")
     parser.add_argument("--attributes", nargs="*", default=ALL_ATTRIBUTES)
     parser.add_argument("--policy-json", default="data/results/experiment_reports/exp_step5_hybrid_router_best_policy.json")
-    parser.add_argument("--router-tag", default="learned_hybrid_router_v1")
+    parser.add_argument("--router-tag", default="learned_hybrid_router_v2")
     args = parser.parse_args()
 
     with open(args.policy_json, "r", encoding="utf-8") as f:
@@ -233,6 +280,8 @@ def main() -> int:
         summary[attribute] = {
             "baseline": baseline,
             "threshold": result["threshold"],
+            "best_c": result["best_c"],
+            "cv_accuracy": result["cv_accuracy"],
             "n_train_rows": result["n_train_rows"],
             "f1": result["evaluation"]["metrics"]["f1"],
             "prediction_file": str(pred_path),

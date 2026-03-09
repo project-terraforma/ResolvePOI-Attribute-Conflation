@@ -1,13 +1,13 @@
 {
   "algorithm": "Baseline Confidence (category)",
   "metrics": {
-    "accuracy": 0.665,
-    "precision": 0.7878787878787878,
-    "recall": 0.7272727272727273,
-    "f1": 0.7563636363636363,
-    "n_samples": 200
+    "accuracy": 0.6895674300254453,
+    "precision": 0.8208955223880597,
+    "recall": 0.7482993197278912,
+    "f1": 0.7829181494661922,
+    "n_samples": 393
   },
-  "coverage": 1.0,
-  "n_total": 200,
-  "n_unclear": 0
+  "coverage": 0.9975,
+  "n_total": 400,
+  "n_unclear": 1
 }

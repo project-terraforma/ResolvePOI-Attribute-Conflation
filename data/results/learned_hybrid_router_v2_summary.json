@@ -1,0 +1,52 @@
+{
+  "name": {
+    "baseline": "most_recent",
+    "threshold": 0.55,
+    "best_c": 0.2,
+    "cv_accuracy": 0.5748917748917749,
+    "n_train_rows": 108,
+    "f1": 0.6996466431095406,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v2_name.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v2_name.json"
+  },
+  "phone": {
+    "baseline": "hybrid",
+    "threshold": 0.6,
+    "best_c": 0.2,
+    "cv_accuracy": 0.6615384615384615,
+    "n_train_rows": 62,
+    "f1": 0.8554216867469879,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v2_phone.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v2_phone.json"
+  },
+  "website": {
+    "baseline": "hybrid",
+    "threshold": 0.5,
+    "best_c": 0.2,
+    "cv_accuracy": 0.5888888888888889,
+    "n_train_rows": 90,
+    "f1": 0.832258064516129,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v2_website.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v2_website.json"
+  },
+  "address": {
+    "baseline": "hybrid",
+    "threshold": 0.3,
+    "best_c": 0.2,
+    "cv_accuracy": 0.523076923076923,
+    "n_train_rows": 67,
+    "f1": 0.7986577181208053,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v2_address.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v2_address.json"
+  },
+  "category": {
+    "baseline": "most_recent",
+    "threshold": 0.35,
+    "best_c": 0.2,
+    "cv_accuracy": 0.6667226890756304,
+    "n_train_rows": 171,
+    "f1": 0.8338192419825073,
+    "prediction_file": "data/results/predictions_learned_hybrid_router_v2_category.json",
+    "evaluation_file": "data/results/evaluation_learned_hybrid_router_v2_category.json"
+  }
+}

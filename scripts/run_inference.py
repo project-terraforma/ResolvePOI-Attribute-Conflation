@@ -139,7 +139,9 @@ def run_inference():
     model = model_data['model']
     feature_cols = model_data['feature_cols']
     calibration = model_data.get('calibration')
+    decision_threshold = float(model_data.get('decision_threshold', 0.5))
     print(f"Model loaded: {model_data['model_type']}")
+    print(f"Decision threshold: {decision_threshold:.2f}")
 
     # 3. Extract Features
     print(f"Extracting features for '{args.attribute}' attribute...")
@@ -156,7 +158,6 @@ def run_inference():
     # 4. Predict
     print("Predicting best attributes...")
     start_time = time.time()
-    predictions = model.predict(X)
     probabilities = model.predict_proba(X)
     end_time = time.time()
     inference_duration_seconds = end_time - start_time
@@ -168,15 +169,16 @@ def run_inference():
     results = []
     stats = {"current": 0, "base": 0}
     
-    for idx, (pred, prob) in enumerate(zip(predictions, probabilities)):
+    for idx, prob in enumerate(probabilities):
         row = df.iloc[idx]
         
         val_c = get_attribute_value(row, args.attribute, 'current')
         val_b = get_attribute_value(row, args.attribute, 'base')
 
-        choice = "current" if pred == 1 else "base"
         current_prob_raw = float(prob[1])
         current_prob_calibrated = apply_platt_calibration(current_prob_raw, calibration)
+        current_prob_for_decision = current_prob_calibrated if calibration else current_prob_raw
+        choice = "current" if current_prob_for_decision >= decision_threshold else "base"
 
         # Preserve existing `model_confidence` field while upgrading its meaning
         # to calibrated confidence when calibration is available.
@@ -197,6 +199,8 @@ def run_inference():
             "model_confidence_raw": float(confidence_raw),
             "current_probability_raw": current_prob_raw,
             "current_probability_calibrated": float(current_prob_calibrated),
+            "current_probability_for_decision": float(current_prob_for_decision),
+            "decision_threshold": float(decision_threshold),
             "is_calibrated": bool(calibration),
             "conflated_value": chosen_value,
             "candidates": {

@@ -11,28 +11,28 @@ MAYHEM PROJECT: FINAL RESULTS ANALYSIS
 | Address     | Hybrid Router (address) [exp_step5_hybrid_router_best]      |     0.8563 |     0.7487 |      0.7487 |   1.0000 |     1.0000 |
 | Address     | Hybrid Router (address) [exp_step5_hybrid_router_v1]        |     0.8373 |     0.7300 |      0.7354 |   0.9720 |     1.0000 |
 | Address     | Learned Hybrid Router (address) [learned_hybrid_router_v1]  |     0.8333 |     0.7300 |      0.7459 |   0.9441 |     1.0000 |
-| Address     | ML Model                                                    |     0.8040 |     0.7030 |      0.7947 |   0.8136 |     1.0000 |
+| Address     | ML Model                                                    |     0.8315 |     0.7234 |      0.7642 |   0.9119 |     1.0000 |
 | Address     | Learned Hybrid Router (address) [learned_hybrid_router_v2]  |     0.7987 |     0.7000 |      0.7677 |   0.8322 |     1.0000 |
 | Address     | Baseline: Confidence                                        |     0.7822 |     0.6777 |      0.7917 |   0.7729 |     1.0000 |
 | Category    | Baseline: Most Recent                                       |     0.8571 |     0.7506 |      0.7500 |   1.0000 |     0.9975 |
 | Category    | Hybrid Router (category) [exp_step5_hybrid_router_best]     |     0.8571 |     0.7506 |      0.7500 |   1.0000 |     0.9975 |
+| Category    | ML Model                                                    |     0.8563 |     0.7487 |      0.7487 |   1.0000 |     1.0000 |
 | Category    | Learned Hybrid Router (category) [learned_hybrid_router_v1] |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
 | Category    | Learned Hybrid Router (category) [learned_hybrid_router_v2] |     0.8338 |     0.7150 |      0.7150 |   1.0000 |     1.0000 |
 | Category    | Baseline: Hybrid                                            |     0.8317 |     0.7405 |      0.8077 |   0.8571 |     0.9975 |
 | Category    | Hybrid Router (category) [exp_step5_hybrid_router_v1]       |     0.8094 |     0.7150 |      0.7756 |   0.8462 |     1.0000 |
 | Category    | Baseline: Confidence                                        |     0.7829 |     0.6896 |      0.8209 |   0.7483 |     0.9975 |
 | Category    | Baseline: Completeness                                      |     0.7214 |     0.6285 |      0.8217 |   0.6429 |     0.9975 |
-| Category    | ML Model                                                    |     0.0000 |     0.2513 |      0.0000 |   0.0000 |     1.0000 |
 | Name        | Baseline: Most Recent                                       |     0.8563 |     0.7487 |      0.7487 |   1.0000 |     1.0000 |
 | Name        | Hybrid Router (name) [exp_step5_hybrid_router_best]         |     0.8563 |     0.7487 |      0.7487 |   1.0000 |     1.0000 |
 | Name        | Hybrid Router (name) [smoke_hybrid_v2]                      |     0.8196 |     0.7050 |      0.7283 |   0.9371 |     1.0000 |
+| Name        | ML Model                                                    |     0.8079 |     0.7056 |      0.7896 |   0.8271 |     1.0000 |
 | Name        | Baseline: Hybrid                                            |     0.7882 |     0.6726 |      0.7643 |   0.8136 |     1.0000 |
 | Name        | Baseline: Confidence                                        |     0.7855 |     0.6701 |      0.7653 |   0.8068 |     1.0000 |
 | Name        | Hybrid Router (name) [exp_step5_hybrid_router_v1]           |     0.7483 |     0.6300 |      0.7285 |   0.7692 |     1.0000 |
 | Name        | Baseline: Completeness                                      |     0.7389 |     0.6269 |      0.7761 |   0.7051 |     1.0000 |
 | Name        | Learned Hybrid Router (name) [learned_hybrid_router_v1]     |     0.6996 |     0.5750 |      0.7071 |   0.6923 |     1.0000 |
 | Name        | Learned Hybrid Router (name) [learned_hybrid_router_v2]     |     0.6996 |     0.5750 |      0.7071 |   0.6923 |     1.0000 |
-| Name        | ML Model                                                    |     0.5376 |     0.4848 |      0.8194 |   0.4000 |     1.0000 |
 | Phone       | Baseline: Completeness                                      |     0.8726 |     0.7843 |      0.7823 |   0.9864 |     1.0000 |
 | Phone       | Baseline: Most Recent                                       |     0.8726 |     0.7843 |      0.7823 |   0.9864 |     1.0000 |
 | Phone       | Baseline: Hybrid                                            |     0.8726 |     0.7843 |      0.7823 |   0.9864 |     1.0000 |
@@ -40,8 +40,9 @@ MAYHEM PROJECT: FINAL RESULTS ANALYSIS
 | Phone       | Learned Hybrid Router (phone) [learned_hybrid_router_v2]    |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
 | Phone       | Hybrid Router (phone) [exp_step5_hybrid_router_v1]          |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
 | Phone       | Learned Hybrid Router (phone) [learned_hybrid_router_v1]    |     0.8554 |     0.7600 |      0.7513 |   0.9930 |     1.0000 |
+| Phone       | ML Model                                                    |     0.8094 |     0.7107 |      0.7987 |   0.8203 |     1.0000 |
 | Phone       | Baseline: Confidence                                        |     0.7958 |     0.7030 |      0.8201 |   0.7729 |     1.0000 |
-| Phone       | ML Model                                                    |     0.7741 |     0.6726 |      0.8007 |   0.7492 |     1.0000 |
+| Website     | ML Model                                                    |     0.8563 |     0.7487 |      0.7487 |   1.0000 |     1.0000 |
 | Website     | Baseline: Completeness                                      |     0.8449 |     0.7513 |      0.7923 |   0.9051 |     1.0000 |
 | Website     | Baseline: Hybrid                                            |     0.8449 |     0.7513 |      0.7923 |   0.9051 |     1.0000 |
 | Website     | Baseline: Most Recent                                       |     0.8449 |     0.7513 |      0.7923 |   0.9051 |     1.0000 |
@@ -50,23 +51,22 @@ MAYHEM PROJECT: FINAL RESULTS ANALYSIS
 | Website     | Learned Hybrid Router (website) [learned_hybrid_router_v2]  |     0.8323 |     0.7400 |      0.7725 |   0.9021 |     1.0000 |
 | Website     | Learned Hybrid Router (website) [learned_hybrid_router_v1]  |     0.8274 |     0.7350 |      0.7744 |   0.8881 |     1.0000 |
 | Website     | Baseline: Confidence                                        |     0.8027 |     0.7056 |      0.8055 |   0.8000 |     1.0000 |
-| Website     | ML Model                                                    |     0.5549 |     0.4543 |      0.7128 |   0.4542 |     1.0000 |
 
 --- OKR 2.1 CHECK (ML vs. Most Recent Baseline) ---
-Address: ML (0.8040) vs Baseline (0.8563) -> -6.11% Improvement  FAILED ❌
-Category: ML (0.0000) vs Baseline (0.8571) -> -100.00% Improvement  FAILED ❌
-Name: ML (0.5376) vs Baseline (0.8563) -> -37.22% Improvement  FAILED ❌
-Phone: ML (0.7741) vs Baseline (0.8726) -> -11.29% Improvement  FAILED ❌
-Website: ML (0.5549) vs Baseline (0.8449) -> -34.33% Improvement  FAILED ❌
+Address: ML (0.8315) vs Baseline (0.8563) -> -2.89% Improvement  FAILED ❌
+Category: ML (0.8563) vs Baseline (0.8571) -> -0.10% Improvement  FAILED ❌
+Name: ML (0.8079) vs Baseline (0.8563) -> -5.65% Improvement  FAILED ❌
+Phone: ML (0.8094) vs Baseline (0.8726) -> -7.24% Improvement  FAILED ❌
+Website: ML (0.8563) vs Baseline (0.8449) -> +1.35% Improvement  FAILED ❌
 
 --- COMPUTE METRICS (Training) ---
 | Attribute   | Best Model          |   Train Time (s) |   Peak Memory (MB) |
 |:------------|:--------------------|-----------------:|-------------------:|
-| Category    | logistic_regression |           0.0023 |           191.6562 |
-| Website     | random_forest       |           0.1651 |           197.2969 |
-| Address     | logistic_regression |           0.0029 |           191.5781 |
-| Phone       | random_forest       |           0.1637 |           197.8594 |
-| Name        | random_forest       |           0.1650 |           202.4062 |
+| Category    | logistic_regression |           0.0024 |           191.4531 |
+| Website     | random_forest       |           0.1715 |           197.8281 |
+| Address     | logistic_regression |           0.0029 |           192.1094 |
+| Phone       | random_forest       |           0.1586 |           198.7656 |
+| Name        | logistic_regression |           0.0120 |           192.4688 |
 
 --- COMPUTE METRICS (Inference on 2k Records) ---
 | Attribute   |   Total Inference Time (s) |   Time Per Record (ms) |   Peak Memory (MB) |

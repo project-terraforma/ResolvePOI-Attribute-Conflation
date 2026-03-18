@@ -8,10 +8,10 @@
   },
   "searched_configs": 541696,
   "best": {
-    "macro_f1": 0.857454055958082,
-    "weighted_f1": 0.857454055958082,
+    "macro_f1": 0.8490813399731344,
+    "weighted_f1": 0.8490813399731344,
     "per_attr_f1": {
-      "name": 0.8563134978229318,
+      "name": 0.8144499178981938,
       "phone": 0.8725637181409296,
       "website": 0.8449367088607594,
       "address": 0.8563134978229318,
@@ -20,7 +20,7 @@
     "policy": {
       "name": {
         "mode": "confidence_gate",
-        "threshold": 0.9,
+        "threshold": 0.85,
         "baseline": "most_recent"
       },
       "address": {
@@ -47,10 +47,10 @@
   },
   "top_k": [
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -59,7 +59,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -85,10 +85,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -97,7 +97,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -123,10 +123,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -135,7 +135,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -161,10 +161,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -173,7 +173,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -199,10 +199,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -211,7 +211,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -237,10 +237,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -249,7 +249,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -275,10 +275,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -287,7 +287,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -316,10 +316,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -328,7 +328,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -357,10 +357,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -369,7 +369,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {
@@ -398,10 +398,10 @@
       }
     },
     {
-      "macro_f1": 0.857454055958082,
-      "weighted_f1": 0.857454055958082,
+      "macro_f1": 0.8490813399731344,
+      "weighted_f1": 0.8490813399731344,
       "per_attr_f1": {
-        "name": 0.8563134978229318,
+        "name": 0.8144499178981938,
         "phone": 0.8725637181409296,
         "website": 0.8449367088607594,
         "address": 0.8563134978229318,
@@ -410,7 +410,7 @@
       "policy": {
         "name": {
           "mode": "confidence_gate",
-          "threshold": 0.9,
+          "threshold": 0.85,
           "baseline": "most_recent"
         },
         "address": {

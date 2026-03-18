@@ -52,6 +52,44 @@ def fit_platt_calibrator(prob_pos: np.ndarray, y_true: pd.Series) -> Optional[Di
         return None
 
 
+def apply_platt_calibration_array(prob_pos: np.ndarray, calibration: Optional[Dict[str, float]]) -> np.ndarray:
+    """Apply optional Platt scaling to a probability array."""
+    if not calibration or calibration.get("method") != "platt_logit":
+        return np.asarray(prob_pos, dtype=float)
+
+    eps = 1e-6
+    p = np.clip(np.asarray(prob_pos, dtype=float), eps, 1.0 - eps)
+    logit = np.log(p / (1.0 - p))
+    coef = float(calibration.get("coef", 1.0))
+    intercept = float(calibration.get("intercept", 0.0))
+    calibrated_logit = coef * logit + intercept
+    calibrated = 1.0 / (1.0 + np.exp(-calibrated_logit))
+    return np.clip(calibrated, 0.0, 1.0)
+
+
+def tune_decision_threshold(y_true: pd.Series, prob_pos: np.ndarray) -> Dict[str, float]:
+    """Tune classification threshold on validation set for best F1."""
+    y_arr = np.asarray(y_true)
+    p_arr = np.asarray(prob_pos, dtype=float)
+
+    best_threshold = 0.5
+    best_f1 = -1.0
+    best_acc = 0.0
+    for th in np.arange(0.20, 0.81, 0.02):
+        pred = (p_arr >= th).astype(int)
+        f1 = f1_score(y_arr, pred, zero_division=0)
+        if f1 > best_f1:
+            best_f1 = float(f1)
+            best_threshold = float(round(float(th), 2))
+            best_acc = float(accuracy_score(y_arr, pred))
+
+    return {
+        "decision_threshold": best_threshold,
+        "val_f1_at_threshold": best_f1,
+        "val_acc_at_threshold": best_acc,
+    }
+
+
 def load_training_data(features_file: str) -> tuple:
     """
     Load training data with features and labels.
@@ -106,9 +144,13 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series,
 
     # Evaluate
     train_pred = model.predict(X_train_scaled)
-    val_pred = model.predict(X_val_scaled)
     val_prob_pos = model.predict_proba(X_val_scaled)[:, 1]
-    
+    calibration = fit_platt_calibrator(val_prob_pos, y_val)
+    val_prob_for_decision = apply_platt_calibration_array(val_prob_pos, calibration)
+    threshold_meta = tune_decision_threshold(y_val, val_prob_for_decision)
+    decision_threshold = threshold_meta["decision_threshold"]
+    val_pred = (val_prob_for_decision >= decision_threshold).astype(int)
+
     train_f1 = f1_score(y_train, train_pred)
     val_f1 = f1_score(y_val, val_pred)
     val_acc = accuracy_score(y_val, val_pred)
@@ -116,10 +158,9 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series,
     print(f"  Train F1: {train_f1:.4f}")
     print(f"  Val F1:   {val_f1:.4f}")
     print(f"  Val Acc:  {val_acc:.4f}")
+    print(f"  Tuned Threshold: {decision_threshold:.2f}")
     print(f"  Train Duration: {train_duration_seconds:.2f}s")
     print(f"  Peak Memory: {peak_memory_mb:.2f}MB")
-
-    calibration = fit_platt_calibrator(val_prob_pos, y_val)
     
     return {
         'model': model,
@@ -132,7 +173,9 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series,
         'initial_memory_mb': initial_memory_mb,
         'peak_memory_mb': peak_memory_mb
         ,
-        'calibration': calibration
+        'calibration': calibration,
+        'decision_threshold': decision_threshold,
+        'threshold_meta': threshold_meta,
     }
 
 
@@ -159,9 +202,13 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
 
     # Evaluate
     train_pred = model.predict(X_train)
-    val_pred = model.predict(X_val)
     val_prob_pos = model.predict_proba(X_val)[:, 1]
-    
+    calibration = fit_platt_calibrator(val_prob_pos, y_val)
+    val_prob_for_decision = apply_platt_calibration_array(val_prob_pos, calibration)
+    threshold_meta = tune_decision_threshold(y_val, val_prob_for_decision)
+    decision_threshold = threshold_meta["decision_threshold"]
+    val_pred = (val_prob_for_decision >= decision_threshold).astype(int)
+
     train_f1 = f1_score(y_train, train_pred)
     val_f1 = f1_score(y_val, val_pred)
     val_acc = accuracy_score(y_val, val_pred)
@@ -169,6 +216,7 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
     print(f"  Train F1: {train_f1:.4f}")
     print(f"  Val F1:   {val_f1:.4f}")
     print(f"  Val Acc:  {val_acc:.4f}")
+    print(f"  Tuned Threshold: {decision_threshold:.2f}")
     print(f"  Train Duration: {train_duration_seconds:.2f}s")
     print(f"  Peak Memory: {peak_memory_mb:.2f}MB")
     
@@ -177,8 +225,6 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
     top_features = sorted(feature_importance.items(), key=lambda x: x[1], reverse=True)[:10]
     print(f"  Top 5 features: {[f[0] for f in top_features[:5]]}")
 
-    calibration = fit_platt_calibrator(val_prob_pos, y_val)
-    
     return {
         'model': model,
         'scaler': None,
@@ -191,6 +237,8 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series,
         'peak_memory_mb': peak_memory_mb,
         'feature_importance': feature_importance,
         'calibration': calibration,
+        'decision_threshold': decision_threshold,
+        'threshold_meta': threshold_meta,
     }
 
 
@@ -216,9 +264,13 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
 
     # Evaluate
     train_pred = model.predict(X_train)
-    val_pred = model.predict(X_val)
     val_prob_pos = model.predict_proba(X_val)[:, 1]
-    
+    calibration = fit_platt_calibrator(val_prob_pos, y_val)
+    val_prob_for_decision = apply_platt_calibration_array(val_prob_pos, calibration)
+    threshold_meta = tune_decision_threshold(y_val, val_prob_for_decision)
+    decision_threshold = threshold_meta["decision_threshold"]
+    val_pred = (val_prob_for_decision >= decision_threshold).astype(int)
+
     train_f1 = f1_score(y_train, train_pred)
     val_f1 = f1_score(y_val, val_pred)
     val_acc = accuracy_score(y_val, val_pred)
@@ -226,6 +278,7 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
     print(f"  Train F1: {train_f1:.4f}")
     print(f"  Val F1:   {val_f1:.4f}")
     print(f"  Val Acc:  {val_acc:.4f}")
+    print(f"  Tuned Threshold: {decision_threshold:.2f}")
     print(f"  Train Duration: {train_duration_seconds:.2f}s")
     print(f"  Peak Memory: {peak_memory_mb:.2f}MB")
     
@@ -234,8 +287,6 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
     top_features = sorted(feature_importance.items(), key=lambda x: x[1], reverse=True)[:10]
     print(f"  Top 5 features: {[f[0] for f in top_features[:5]]}")
 
-    calibration = fit_platt_calibrator(val_prob_pos, y_val)
-    
     return {
         'model': model,
         'scaler': None,
@@ -248,6 +299,8 @@ def train_gradient_boosting(X_train: pd.DataFrame, y_train: pd.Series,
         'peak_memory_mb': peak_memory_mb,
         'feature_importance': feature_importance,
         'calibration': calibration,
+        'decision_threshold': decision_threshold,
+        'threshold_meta': threshold_meta,
     }
 
 
@@ -324,6 +377,8 @@ def train_all_models(
             'initial_memory_mb': best_model.get('initial_memory_mb'),
             'peak_memory_mb': best_model.get('peak_memory_mb'),
             'calibration': best_model.get('calibration'),
+            'decision_threshold': best_model.get('decision_threshold', 0.5),
+            'threshold_meta': best_model.get('threshold_meta'),
         }, model_file)
         print(f"Saved best model to {model_file}")
         
@@ -344,7 +399,9 @@ def train_all_models(
                     'model_type': r['model_type'],
                     'train_duration_seconds': r.get('train_duration_seconds'),
                     'initial_memory_mb': r.get('initial_memory_mb'),
-                    'peak_memory_mb': r.get('peak_memory_mb')
+                    'peak_memory_mb': r.get('peak_memory_mb'),
+                    'decision_threshold': r.get('decision_threshold', 0.5),
+                    'val_f1_at_threshold': r.get('threshold_meta', {}).get('val_f1_at_threshold'),
                 }
                 for name, r in results.items()
             }
